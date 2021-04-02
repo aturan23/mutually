@@ -12,6 +12,7 @@ class TextFieldViewFactory {
         let view = TextFieldView(title: title,
                                  prefix: "+7 (",
                                  formatPattern: "###) ### ## ##",
+                                 placeholderChar: " ",
                                  editingActions: [.paste])
             .withClearButton()
         view.keyboardType = .phonePad
