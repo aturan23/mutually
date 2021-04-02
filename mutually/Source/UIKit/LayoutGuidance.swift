@@ -18,4 +18,6 @@ enum LayoutGuidance {
     static let offsetThreeQuarters: CGFloat = LayoutGuidance.offsetQuarter * 3
     /// 24
     static let offsetLarge: CGFloat = 24
+    /// 32
+    static let offsetSuperLarge: CGFloat = 32
 }
