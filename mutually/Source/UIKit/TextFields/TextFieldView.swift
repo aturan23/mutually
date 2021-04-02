@@ -48,11 +48,6 @@ final class TextFieldView: UIView {
             backgroundView.layer.borderColor = borderColor.cgColor
         }
     }
-    private var borderWidth: CGFloat = Constants.defaultBorderWidth {
-        didSet {
-            backgroundView.layer.borderWidth = borderWidth
-        }
-    }
     private var placeholderTextColor = Color.textLowContrast {
         didSet {
             placeholderLabel.textColor = placeholderTextColor
@@ -131,6 +126,8 @@ final class TextFieldView: UIView {
     
     private let textField: MaskedTextfield
     
+    private let lineView = UIView()
+    
     // MARK: - Init
     
     init(title: String = "",
@@ -145,6 +142,7 @@ final class TextFieldView: UIView {
                                     disabledSymbolsRegex: disabledSymbolsRegex,
                                     editingActions: editingActions)
         super.init(frame: .zero)
+        lineView.backgroundColor = Color.textLowContrast
         placeholderLabel.setAttributedText(to: title)
         textField.maskedDelegate = self
         textField.onTextDidChange = { [weak self] in
@@ -205,13 +203,11 @@ final class TextFieldView: UIView {
     private func apply(state: State) {
         switch state {
         case .regular:
-            borderWidth = Constants.defaultBorderWidth
             placeholderTextColor = Color.textLowContrast
             animatePlaceholder(minimize: false)
             textField.isHidden = true
             hideErrorHint()
         case .active:
-            borderWidth = Constants.activeBorderWidth
             placeholderTextColor = Color.textHighContrast
             animatePlaceholder(minimize: true)
             textField.isHidden = false
@@ -220,7 +216,6 @@ final class TextFieldView: UIView {
             if case .error = currentState {
                 break
             }
-            borderWidth = Constants.defaultBorderWidth
             placeholderTextColor = Color.textLowContrast
             animatePlaceholder(minimize: true)
             textField.isHidden = false
@@ -229,7 +224,6 @@ final class TextFieldView: UIView {
             let offset: CGFloat = message ?? "" == "" ? -Constants.errorLabelHeight : 4
             UIView.animate(withDuration: Constants.errorHintAnimationDuration) { [weak self] in
                 guard let self = self else { return }
-                self.borderWidth = Constants.defaultBorderWidth
                 if !self.textField.hasValue {
                     self.placeholderTextColor = Color.error
                 }
@@ -251,7 +245,7 @@ final class TextFieldView: UIView {
     }
     
     private func setupViewHierarchy() {
-        [placeholderLabel, textField, rightIconButton].forEach {
+        [placeholderLabel, textField, rightIconButton, lineView].forEach {
             containerView.addSubview($0)
         }
         errorHolderView.addSubview(errorLabel)
@@ -268,7 +262,7 @@ final class TextFieldView: UIView {
         }
         layoutInputsContainer()
         placeholderLabel.snp.makeConstraints {
-            $0.left.right.equalToSuperview().inset(LayoutGuidance.offset)
+            $0.left.right.equalToSuperview()
             $0.centerY.equalToSuperview()
         }
         rightIconButton.snp.makeConstraints {
@@ -279,7 +273,12 @@ final class TextFieldView: UIView {
         textField.snp.makeConstraints {
             $0.top.equalTo(28)
             $0.height.equalTo(24)
-            $0.left.right.equalToSuperview().inset(LayoutGuidance.offset)
+            $0.left.right.equalToSuperview()
+        }
+        lineView.snp.makeConstraints {
+            $0.top.equalTo(textField.snp.bottom).offset(LayoutGuidance.offsetHalf)
+            $0.height.equalTo(1)
+            $0.width.equalToSuperview()
         }
         errorHolderView.snp.makeConstraints {
             $0.top.equalTo(backgroundView.snp.bottom)
