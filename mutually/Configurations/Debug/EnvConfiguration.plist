@@ -5,6 +5,6 @@
 	<key>remote_config_time</key>
 	<integer>0</integer>
 	<key>base_url</key>
-	<string>http://std.mfovzaimno.ru/server/m/index.php</string>
+	<string>http://std.mfovzaimno.ru</string>
 </dict>
 </plist>

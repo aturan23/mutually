@@ -6,19 +6,42 @@
 //
 
 import UIKit
+import SnapKit
+import Swinject
 import CoreData
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, RootUIControllerType {
     
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let navigation = UINavigationController(rootViewController: ViewController())
-        window?.rootViewController = navigation
+        window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
+
+        Inject.depContainer.register(RootUIControllerType.self) { _ in self }
+        setupRootViewControllerAndSuggestAlternativeLoginMethods()
         return true
+    }
+    
+    func setupRootViewController() {
+        guard
+            let window = window,
+            let registrationCoordinator = Inject.depContainer
+                .inject(RegistrationCoordinating.self, argument: window)
+            else {
+                return
+        }
+        registrationCoordinator.start()
+    }
+    
+    func setupRootViewControllerAndSuggestAlternativeLoginMethods() {
+        guard let sessionTracker = Inject.depContainer.inject(SessionTrackerProtocol.self) else {
+            return
+        }
+        sessionTracker.shouldSuggestAlternativeLoginMethods = true
+        setupRootViewController()
     }
     
     // MARK: - Core Data stack
