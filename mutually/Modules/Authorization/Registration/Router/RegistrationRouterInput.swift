@@ -6,4 +6,7 @@
 //  Copyright © 2021 mutually. All rights reserved.
 //
 
-protocol RegistrationRouterInput { }
+protocol RegistrationRouterInput {
+    func showSmsVerification(phone: String,
+                             moduleOutput: SmsVerificationModuleOutput)
+}
