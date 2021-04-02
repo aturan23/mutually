@@ -33,7 +33,6 @@
 		4FF7C4B62616DE67007356C3 /* FeatureToggle.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FeatureToggle.plist; sourceTree = "<group>"; };
 		4FF7C4B82616DE67007356C3 /* EnvConfiguration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = EnvConfiguration.plist; sourceTree = "<group>"; };
 		4FF7C4B92616DE67007356C3 /* CommonConfiguration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CommonConfiguration.plist; sourceTree = "<group>"; };
-		4FF7C4BA2616DE67007356C3 /* RemoteConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfig.plist; sourceTree = "<group>"; };
 		4FF7C4BC2616DE67007356C3 /* FeatureToggle.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FeatureToggle.plist; sourceTree = "<group>"; };
 		4FF7C4BE2616DE67007356C3 /* EnvConfiguration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = EnvConfiguration.plist; sourceTree = "<group>"; };
 		CE02A9FC0140DBC4A21F1DA0 /* Pods-mutually.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mutually.debug.xcconfig"; path = "Target Support Files/Pods-mutually/Pods-mutually.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,7 +92,6 @@
 				4FF7C4BB2616DE67007356C3 /* Release */,
 				4FF7C4B52616DE67007356C3 /* Debug */,
 				4FF7C4B92616DE67007356C3 /* CommonConfiguration.plist */,
-				4FF7C4BA2616DE67007356C3 /* RemoteConfig.plist */,
 			);
 			path = Configurations;
 			sourceTree = "<group>";
