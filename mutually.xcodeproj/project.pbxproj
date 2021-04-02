@@ -76,6 +76,11 @@
 			isa = PBXGroup;
 			children = (
 				4FF7C4B42616DE67007356C3 /* Configurations */,
+				4FF7C4C22616E0ED007356C3 /* Core */,
+				4FF7C4C32616E114007356C3 /* Source */,
+				4FF7C4C42616E11D007356C3 /* Modules */,
+				4FF7C4C52616E126007356C3 /* Resources */,
+				4FF7C4C62616E139007356C3 /* Generated */,
 				4F6BFC9F2615D29B00AE1DC3 /* AppDelegate.swift */,
 				4F6BFCA32615D29B00AE1DC3 /* ViewController.swift */,
 				4F6BFCAB2615D29D00AE1DC3 /* Assets.xcassets */,
@@ -112,6 +117,41 @@
 				4FF7C4BE2616DE67007356C3 /* EnvConfiguration.plist */,
 			);
 			path = Release;
+			sourceTree = "<group>";
+		};
+		4FF7C4C22616E0ED007356C3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		4FF7C4C32616E114007356C3 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		4FF7C4C42616E11D007356C3 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		4FF7C4C52616E126007356C3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4FF7C4C62616E139007356C3 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Generated;
 			sourceTree = "<group>";
 		};
 		94742FE1AB3F1DB587452961 /* Frameworks */ = {
