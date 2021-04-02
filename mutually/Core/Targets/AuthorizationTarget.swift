@@ -8,13 +8,17 @@
 import Moya
 
 enum AuthorizationTarget {
+    case getSmsPath(phone: String)
 }
 
 extension AuthorizationTarget: BaseTargetType {
     var task: Task {
-        return .requestData(Data())
-//        switch self {
-//
-//        }
+        switch self {
+        case .getSmsPath(let phone):
+            return .requestParameters(
+                parameters: [JSONRequestParameter.action.key: "get_sms_pass",
+                             JSONRequestParameter.login.key: phone],
+                encoding: URLEncoding.default)
+        }
     }
 }

@@ -82,6 +82,14 @@ class RegistrationViewController: BaseViewController, RegistrationViewInput, Key
         if terms { termsCheckboxView.shake() }
     }
     
+    func startLoading() {
+        button.showLoader(userInteraction: false)
+    }
+    
+    func stopLoading() {
+        button.hideLoader()
+    }
+    
     // ------------------------------
     // MARK: - KeyboardListening
     // ------------------------------

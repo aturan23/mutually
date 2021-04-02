@@ -20,6 +20,7 @@ class RegistrationViewModel: RegistrationViewOutput, RegistrationModuleInput {
     weak var view: RegistrationViewInput?
     var router: RegistrationRouterInput?
     weak var moduleOutput: RegistrationModuleOutput?
+    weak var authorizationService: AuthorizationServiceProtocol?
     
     // ------------------------------
     // MARK: - RegistrationViewOutput methods
@@ -35,12 +36,27 @@ class RegistrationViewModel: RegistrationViewOutput, RegistrationModuleInput {
               form.termsSelected else {
             return
         }
-        print(phone)
+        view?.startLoading()
+        authorizationService?.getSmsPass(phone: phone, completion: { [weak self] (result) in
+            guard let self = self else { return }
+            self.view?.stopLoading()
+            switch result {
+            case .success: self.router?.showSmsVerification(phone: phone, moduleOutput: self)
+            case .failure(let error): self.failureResponseHandler(error: error)
+            }
+        })
     }
     
     // ------------------------------
     // MARK: - Private methods
     // ------------------------------
+    
+    private func failureResponseHandler(error: NetworkError) {
+        if case .networkFail = error {
+            return
+        }
+        alertPresenter?.showMessageAlert(title: nil, message: error.message)
+    }
     
     private func validate(form: RegistrationForm) -> String? {
         guard let phoneText = form.phone,
@@ -49,6 +65,6 @@ class RegistrationViewModel: RegistrationViewOutput, RegistrationModuleInput {
             return nil
         }
         view?.showError(phone: false, dataProcessing: !form.dataProcessingSelected, terms: !form.termsSelected)
-        return phoneText.substr(1)
+        return phoneText
     }
 }

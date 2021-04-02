@@ -29,6 +29,15 @@ final class AuthorizationService: AuthorizationServiceProtocol {
     
     // MARK: - AuthorizationServiceProtocol
  
+    func getSmsPass(phone: String, completion: @escaping (Result<Void, NetworkError>) -> ()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            completion(.failure(.networkFail))
+        }
+//        dataProvider.request(.getSmsPath(phone: phone)) { (result: Result<Void, NetworkError>) in
+//
+//        }
+    }
+    
     func checkRegistrationStatusOf(
         phone: String,
         success: (( _ hasToken: Bool) -> Void)?,
