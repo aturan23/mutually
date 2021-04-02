@@ -37,7 +37,13 @@ class RegistrationViewController: BaseViewController, RegistrationViewInput, Key
         .makeForPhone(title: "Номер телефона")
     private let dataProcessingCashbackView = CheckBoxView()
     private let termsCheckboxView = CheckBoxView()
-    private let button = Button.makePrimary(with: "Подтвердить телефон")
+    private lazy var button: Button = {
+        let button = Button.makePrimary(with: "Подтвердить телефон")
+        button.touchUpInside = { [weak self] in
+            self?.output?.didTapButton()
+        }
+        return button
+    }()
     
 
     // ------------------------------
@@ -65,6 +71,12 @@ class RegistrationViewController: BaseViewController, RegistrationViewInput, Key
     // ------------------------------
 
     func display(viewAdapter: RegistrationViewAdapter) { }
+    
+    func getPhoneFieldText() -> String { phoneFieldView.getText() }
+    
+    func phoneError() {
+        phoneFieldView.shake()
+    }
     
     // ------------------------------
     // MARK: - KeyboardListening

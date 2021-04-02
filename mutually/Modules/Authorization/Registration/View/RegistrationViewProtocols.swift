@@ -8,8 +8,11 @@
 
 protocol RegistrationViewInput: class {
     func display(viewAdapter: RegistrationViewAdapter)
+    func getPhoneFieldText() -> String
+    func phoneError()
 }
 
 protocol RegistrationViewOutput {
     func didLoad()
+    func didTapButton()
 }
