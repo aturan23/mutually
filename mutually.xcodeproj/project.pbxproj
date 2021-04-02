@@ -63,9 +63,6 @@
 		4FF7C55F2616F5FF007356C3 /* SessionTimeoutPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C55E2616F5FF007356C3 /* SessionTimeoutPlugin.swift */; };
 		4FF7C5632616F72B007356C3 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C5622616F72B007356C3 /* DataService.swift */; };
 		4FF7C5732616F8F1007356C3 /* RegisteredUserHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C5722616F8F1007356C3 /* RegisteredUserHandler.swift */; };
-		4FF7C59C26170CB2007356C3 /* Ekibastuz-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FF7C59926170CB2007356C3 /* Ekibastuz-Regular.ttf */; };
-		4FF7C59D26170CB2007356C3 /* Ekibastuz-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FF7C59A26170CB2007356C3 /* Ekibastuz-Semibold.ttf */; };
-		4FF7C59E26170CB2007356C3 /* Ekibastuz-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FF7C59B26170CB2007356C3 /* Ekibastuz-Bold.ttf */; };
 		4FF7C5A126170D43007356C3 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C5A026170D43007356C3 /* UIFontExtension.swift */; };
 		4FF7C5A526170DFE007356C3 /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C5A426170DFE007356C3 /* TextStyle.swift */; };
 		4FF7C5AA26170EBD007356C3 /* LabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C5A926170EBD007356C3 /* LabelFactory.swift */; };
@@ -76,6 +73,20 @@
 		4FF7C5BE26171523007356C3 /* TextFieldViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C5BD26171523007356C3 /* TextFieldViewOutput.swift */; };
 		4FF7C5C1261716D8007356C3 /* LayoutGuidance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C5C0261716D8007356C3 /* LayoutGuidance.swift */; };
 		4FF7C5C42617194B007356C3 /* TextFieldViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C5C32617194B007356C3 /* TextFieldViewFactory.swift */; };
+		4FF7C5C826171AE5007356C3 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C5C726171AE5007356C3 /* Button.swift */; };
+		4FF7C5CC26171B2A007356C3 /* IndicatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C5CB26171B2A007356C3 /* IndicatorProtocol.swift */; };
+		4FF7C5CF26171B60007356C3 /* UIActivityIndicatorViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C5CE26171B60007356C3 /* UIActivityIndicatorViewExtension.swift */; };
+		4FF7C5D226171BF7007356C3 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C5D126171BF7007356C3 /* Observer.swift */; };
+		4FF7C5D526171C38007356C3 /* WeakCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C5D426171C38007356C3 /* WeakCollection.swift */; };
+		4FF7C5D826171C48007356C3 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C5D726171C48007356C3 /* Observable.swift */; };
+		4FF7C5DB26171C85007356C3 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C5DA26171C85007356C3 /* UIImageExtension.swift */; };
+		4FF7C5DE26171CF4007356C3 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C5DD26171CF4007356C3 /* CALayerExtension.swift */; };
+		4FF7C5E126171D18007356C3 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C5E026171D18007356C3 /* UIButtonExtension.swift */; };
+		4FF7C5E426171D78007356C3 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C5E326171D78007356C3 /* PrimaryButton.swift */; };
+		4FF7C5E7261723F3007356C3 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C5E6261723F3007356C3 /* CheckBoxView.swift */; };
+		4FF7C5EC261730DF007356C3 /* Ekibastuz-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FF7C5E9261730DF007356C3 /* Ekibastuz-Semibold.ttf */; };
+		4FF7C5ED261730DF007356C3 /* Ekibastuz-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FF7C5EA261730DF007356C3 /* Ekibastuz-Bold.ttf */; };
+		4FF7C5EE261730DF007356C3 /* Ekibastuz-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FF7C5EB261730DF007356C3 /* Ekibastuz-Regular.ttf */; };
 		5695FC17C485A046E8822B7C /* RegistrationModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F1844EF3EEC212912E2F9 /* RegistrationModuleOutput.swift */; };
 		5E11F8F4E136F951AB74243D /* MainTabsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E214F952358A442AB189ED8 /* MainTabsRouter.swift */; };
 		5EDC8F1C4B0854BBBA9A2A4A /* RegistrationRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77184EFAF8B71967630781C9 /* RegistrationRouterInput.swift */; };
@@ -178,9 +189,6 @@
 		4FF7C5672616F787007356C3 /* RemoteConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigService.swift; sourceTree = "<group>"; };
 		4FF7C5682616F787007356C3 /* FeatureManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureManagerProtocol.swift; sourceTree = "<group>"; };
 		4FF7C5722616F8F1007356C3 /* RegisteredUserHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredUserHandler.swift; sourceTree = "<group>"; };
-		4FF7C59926170CB2007356C3 /* Ekibastuz-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ekibastuz-Regular.ttf"; path = "../../../../../../Downloads/font/Ekibastuz-Regular.ttf"; sourceTree = "<group>"; };
-		4FF7C59A26170CB2007356C3 /* Ekibastuz-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ekibastuz-Semibold.ttf"; path = "../../../../../../Downloads/font/Ekibastuz-Semibold.ttf"; sourceTree = "<group>"; };
-		4FF7C59B26170CB2007356C3 /* Ekibastuz-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ekibastuz-Bold.ttf"; path = "../../../../../../Downloads/font/Ekibastuz-Bold.ttf"; sourceTree = "<group>"; };
 		4FF7C5A026170D43007356C3 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		4FF7C5A426170DFE007356C3 /* TextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyle.swift; sourceTree = "<group>"; };
 		4FF7C5A926170EBD007356C3 /* LabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFactory.swift; sourceTree = "<group>"; };
@@ -191,6 +199,20 @@
 		4FF7C5BD26171523007356C3 /* TextFieldViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewOutput.swift; sourceTree = "<group>"; };
 		4FF7C5C0261716D8007356C3 /* LayoutGuidance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutGuidance.swift; sourceTree = "<group>"; };
 		4FF7C5C32617194B007356C3 /* TextFieldViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewFactory.swift; sourceTree = "<group>"; };
+		4FF7C5C726171AE5007356C3 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		4FF7C5CB26171B2A007356C3 /* IndicatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorProtocol.swift; sourceTree = "<group>"; };
+		4FF7C5CE26171B60007356C3 /* UIActivityIndicatorViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIActivityIndicatorViewExtension.swift; sourceTree = "<group>"; };
+		4FF7C5D126171BF7007356C3 /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
+		4FF7C5D426171C38007356C3 /* WeakCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakCollection.swift; sourceTree = "<group>"; };
+		4FF7C5D726171C48007356C3 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		4FF7C5DA26171C85007356C3 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		4FF7C5DD26171CF4007356C3 /* CALayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
+		4FF7C5E026171D18007356C3 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		4FF7C5E326171D78007356C3 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		4FF7C5E6261723F3007356C3 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
+		4FF7C5E9261730DF007356C3 /* Ekibastuz-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ekibastuz-Semibold.ttf"; sourceTree = "<group>"; };
+		4FF7C5EA261730DF007356C3 /* Ekibastuz-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ekibastuz-Bold.ttf"; sourceTree = "<group>"; };
+		4FF7C5EB261730DF007356C3 /* Ekibastuz-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ekibastuz-Regular.ttf"; sourceTree = "<group>"; };
 		5378F58036B195AC3B33F121 /* MainTabsViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainTabsViewModel.swift; sourceTree = "<group>"; };
 		54DDB787EF4B4E7FF922C304 /* SetupPasscodeAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SetupPasscodeAssembly.swift; sourceTree = "<group>"; };
 		5C6619DFCF2687E832B89120 /* SetupPasscodeViewAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SetupPasscodeViewAdapter.swift; sourceTree = "<group>"; };
@@ -391,6 +413,9 @@
 				4FF7C4F52616E83A007356C3 /* Data */,
 				4FF7C50A2616EB03007356C3 /* MutuallyNotification.swift */,
 				4FF7C5562616F436007356C3 /* Debouncer.swift */,
+				4FF7C5D126171BF7007356C3 /* Observer.swift */,
+				4FF7C5D426171C38007356C3 /* WeakCollection.swift */,
+				4FF7C5D726171C48007356C3 /* Observable.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -468,6 +493,7 @@
 		4FF7C4E32616E5AD007356C3 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				4FF7C5C626171AD2007356C3 /* Buttons */,
 				4FF7C5B5261714BA007356C3 /* Common */,
 				4FF7C5B026171486007356C3 /* TextFields */,
 				4FF7C5A826170EB9007356C3 /* Labels */,
@@ -506,6 +532,10 @@
 				4FF7C4FF2616E9A5007356C3 /* UIWindowExtension.swift */,
 				4FF7C5A026170D43007356C3 /* UIFontExtension.swift */,
 				4FF7C5AD26171015007356C3 /* UILabelExtension.swift */,
+				4FF7C5CE26171B60007356C3 /* UIActivityIndicatorViewExtension.swift */,
+				4FF7C5DA26171C85007356C3 /* UIImageExtension.swift */,
+				4FF7C5DD26171CF4007356C3 /* CALayerExtension.swift */,
+				4FF7C5E026171D18007356C3 /* UIButtonExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -611,9 +641,9 @@
 		4FF7C59826170A14007356C3 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				4FF7C59926170CB2007356C3 /* Ekibastuz-Regular.ttf */,
-				4FF7C59A26170CB2007356C3 /* Ekibastuz-Semibold.ttf */,
-				4FF7C59B26170CB2007356C3 /* Ekibastuz-Bold.ttf */,
+				4FF7C5EA261730DF007356C3 /* Ekibastuz-Bold.ttf */,
+				4FF7C5EB261730DF007356C3 /* Ekibastuz-Regular.ttf */,
+				4FF7C5E9261730DF007356C3 /* Ekibastuz-Semibold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -633,6 +663,7 @@
 				4FF7C5BA261714E9007356C3 /* TextFieldView.swift */,
 				4FF7C5BD26171523007356C3 /* TextFieldViewOutput.swift */,
 				4FF7C5C32617194B007356C3 /* TextFieldViewFactory.swift */,
+				4FF7C5E6261723F3007356C3 /* CheckBoxView.swift */,
 			);
 			path = TextFields;
 			sourceTree = "<group>";
@@ -641,8 +672,18 @@
 			isa = PBXGroup;
 			children = (
 				4FF7C5B6261714C8007356C3 /* EditingAction.swift */,
+				4FF7C5CB26171B2A007356C3 /* IndicatorProtocol.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		4FF7C5C626171AD2007356C3 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				4FF7C5C726171AE5007356C3 /* Button.swift */,
+				4FF7C5E326171D78007356C3 /* PrimaryButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		6BD6ABFC53693888B42A4B66 /* ViewModel */ = {
@@ -835,11 +876,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FF7C5ED261730DF007356C3 /* Ekibastuz-Bold.ttf in Resources */,
+				4FF7C5EC261730DF007356C3 /* Ekibastuz-Semibold.ttf in Resources */,
 				4F6BFCAF2615D29D00AE1DC3 /* LaunchScreen.storyboard in Resources */,
 				4FF7C4EA2616E6FB007356C3 /* CommonConfiguration.plist in Resources */,
-				4FF7C59E26170CB2007356C3 /* Ekibastuz-Bold.ttf in Resources */,
-				4FF7C59C26170CB2007356C3 /* Ekibastuz-Regular.ttf in Resources */,
-				4FF7C59D26170CB2007356C3 /* Ekibastuz-Semibold.ttf in Resources */,
+				4FF7C5EE261730DF007356C3 /* Ekibastuz-Regular.ttf in Resources */,
 				4F6BFCAC2615D29D00AE1DC3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -894,6 +935,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FF7C4C82616E195007356C3 /* RootUIControllerType.swift in Sources */,
+				4FF7C5D226171BF7007356C3 /* Observer.swift in Sources */,
 				4FF7C4D12616E26C007356C3 /* Inject.swift in Sources */,
 				4FF7C50F2616EB68007356C3 /* ContainerExtension.swift in Sources */,
 				4FF7C4D52616E310007356C3 /* RegistrationCoordinating.swift in Sources */,
@@ -903,12 +945,14 @@
 				4FF7C5BE26171523007356C3 /* TextFieldViewOutput.swift in Sources */,
 				4FF7C5272616ECC2007356C3 /* SmsServiceProtocol.swift in Sources */,
 				4FF7C4CD2616E24F007356C3 /* BaseModuleAssembly.swift in Sources */,
+				4FF7C5E126171D18007356C3 /* UIButtonExtension.swift in Sources */,
 				4FF7C4FB2616E8F4007356C3 /* RegisteredUserData.swift in Sources */,
 				4F6BFCAA2615D29B00AE1DC3 /* mutually.xcdatamodeld in Sources */,
 				4FF7C4D92616E328007356C3 /* RegistrationCoordinator.swift in Sources */,
 				4FF7C5BB261714E9007356C3 /* TextFieldView.swift in Sources */,
 				5FB5CAAF3696C42BC5994941 /* RegistrationViewProtocols.swift in Sources */,
 				4FF7C4F72616E844007356C3 /* RegisteredUserHandlerProtocol.swift in Sources */,
+				4FF7C5D526171C38007356C3 /* WeakCollection.swift in Sources */,
 				3447B84CB0A94CD74331A72C /* RegistrationViewController.swift in Sources */,
 				4FF7C4E02616E584007356C3 /* AlertShowable.swift in Sources */,
 				4FF7C53C2616EFAE007356C3 /* NetworkReachabilityChecking.swift in Sources */,
@@ -918,8 +962,10 @@
 				5695FC17C485A046E8822B7C /* RegistrationModuleOutput.swift in Sources */,
 				4FF7C5572616F436007356C3 /* Debouncer.swift in Sources */,
 				4FF7C5B22617148D007356C3 /* MaskedTextFieldDelegate.swift in Sources */,
+				4FF7C5C826171AE5007356C3 /* Button.swift in Sources */,
 				4FF7C55B2616F5D2007356C3 /* NetworkLoggerPluginConfig.swift in Sources */,
 				0086D0D40306975B7513B945 /* RegistrationViewModel.swift in Sources */,
+				4FF7C5CC26171B2A007356C3 /* IndicatorProtocol.swift in Sources */,
 				5EDC8F1C4B0854BBBA9A2A4A /* RegistrationRouterInput.swift in Sources */,
 				9638384DBBD2585D20E007D4 /* RegistrationRouter.swift in Sources */,
 				4FF7C4F02616E77C007356C3 /* Color.swift in Sources */,
@@ -932,9 +978,12 @@
 				4FF7C5152616EBC5007356C3 /* SessionTracker.swift in Sources */,
 				4FF7C5532616F20C007356C3 /* DataServiceProtocol.swift in Sources */,
 				4FF7C5AE26171015007356C3 /* UILabelExtension.swift in Sources */,
+				4FF7C5CF26171B60007356C3 /* UIActivityIndicatorViewExtension.swift in Sources */,
+				4FF7C5E426171D78007356C3 /* PrimaryButton.swift in Sources */,
 				4883CA7DB618B59A6CDF3371 /* SignInModuleInput.swift in Sources */,
 				249B4AD4B276956BA8875647 /* SignInModuleOutput.swift in Sources */,
 				6082B1893C5900F666CBA1D0 /* SignInViewModel.swift in Sources */,
+				4FF7C5DB26171C85007356C3 /* UIImageExtension.swift in Sources */,
 				4FF7C51C2616EC42007356C3 /* TimeIntervalExtension.swift in Sources */,
 				4FF7C53F2616EFC3007356C3 /* Alamofire+NetworkReachabilityChecking.swift in Sources */,
 				4FF7C52C2616ED42007356C3 /* NetworkError.swift in Sources */,
@@ -956,7 +1005,9 @@
 				36D6FF40A772645063C96244 /* MainTabsModuleOutput.swift in Sources */,
 				B0C4E6A866AD9E7893447531 /* MainTabsViewModel.swift in Sources */,
 				4FF7C55F2616F5FF007356C3 /* SessionTimeoutPlugin.swift in Sources */,
+				4FF7C5E7261723F3007356C3 /* CheckBoxView.swift in Sources */,
 				8405F588A42F25D09F8683A5 /* MainTabsRouterInput.swift in Sources */,
+				4FF7C5DE26171CF4007356C3 /* CALayerExtension.swift in Sources */,
 				5E11F8F4E136F951AB74243D /* MainTabsRouter.swift in Sources */,
 				4FF7C5362616EF02007356C3 /* JSONResponseParameter.swift in Sources */,
 				629C9F750C3D0B7C5CB474AA /* MainTabsAssembly.swift in Sources */,
@@ -964,6 +1015,7 @@
 				4FF7C5082616EAD6007356C3 /* KeyboardListening.swift in Sources */,
 				4FF7C5202616EC90007356C3 /* AuthorizationService.swift in Sources */,
 				4FF7C5AA26170EBD007356C3 /* LabelFactory.swift in Sources */,
+				4FF7C5D826171C48007356C3 /* Observable.swift in Sources */,
 				4FF7C54F2616F1D7007356C3 /* RegistrationTokenWrapper.swift in Sources */,
 				4FF7C5232616ECA0007356C3 /* AuthorizationServiceProtocol.swift in Sources */,
 				4FF7C5A126170D43007356C3 /* UIFontExtension.swift in Sources */,
