@@ -29,8 +29,10 @@ class RegistrationViewModel: RegistrationViewOutput, RegistrationModuleInput {
         view?.display(viewAdapter: RegistrationViewAdapter())
     }
     
-    func didTapButton() {
-        guard let phone = getPhoneValidatingCompleteness() else {
+    func didTapButton(with form: RegistrationForm) {
+        guard let phone = validate(form: form),
+              form.dataProcessingSelected,
+              form.termsSelected else {
             return
         }
         print(phone)
@@ -40,12 +42,13 @@ class RegistrationViewModel: RegistrationViewOutput, RegistrationModuleInput {
     // MARK: - Private methods
     // ------------------------------
     
-    private func getPhoneValidatingCompleteness() -> String? {
-        guard let phoneText = view?.getPhoneFieldText().onlyDigits,
+    private func validate(form: RegistrationForm) -> String? {
+        guard let phoneText = form.phone,
               phoneText.count == Constants.phoneOnlyDigitsLength else {
-            view?.phoneError()
+            view?.showError(phone: true, dataProcessing: !form.dataProcessingSelected, terms: !form.termsSelected)
             return nil
         }
+        view?.showError(phone: false, dataProcessing: !form.dataProcessingSelected, terms: !form.termsSelected)
         return phoneText.substr(1)
     }
 }

@@ -40,7 +40,11 @@ class RegistrationViewController: BaseViewController, RegistrationViewInput, Key
     private lazy var button: Button = {
         let button = Button.makePrimary(with: "Подтвердить телефон")
         button.touchUpInside = { [weak self] in
-            self?.output?.didTapButton()
+            var form = RegistrationForm()
+            form.phone = self?.phoneFieldView.getText().onlyDigits
+            form.dataProcessingSelected = self?.dataProcessingCashbackView.isChecked ?? false
+            form.termsSelected = self?.termsCheckboxView.isChecked ?? false
+            self?.output?.didTapButton(with: form)
         }
         return button
     }()
@@ -72,10 +76,10 @@ class RegistrationViewController: BaseViewController, RegistrationViewInput, Key
 
     func display(viewAdapter: RegistrationViewAdapter) { }
     
-    func getPhoneFieldText() -> String { phoneFieldView.getText() }
-    
-    func phoneError() {
-        phoneFieldView.shake()
+    func showError(phone: Bool, dataProcessing: Bool, terms: Bool) {
+        if phone { phoneFieldView.shake() }
+        if dataProcessing { dataProcessingCashbackView.shake() }
+        if terms { termsCheckboxView.shake() }
     }
     
     // ------------------------------
