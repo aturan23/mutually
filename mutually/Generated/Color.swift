@@ -11,6 +11,10 @@ public enum Color { }
 
 // swiftlint:disable identifier_name line_length type_body_length
 public extension Color {
+  /// 0x1d1d1dff (r: 29, g: 29, b: 29, a: 255)
+  static let buttonPrimaryFillActive = #colorLiteral(red: 0.11372549, green: 0.11372549, blue: 0.11372549, alpha: 1.0)
+  /// 0x0046adff (r: 0, g: 70, b: 173, a: 255)
+  static let buttonPrimaryFillRegular = #colorLiteral(red: 0.0, green: 0.27450982, blue: 0.6784314, alpha: 1.0)
   /// 0xcf0000ff (r: 207, g: 0, b: 0, a: 255)
   static let error = #colorLiteral(red: 0.8117647, green: 0.0, blue: 0.0, alpha: 1.0)
   /// 0x2d72e5ff (r: 45, g: 114, b: 229, a: 255)

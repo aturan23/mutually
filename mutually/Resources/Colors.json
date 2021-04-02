@@ -3,4 +3,6 @@
     "TextHighContrast"          : "#111111",
     "TextLowContrast"           : "#575757",
     "Error"                     : "#CF0000",
+    "ButtonPrimaryFillRegular"  : "#0046AD",
+    "ButtonPrimaryFillActive"   : "#1D1D1D",
 }
