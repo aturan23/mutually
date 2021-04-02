@@ -6,6 +6,7 @@
 //
 
 enum JSONRequestParameter: String {
+    case action
     case login
     
     var key: String {

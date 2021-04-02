@@ -7,6 +7,7 @@
 
 enum JSONResponseParameter: String {
     case token
+    case success
     
     var key: String {
         return rawValue

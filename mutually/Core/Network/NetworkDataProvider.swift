@@ -46,20 +46,13 @@ final class NetworkDataProvider<Target: TargetType> {
     private func decode<T: Codable>(_ response: Response, reason: Bool) -> Result<T, NetworkError> {
         if let data = String(decoding: response.data, as: UTF8.self).data(using: .utf8),
            let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []),
-           let _ = jsonObject as? JSONStandard {
-//            let withReasonResponse = try? response.map(NetworkResponse<T>.self)
-//            let withoutReasonResponse = try? response.map(T.self)
-//            if let response = withoutReasonResponse, !reason {
-//                return .success(response)
-//            }
-//            if let response = withReasonResponse,
-//               let success = response.success,
-//               success {
-//                if let reason = response.reason {
-//                    return .success(reason)
-//                }
-//                return .failure(.incorrectJSON)
-//            }
+           let _ = jsonObject as? JSONStandard,
+           let result = try? response.map(NetworkResponse.self) {
+            
+            let response = try? response.map(T.self)
+            if let response = response, result.result {
+                return .success(response)
+            }
             var networkError: NetworkError = .unknownError
 //            if let response = try? response.map(NetworkResponse<String>.self) {
 //                networkError = response.reason == nil ? .unknownError : .serverError(reason: response.reason!)
