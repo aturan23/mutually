@@ -76,7 +76,7 @@ class RegistrationViewController: BaseViewController, RegistrationViewInput, Key
             else { return }
         let keyboardRectangle = keyboardFrame.cgRectValue
         let keyboardHeight = keyboardRectangle.height
-        moveButton(bottomInset: LayoutGuidance.offsetHalf + keyboardHeight)
+        moveButton(bottomInset: LayoutGuidance.offset + keyboardHeight)
     }
     
     func keyboardWillHide(notification: NSNotification) { }
