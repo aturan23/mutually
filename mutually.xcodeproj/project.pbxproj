@@ -87,6 +87,8 @@
 		4FF7C5EC261730DF007356C3 /* Ekibastuz-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FF7C5E9261730DF007356C3 /* Ekibastuz-Semibold.ttf */; };
 		4FF7C5ED261730DF007356C3 /* Ekibastuz-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FF7C5EA261730DF007356C3 /* Ekibastuz-Bold.ttf */; };
 		4FF7C5EE261730DF007356C3 /* Ekibastuz-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FF7C5EB261730DF007356C3 /* Ekibastuz-Regular.ttf */; };
+		4FF7C5F126173CAB007356C3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C5F026173CAB007356C3 /* StringExtension.swift */; };
+		4FF7C5F42617615C007356C3 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C5F32617615C007356C3 /* UIViewExtension.swift */; };
 		5695FC17C485A046E8822B7C /* RegistrationModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F1844EF3EEC212912E2F9 /* RegistrationModuleOutput.swift */; };
 		5E11F8F4E136F951AB74243D /* MainTabsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E214F952358A442AB189ED8 /* MainTabsRouter.swift */; };
 		5EDC8F1C4B0854BBBA9A2A4A /* RegistrationRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77184EFAF8B71967630781C9 /* RegistrationRouterInput.swift */; };
@@ -213,6 +215,8 @@
 		4FF7C5E9261730DF007356C3 /* Ekibastuz-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ekibastuz-Semibold.ttf"; sourceTree = "<group>"; };
 		4FF7C5EA261730DF007356C3 /* Ekibastuz-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ekibastuz-Bold.ttf"; sourceTree = "<group>"; };
 		4FF7C5EB261730DF007356C3 /* Ekibastuz-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ekibastuz-Regular.ttf"; sourceTree = "<group>"; };
+		4FF7C5F026173CAB007356C3 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		4FF7C5F32617615C007356C3 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		5378F58036B195AC3B33F121 /* MainTabsViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainTabsViewModel.swift; sourceTree = "<group>"; };
 		54DDB787EF4B4E7FF922C304 /* SetupPasscodeAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SetupPasscodeAssembly.swift; sourceTree = "<group>"; };
 		5C6619DFCF2687E832B89120 /* SetupPasscodeViewAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SetupPasscodeViewAdapter.swift; sourceTree = "<group>"; };
@@ -536,6 +540,7 @@
 				4FF7C5DA26171C85007356C3 /* UIImageExtension.swift */,
 				4FF7C5DD26171CF4007356C3 /* CALayerExtension.swift */,
 				4FF7C5E026171D18007356C3 /* UIButtonExtension.swift */,
+				4FF7C5F32617615C007356C3 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -545,6 +550,7 @@
 			children = (
 				4FF7C50E2616EB68007356C3 /* ContainerExtension.swift */,
 				4FF7C51B2616EC42007356C3 /* TimeIntervalExtension.swift */,
+				4FF7C5F026173CAB007356C3 /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -949,6 +955,7 @@
 				4FF7C4FB2616E8F4007356C3 /* RegisteredUserData.swift in Sources */,
 				4F6BFCAA2615D29B00AE1DC3 /* mutually.xcdatamodeld in Sources */,
 				4FF7C4D92616E328007356C3 /* RegistrationCoordinator.swift in Sources */,
+				4FF7C5F126173CAB007356C3 /* StringExtension.swift in Sources */,
 				4FF7C5BB261714E9007356C3 /* TextFieldView.swift in Sources */,
 				5FB5CAAF3696C42BC5994941 /* RegistrationViewProtocols.swift in Sources */,
 				4FF7C4F72616E844007356C3 /* RegisteredUserHandlerProtocol.swift in Sources */,
@@ -975,6 +982,7 @@
 				61F5B79BCB16832A40BC9A80 /* SignInViewProtocols.swift in Sources */,
 				6E5CE1893A235366D2D20AC1 /* SignInViewController.swift in Sources */,
 				2EE50B8436736DD8B8B30EED /* SignInViewAdapter.swift in Sources */,
+				4FF7C5F42617615C007356C3 /* UIViewExtension.swift in Sources */,
 				4FF7C5152616EBC5007356C3 /* SessionTracker.swift in Sources */,
 				4FF7C5532616F20C007356C3 /* DataServiceProtocol.swift in Sources */,
 				4FF7C5AE26171015007356C3 /* UILabelExtension.swift in Sources */,
