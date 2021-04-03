@@ -64,6 +64,6 @@ class RegistrationViewModel: RegistrationViewOutput, RegistrationModuleInput {
 
 extension RegistrationViewModel: SmsVerificationModuleOutput {
     func smsVerificationSucceeded(with data: [String : Any]?) {
-        moduleOutput?.checkDidFindAlreadyRegistered(for: phone)
+        moduleOutput?.moveToSetupPasscode()
     }
 }
