@@ -206,7 +206,7 @@ class SmsVerificationViewController: BaseViewController, SmsVerificationViewInpu
 // ------------------------------
 
 extension SmsVerificationViewController: SmsInputViewOutput {
-    func didComplete(smsCode: String) {
-        output?.didFillField(smsCode: smsCode)
+    func didComplete(inputView: SmsInputView, code: String) {
+        output?.didFillField(smsCode: code)
     }
 }

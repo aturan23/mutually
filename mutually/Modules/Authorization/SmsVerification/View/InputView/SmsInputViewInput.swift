@@ -13,5 +13,5 @@ protocol SmsInputViewInput: class {
 }
 
 protocol SmsInputViewOutput: class {
-    func didComplete(smsCode: String)
+    func didComplete(inputView: SmsInputView, code: String)
 }

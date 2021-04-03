@@ -162,7 +162,7 @@ final class SmsInputView: UIView {
         if self.otpTextField.text == newText {
             self.isShowingError = false
             if newText.count == self.codeLength {
-                self.output?.didComplete(smsCode: newText)
+                self.output?.didComplete(inputView: self, code: newText)
             }
         } else {
             self.otpTextField.text = newText
