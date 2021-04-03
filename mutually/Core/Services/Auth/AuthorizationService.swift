@@ -31,7 +31,7 @@ final class AuthorizationService: AuthorizationServiceProtocol {
  
     func getSmsPass(phone: String, completion: @escaping (Result<Void, NetworkError>) -> ()) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            completion(.failure(.networkFail))
+            completion(.success(()))
         }
 //        dataProvider.request(.getSmsPath(phone: phone)) { (result: Result<Void, NetworkError>) in
 //
