@@ -21,7 +21,6 @@ class RegistrationCoordinator: RegistrationCoordinating {
         self.window = window
         self.injection = injection
         navigationController = UINavigationController()
-        navigationController.setNavigationBarHidden(true, animated: false)
     }
     
     // MARK: - RegistrationCoordinating
