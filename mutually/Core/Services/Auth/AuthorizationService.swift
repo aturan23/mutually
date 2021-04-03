@@ -72,12 +72,12 @@ final class AuthorizationService: AuthorizationServiceProtocol {
     }
     
     func requestSMSCode(completion: @escaping (Result<Void, NetworkError>) -> ()) {
-        guard let phone = dataService?.phone else {
-            completion(.failure(.unknownError))
-                return
-        }
+//        guard let phone = dataService?.phone else {
+//            completion(.failure(.unknownError))
+//                return
+//        }
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            print(phone)
+//            print(phone)
             completion(.success(()))
         }
 //        dataProvider.request(
@@ -94,14 +94,16 @@ final class AuthorizationService: AuthorizationServiceProtocol {
     
     func confirmSMSCode(code: String,
                         completion: @escaping (Result<JSONStandard?, NetworkError>) -> ()) {
-//        guard let token = tokenWrapper?.token,
-//            let phone = dataService?.user?.phone,
-//            let status = dataService?.user?.status else {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//            print(phone)
+            completion(.failure(.incorrectJSON))
+        }
+//        guard let phone = dataService?.phone else {
 //            completion(.failure(.unknownError))
 //                return
 //        }
 //        dataProvider.request(
-//            .confirmSmsCode(token: token, code: code, phone: phone, status: status)
+//            .auth(phone: phone, password: "")
 //        ) { result in
 //            switch result {
 //            case .success:
