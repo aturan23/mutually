@@ -40,7 +40,7 @@ final class SmsInputView: UIView {
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.spacing = 28
+        stackView.spacing = 16
         return stackView
     }()
     
@@ -103,35 +103,34 @@ final class SmsInputView: UIView {
         stackView.arrangedSubviews.forEach(stackView.removeArrangedSubview)
         for i in 0..<codeLength {
             let attr = i == 0 ? Constant.activePlaceholderAttributes : Constant.placeholderAttributes
-            let label = UILabel()
-            label.tag = i
-            label.attributedText = NSAttributedString(string: Constant.placeholderText,
-                                                      attributes: attr)
-            label.textAlignment = .center
-            stackView.addArrangedSubview(label)
-            label.translatesAutoresizingMaskIntoConstraints = false
-            label.widthAnchor.constraint(equalToConstant: 20).isActive = true
+            let charView = SmsCharView()
+            charView.tag = i
+            charView.attributedText = NSAttributedString(string: Constant.placeholderText,
+                                                         attributes: attr)
+            stackView.addArrangedSubview(charView)
         }
     }
     
     private func displayOtpValue(text: String) {
-        let labels = stackView.subviews.compactMap({ $0 as? UILabel })
-        guard text.count <= labels.count else { return }
-        let eligibleLabels = labels.filter({ label in
-            return label.tag < text.count
+        let charViews = stackView.subviews.compactMap({ $0 as? SmsCharView })
+        guard text.count <= charViews.count else { return }
+        let eligibleCharViews = charViews.filter({ charView in
+            return charView.tag < text.count
         })
-        let nonEligibleLabels = labels.filter({ label in
-            return label.tag >= text.count
+        let nonEligibleCharViews = charViews.filter({ charView in
+            return charView.tag >= text.count
         })
-        for (value, label) in zip(Array(text), eligibleLabels) {
-            label.attributedText = NSAttributedString(string: String(value),
-                                                      attributes: Constant.labelTextAttributes)
-            label.font = Constant.textFieldFont
+        for (value, charView) in zip(Array(text), eligibleCharViews) {
+            charView.lineColor = Color.buttonPrimaryFillActive
+            charView.attributedText = NSAttributedString(string: String(value),
+                                                         attributes: Constant.labelTextAttributes)
+            charView.font = Constant.textFieldFont
         }
-        for (i, label) in nonEligibleLabels.enumerated() {
+        for (i, charView) in nonEligibleCharViews.enumerated() {
             let attr = i == 0 ? Constant.activePlaceholderAttributes : Constant.placeholderAttributes
-            label.attributedText = NSAttributedString(string: Constant.placeholderText,
-                                                      attributes: attr)
+            charView.lineColor = Color.textLowContrast
+            charView.attributedText = NSAttributedString(string: Constant.placeholderText,
+                                                         attributes: attr)
         }
     }
     
@@ -168,11 +167,12 @@ extension SmsInputView: SmsInputViewInput {
     
     func showError() {
         shake()
-        let labels = stackView.subviews.compactMap({ $0 as? UILabel })
-        labels.forEach { label in
-            let value = label.text ?? Constant.placeholderText
-            label.attributedText = NSAttributedString(string: value,
-                                                      attributes: Constant.errorLabelTextAttributes)
+        let charViews = stackView.subviews.compactMap({ $0 as? SmsCharView })
+        charViews.forEach { charView in
+            let value = charView.text ?? Constant.placeholderText
+            charView.lineColor = Color.error
+            charView.attributedText = NSAttributedString(string: value,
+                                                         attributes: Constant.errorLabelTextAttributes)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             self?.resetAndActivateInput()
