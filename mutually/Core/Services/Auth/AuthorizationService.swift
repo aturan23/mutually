@@ -96,7 +96,7 @@ final class AuthorizationService: AuthorizationServiceProtocol {
                         completion: @escaping (Result<JSONStandard?, NetworkError>) -> ()) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
 //            print(phone)
-            completion(.failure(.incorrectJSON))
+            completion(.success(nil))
         }
 //        guard let phone = dataService?.phone else {
 //            completion(.failure(.unknownError))
