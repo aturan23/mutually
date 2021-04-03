@@ -9,10 +9,10 @@ import UIKit
 
 final class SmsInputView: UIView {
     enum Constant {
-        static let defaultCodeLength = 6
+        static let defaultCodeLength = 4
         static let textFieldFont = UIFont.regular(size: 17)
 
-        static let placeholderText: String = "-"
+        static let placeholderText: String = "0"
         static let placeholderAttributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: Color.textLowContrast
         ]
@@ -87,25 +87,16 @@ final class SmsInputView: UIView {
     private func configureViews() {
         arrangeInputLabels()
         
-        [stackView, otpTextField].forEach {
-            $0.translatesAutoresizingMaskIntoConstraints = false
-            addSubview($0)
+        [stackView, otpTextField].forEach(addSubview(_:))
+        
+        stackView.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.left.right.equalToSuperview()
+            $0.top.bottom.equalToSuperview().inset(Constant.stackViewVerticalOffset)
         }
-        NSLayoutConstraint.activate([
-            stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            stackView.topAnchor.constraint(
-                equalTo: topAnchor, constant: Constant.stackViewVerticalOffset),
-            stackView.bottomAnchor.constraint(
-                equalTo: bottomAnchor, constant: -Constant.stackViewVerticalOffset),
-            
-            otpTextField.topAnchor.constraint(equalTo: topAnchor),
-            otpTextField.leftAnchor.constraint(equalTo: leftAnchor),
-            otpTextField.bottomAnchor.constraint(equalTo: bottomAnchor),
-            otpTextField.rightAnchor.constraint(equalTo: rightAnchor)
-        ])
+        otpTextField.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
     }
     
     private func arrangeInputLabels() {
