@@ -25,6 +25,7 @@ internal enum Asset {
   internal static let iconCheckboxSelected = ImageAsset(name: "icon_checkbox_selected")
   internal static let iconClearTextfield = ImageAsset(name: "icon_clear_textfield")
   internal static let logo = ImageAsset(name: "logo")
+  internal static let passwordKeyboardBackspace = ImageAsset(name: "password_keyboard_backspace")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
