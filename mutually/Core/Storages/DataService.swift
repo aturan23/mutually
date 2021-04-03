@@ -6,5 +6,6 @@
 //
 
 final class DataService: DataServiceProtocol {
-    var sessionCode: String?
+    var token: String?
+    var phone: String?
 }

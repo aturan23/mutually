@@ -6,5 +6,6 @@
 //
 
 protocol DataServiceProtocol {
-    var sessionCode: String? { get set }
+    var token: String? { get set }
+    var phone: String? { get set }
 }
