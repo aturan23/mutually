@@ -16,4 +16,8 @@ class SmsVerificationRouter: SmsVerificationRouterInput {
 	// ------------------------------
     // MARK: - SmsVerificationRouterInput
     // ------------------------------
+    
+    func routeBack(completion: (() -> Void)?) {
+        viewController?.dismiss(animated: true, completion: completion)
+    }
 }

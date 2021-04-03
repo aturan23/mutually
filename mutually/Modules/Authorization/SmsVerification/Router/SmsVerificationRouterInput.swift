@@ -6,4 +6,6 @@
 //  Copyright © 2021 mutually. All rights reserved.
 //
 
-protocol SmsVerificationRouterInput: AlertShowingRouter { }
+protocol SmsVerificationRouterInput: AlertShowingRouter {
+    func routeBack(completion: (() -> Void)?)
+}
