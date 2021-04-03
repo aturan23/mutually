@@ -7,7 +7,7 @@
 
 protocol SmsInputViewInput: class {
     func disableInput()
-    func showError()
+    func showError(message: String?)
     func set(otp: String)
     func resetOtp()
 }

@@ -8,8 +8,14 @@
 
 protocol SmsVerificationViewInput: class {
     func display(viewAdapter: SmsVerificationViewAdapter)
+    func apply(state: SmsVerificationViewState)
+    func getCurrentState() -> SmsVerificationViewState?
+    func updateTimerInfo(text: String)
+    func show(errorData: SmsVerificationErrorViewAdapter)
 }
 
 protocol SmsVerificationViewOutput {
     func didLoad()
+    func didTapResendCode()
+    func didFillField(smsCode: String)
 }

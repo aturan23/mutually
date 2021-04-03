@@ -47,10 +47,18 @@ final class SmsInputView: UIView {
     private lazy var otpTextField: OtpTextField = {
         let field = OtpTextField()
         field.alpha = 0
-        field.addTarget(self,
-                        action: #selector(handleOtpValueChange),
-                        for: .editingChanged)
+        field.addTarget(self, action: #selector(handleOtpValueChange), for: .editingChanged)
         return field
+    }()
+    
+    private lazy var errorLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.regular(size: 14)
+        label.textColor = Color.error
+        label.textAlignment = .center
+        label.setContentCompressionResistancePriority(.required, for: .vertical)
+        label.numberOfLines = 0
+        return label
     }()
     
     // MARK: - Properties
@@ -87,7 +95,7 @@ final class SmsInputView: UIView {
     private func configureViews() {
         arrangeInputLabels()
         
-        [stackView, otpTextField].forEach(addSubview(_:))
+        [stackView, otpTextField, errorLabel].forEach(addSubview(_:))
         
         stackView.snp.makeConstraints {
             $0.center.equalToSuperview()
@@ -96,6 +104,10 @@ final class SmsInputView: UIView {
         }
         otpTextField.snp.makeConstraints {
             $0.edges.equalToSuperview()
+        }
+        errorLabel.snp.makeConstraints {
+            $0.top.equalTo(stackView.snp.bottom).offset(LayoutGuidance.offsetHalf)
+            $0.centerX.equalToSuperview()
         }
     }
     
@@ -136,6 +148,7 @@ final class SmsInputView: UIView {
     
     private func resetAndActivateInput() {
         resetOtp()
+        errorLabel.text = nil
         isShowingError = false
         otpTextField.isUserInteractionEnabled = true
         otpTextField.becomeFirstResponder()
@@ -165,8 +178,9 @@ extension SmsInputView: SmsInputViewInput {
         otpTextField.isUserInteractionEnabled = false
     }
     
-    func showError() {
+    func showError(message: String?) {
         shake()
+        errorLabel.text = message
         let charViews = stackView.subviews.compactMap({ $0 as? SmsCharView })
         charViews.forEach { charView in
             let value = charView.text ?? Constant.placeholderText
