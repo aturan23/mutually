@@ -17,7 +17,7 @@ class RegistrationModuleAssembly: BaseModuleAssembly {
     /// - Returns: Assembled module's ViewController
     func assemble(_ configuration: RegistrationConfiguration? = nil) -> UIViewController {
         let viewController = RegistrationViewController()
-        let router = RegistrationRouter()
+        let router = RegistrationRouter(smsModuleAssembly: injection.inject(SmsVerificationModuleAssembly.self))
         let viewModel = RegistrationViewModel()
         viewModel.view = viewController
         viewModel.router = router
