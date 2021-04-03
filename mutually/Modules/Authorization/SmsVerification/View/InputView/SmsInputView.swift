@@ -10,7 +10,7 @@ import UIKit
 final class SmsInputView: UIView {
     enum Constant {
         static let defaultCodeLength = 4
-        static let textFieldFont = UIFont.regular(size: 17)
+        static let textFieldFont = UIFont.semibold(size: 17)
 
         static let placeholderText: String = "0"
         static let placeholderAttributes: [NSAttributedString.Key: Any] = [
