@@ -63,11 +63,13 @@ class RegistrationViewController: BaseViewController, RegistrationViewInput, Key
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         phoneFieldView.becomeFirstResponder()
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         phoneFieldView.resignFirstResponder()
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
 
     // ------------------------------
