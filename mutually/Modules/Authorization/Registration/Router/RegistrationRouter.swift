@@ -31,6 +31,6 @@ class RegistrationRouter: RegistrationRouterInput {
             else {
                 return
         }
-        viewController?.present(smsViewController, animated: true)
+        viewController?.navigationController?.pushViewController(smsViewController, animated: true)
     }
 }
