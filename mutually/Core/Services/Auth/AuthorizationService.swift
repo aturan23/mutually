@@ -234,17 +234,6 @@ final class AuthorizationService: AuthorizationServiceProtocol {
 //        }
     }
     
-    func logOut(success: (() -> Void)?, failure: ((NetworkError) -> Void)?) {
-//        dataProvider.request(.logOut) { (result) in
-//            switch result {
-//            case .success:
-//                success?()
-//            case .failure(let error):
-//                failure?(error)
-//            }
-//        }
-    }
-    
     private func constructDeviceInfo() -> String {
         return [("p",          "iOS\(UIDevice.current.systemVersion)")]
             .map { "\($0.0):\($0.1);" }
