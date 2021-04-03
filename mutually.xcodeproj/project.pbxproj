@@ -97,6 +97,9 @@
 		4FF7C63926181268007356C3 /* SmsVerificationViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C63826181268007356C3 /* SmsVerificationViewState.swift */; };
 		4FF7C63D2618151F007356C3 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C63C2618151F007356C3 /* SecondaryButton.swift */; };
 		4FF7C64126181683007356C3 /* DefaultActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C64026181683007356C3 /* DefaultActivityIndicator.swift */; };
+		4FF7C6462618171F007356C3 /* SmsInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C6452618171F007356C3 /* SmsInputView.swift */; };
+		4FF7C64B26181751007356C3 /* SmsInputViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C64A26181751007356C3 /* SmsInputViewInput.swift */; };
+		4FF7C64E26181773007356C3 /* OtpTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C64D26181773007356C3 /* OtpTextField.swift */; };
 		5695FC17C485A046E8822B7C /* RegistrationModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F1844EF3EEC212912E2F9 /* RegistrationModuleOutput.swift */; };
 		5E11F8F4E136F951AB74243D /* MainTabsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E214F952358A442AB189ED8 /* MainTabsRouter.swift */; };
 		5EDC8F1C4B0854BBBA9A2A4A /* RegistrationRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77184EFAF8B71967630781C9 /* RegistrationRouterInput.swift */; };
@@ -244,6 +247,9 @@
 		4FF7C63826181268007356C3 /* SmsVerificationViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsVerificationViewState.swift; sourceTree = "<group>"; };
 		4FF7C63C2618151F007356C3 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		4FF7C64026181683007356C3 /* DefaultActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultActivityIndicator.swift; sourceTree = "<group>"; };
+		4FF7C6452618171F007356C3 /* SmsInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsInputView.swift; sourceTree = "<group>"; };
+		4FF7C64A26181751007356C3 /* SmsInputViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsInputViewInput.swift; sourceTree = "<group>"; };
+		4FF7C64D26181773007356C3 /* OtpTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpTextField.swift; sourceTree = "<group>"; };
 		5378F58036B195AC3B33F121 /* MainTabsViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainTabsViewModel.swift; sourceTree = "<group>"; };
 		54DDB787EF4B4E7FF922C304 /* SetupPasscodeAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SetupPasscodeAssembly.swift; sourceTree = "<group>"; };
 		5C6619DFCF2687E832B89120 /* SetupPasscodeViewAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SetupPasscodeViewAdapter.swift; sourceTree = "<group>"; };
@@ -758,6 +764,16 @@
 			path = ActivityIndicators;
 			sourceTree = "<group>";
 		};
+		4FF7C644261816E7007356C3 /* InputView */ = {
+			isa = PBXGroup;
+			children = (
+				4FF7C6452618171F007356C3 /* SmsInputView.swift */,
+				4FF7C64A26181751007356C3 /* SmsInputViewInput.swift */,
+				4FF7C64D26181773007356C3 /* OtpTextField.swift */,
+			);
+			path = InputView;
+			sourceTree = "<group>";
+		};
 		6BD6ABFC53693888B42A4B66 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -772,6 +788,7 @@
 		6D3FE2A0EFA10415E025D00E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4FF7C644261816E7007356C3 /* InputView */,
 				60898B4EA537D7859BA5AF63 /* SmsVerificationViewProtocols.swift */,
 				EB931A16A64C4FE6C8FE40CD /* SmsVerificationViewController.swift */,
 				26F58DB79C249CD4BF740451 /* SmsVerificationViewAdapter.swift */,
@@ -1091,6 +1108,7 @@
 				4FF7C5A526170DFE007356C3 /* TextStyle.swift in Sources */,
 				4FF7C5632616F72B007356C3 /* DataService.swift in Sources */,
 				61F5B79BCB16832A40BC9A80 /* SignInViewProtocols.swift in Sources */,
+				4FF7C64B26181751007356C3 /* SmsInputViewInput.swift in Sources */,
 				6E5CE1893A235366D2D20AC1 /* SignInViewController.swift in Sources */,
 				2EE50B8436736DD8B8B30EED /* SignInViewAdapter.swift in Sources */,
 				4FF7C5F42617615C007356C3 /* UIViewExtension.swift in Sources */,
@@ -1115,6 +1133,7 @@
 				4FF7C4F32616E77C007356C3 /* Assets.swift in Sources */,
 				4FF7C4E62616E5C4007356C3 /* AlertFactory.swift in Sources */,
 				F4A8CC3D9DF5B8323A59AB5F /* SignInRouter.swift in Sources */,
+				4FF7C64E26181773007356C3 /* OtpTextField.swift in Sources */,
 				4FF7C4F22616E77C007356C3 /* EnvConfigs.swift in Sources */,
 				4FF7C54B2616F07C007356C3 /* BaseTargetType.swift in Sources */,
 				4FF7C5192616EBD1007356C3 /* SessionTrackerProtocol.swift in Sources */,
@@ -1122,6 +1141,7 @@
 				4FF7C5332616EEB3007356C3 /* NetworkResponse.swift in Sources */,
 				E9112D86C46D3C9FE7DFD48B /* SignInAssembly.swift in Sources */,
 				CCC89F19D217E51DB9CB278C /* MainTabsViewProtocols.swift in Sources */,
+				4FF7C6462618171F007356C3 /* SmsInputView.swift in Sources */,
 				B00341ED191505BD657D7B16 /* MainTabsViewController.swift in Sources */,
 				6B3E1626541F464D64799410 /* MainTabsViewAdapter.swift in Sources */,
 				9739F1ACAE4837114BCD1164 /* MainTabsModuleInput.swift in Sources */,
