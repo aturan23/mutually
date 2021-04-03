@@ -54,10 +54,8 @@ class RegistrationViewModel: RegistrationViewOutput, RegistrationModuleInput {
     // ------------------------------
     
     private func failureResponseHandler(error: NetworkError) {
-        if case .networkFail = error {
-            return
-        }
-        alertPresenter?.showMessageAlert(title: nil, message: error.message)
+        if case .networkFail = error { return }
+        alertPresenter?.showMessageAlert(message: error.message)
     }
     
     private func validate(form: RegistrationForm) -> String? {

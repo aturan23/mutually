@@ -19,3 +19,24 @@ protocol AlertShowable: class {
         actionsDescriptions: [AlertAction]
     )
 }
+
+extension AlertShowable {
+    func showDefaultAlert(
+        title: String? = nil,
+        message: String?,
+        actionTitle: String,
+        actionHandler: (() -> ())? = nil
+    ) {
+        showDefaultAlert(title: title, message: message, actionTitle: actionTitle, actionHandler: actionHandler)
+    }
+    func showMessageAlert(title: String? = nil, message: String) {
+        showMessageAlert(title: title, message: message)
+    }
+    func showAlert(
+        title: String? = nil,
+        message: String?,
+        actionsDescriptions: [AlertAction] = []
+    ) {
+        showAlert(title: title, message: message, actionsDescriptions: actionsDescriptions)
+    }
+}
