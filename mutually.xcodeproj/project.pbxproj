@@ -94,6 +94,7 @@
 		4FF7C60826180499007356C3 /* UINavigationItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C60726180499007356C3 /* UINavigationItemExtension.swift */; };
 		4FF7C60B26180A4C007356C3 /* DefaultNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C60A26180A4C007356C3 /* DefaultNavigationController.swift */; };
 		4FF7C60E26180A7B007356C3 /* ScreenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C60D26180A7B007356C3 /* ScreenUtils.swift */; };
+		4FF7C63926181268007356C3 /* SmsVerificationViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C63826181268007356C3 /* SmsVerificationViewState.swift */; };
 		5695FC17C485A046E8822B7C /* RegistrationModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F1844EF3EEC212912E2F9 /* RegistrationModuleOutput.swift */; };
 		5E11F8F4E136F951AB74243D /* MainTabsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E214F952358A442AB189ED8 /* MainTabsRouter.swift */; };
 		5EDC8F1C4B0854BBBA9A2A4A /* RegistrationRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77184EFAF8B71967630781C9 /* RegistrationRouterInput.swift */; };
@@ -238,6 +239,7 @@
 		4FF7C60726180499007356C3 /* UINavigationItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationItemExtension.swift; sourceTree = "<group>"; };
 		4FF7C60A26180A4C007356C3 /* DefaultNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNavigationController.swift; sourceTree = "<group>"; };
 		4FF7C60D26180A7B007356C3 /* ScreenUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenUtils.swift; sourceTree = "<group>"; };
+		4FF7C63826181268007356C3 /* SmsVerificationViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsVerificationViewState.swift; sourceTree = "<group>"; };
 		5378F58036B195AC3B33F121 /* MainTabsViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainTabsViewModel.swift; sourceTree = "<group>"; };
 		54DDB787EF4B4E7FF922C304 /* SetupPasscodeAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SetupPasscodeAssembly.swift; sourceTree = "<group>"; };
 		5C6619DFCF2687E832B89120 /* SetupPasscodeViewAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SetupPasscodeViewAdapter.swift; sourceTree = "<group>"; };
@@ -733,6 +735,15 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
+		4FF7C6372618125A007356C3 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				4FF7C6042617F9AF007356C3 /* SmsVerificationPurpose.swift */,
+				4FF7C63826181268007356C3 /* SmsVerificationViewState.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		6BD6ABFC53693888B42A4B66 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -758,7 +769,6 @@
 			isa = PBXGroup;
 			children = (
 				B725CB47F7EA6099F09AEB7F /* SmsVerificationAssembly.swift */,
-				4FF7C6042617F9AF007356C3 /* SmsVerificationPurpose.swift */,
 			);
 			path = Assembly;
 			sourceTree = "<group>";
@@ -788,6 +798,7 @@
 		988E69B62771757FA2113CAC /* SmsVerification */ = {
 			isa = PBXGroup;
 			children = (
+				4FF7C6372618125A007356C3 /* Entity */,
 				6D3FE2A0EFA10415E025D00E /* View */,
 				9B4721F05A68B7DE9AFE8479 /* ViewModel */,
 				3FDB86CDEA5648A0532493BC /* Router */,
@@ -1079,6 +1090,7 @@
 				249B4AD4B276956BA8875647 /* SignInModuleOutput.swift in Sources */,
 				6082B1893C5900F666CBA1D0 /* SignInViewModel.swift in Sources */,
 				4FF7C5DB26171C85007356C3 /* UIImageExtension.swift in Sources */,
+				4FF7C63926181268007356C3 /* SmsVerificationViewState.swift in Sources */,
 				4FF7C51C2616EC42007356C3 /* TimeIntervalExtension.swift in Sources */,
 				4FF7C53F2616EFC3007356C3 /* Alamofire+NetworkReachabilityChecking.swift in Sources */,
 				4FF7C52C2616ED42007356C3 /* NetworkError.swift in Sources */,
