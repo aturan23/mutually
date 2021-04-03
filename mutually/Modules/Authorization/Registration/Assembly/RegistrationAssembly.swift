@@ -22,6 +22,7 @@ class RegistrationModuleAssembly: BaseModuleAssembly {
         viewModel.view = viewController
         viewModel.router = router
         viewModel.authorizationService = injection.inject(AuthorizationServiceProtocol.self)
+        viewModel.dataService = injection.inject(DataServiceProtocol.self)
         router.viewController = viewController
         viewController.output = viewModel
         viewModel.moduleOutput = configuration?(viewModel)
