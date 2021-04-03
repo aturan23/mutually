@@ -100,6 +100,7 @@
 		4FF7C6462618171F007356C3 /* SmsInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C6452618171F007356C3 /* SmsInputView.swift */; };
 		4FF7C64B26181751007356C3 /* SmsInputViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C64A26181751007356C3 /* SmsInputViewInput.swift */; };
 		4FF7C64E26181773007356C3 /* OtpTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C64D26181773007356C3 /* OtpTextField.swift */; };
+		4FF7C65126181DBC007356C3 /* SmsCharView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C65026181DBC007356C3 /* SmsCharView.swift */; };
 		5695FC17C485A046E8822B7C /* RegistrationModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F1844EF3EEC212912E2F9 /* RegistrationModuleOutput.swift */; };
 		5E11F8F4E136F951AB74243D /* MainTabsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E214F952358A442AB189ED8 /* MainTabsRouter.swift */; };
 		5EDC8F1C4B0854BBBA9A2A4A /* RegistrationRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77184EFAF8B71967630781C9 /* RegistrationRouterInput.swift */; };
@@ -250,6 +251,7 @@
 		4FF7C6452618171F007356C3 /* SmsInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsInputView.swift; sourceTree = "<group>"; };
 		4FF7C64A26181751007356C3 /* SmsInputViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsInputViewInput.swift; sourceTree = "<group>"; };
 		4FF7C64D26181773007356C3 /* OtpTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpTextField.swift; sourceTree = "<group>"; };
+		4FF7C65026181DBC007356C3 /* SmsCharView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsCharView.swift; sourceTree = "<group>"; };
 		5378F58036B195AC3B33F121 /* MainTabsViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainTabsViewModel.swift; sourceTree = "<group>"; };
 		54DDB787EF4B4E7FF922C304 /* SetupPasscodeAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SetupPasscodeAssembly.swift; sourceTree = "<group>"; };
 		5C6619DFCF2687E832B89120 /* SetupPasscodeViewAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SetupPasscodeViewAdapter.swift; sourceTree = "<group>"; };
@@ -770,6 +772,7 @@
 				4FF7C6452618171F007356C3 /* SmsInputView.swift */,
 				4FF7C64A26181751007356C3 /* SmsInputViewInput.swift */,
 				4FF7C64D26181773007356C3 /* OtpTextField.swift */,
+				4FF7C65026181DBC007356C3 /* SmsCharView.swift */,
 			);
 			path = InputView;
 			sourceTree = "<group>";
@@ -1139,6 +1142,7 @@
 				4FF7C5192616EBD1007356C3 /* SessionTrackerProtocol.swift in Sources */,
 				4FF7C4F12616E77C007356C3 /* CommonConfigs.swift in Sources */,
 				4FF7C5332616EEB3007356C3 /* NetworkResponse.swift in Sources */,
+				4FF7C65126181DBC007356C3 /* SmsCharView.swift in Sources */,
 				E9112D86C46D3C9FE7DFD48B /* SignInAssembly.swift in Sources */,
 				CCC89F19D217E51DB9CB278C /* MainTabsViewProtocols.swift in Sources */,
 				4FF7C6462618171F007356C3 /* SmsInputView.swift in Sources */,
