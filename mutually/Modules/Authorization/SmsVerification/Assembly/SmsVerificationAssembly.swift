@@ -19,6 +19,8 @@ class SmsVerificationModuleAssembly: BaseModuleAssembly {
         for purpose: SmsVerificationPurpose,
         configuration: SmsVerificationConfiguration? = nil) -> UIViewController {
         let viewController = SmsVerificationViewController()
+        viewController.navigationItem.title = "Подтверждение телефона"
+        
         let router = SmsVerificationRouter()
         let viewModel = SmsVerificationViewModel()
         viewModel.view = viewController
