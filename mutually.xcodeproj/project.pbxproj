@@ -95,6 +95,8 @@
 		4FF7C60B26180A4C007356C3 /* DefaultNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C60A26180A4C007356C3 /* DefaultNavigationController.swift */; };
 		4FF7C60E26180A7B007356C3 /* ScreenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C60D26180A7B007356C3 /* ScreenUtils.swift */; };
 		4FF7C63926181268007356C3 /* SmsVerificationViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C63826181268007356C3 /* SmsVerificationViewState.swift */; };
+		4FF7C63D2618151F007356C3 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C63C2618151F007356C3 /* SecondaryButton.swift */; };
+		4FF7C64126181683007356C3 /* DefaultActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C64026181683007356C3 /* DefaultActivityIndicator.swift */; };
 		5695FC17C485A046E8822B7C /* RegistrationModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F1844EF3EEC212912E2F9 /* RegistrationModuleOutput.swift */; };
 		5E11F8F4E136F951AB74243D /* MainTabsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E214F952358A442AB189ED8 /* MainTabsRouter.swift */; };
 		5EDC8F1C4B0854BBBA9A2A4A /* RegistrationRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77184EFAF8B71967630781C9 /* RegistrationRouterInput.swift */; };
@@ -240,6 +242,8 @@
 		4FF7C60A26180A4C007356C3 /* DefaultNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNavigationController.swift; sourceTree = "<group>"; };
 		4FF7C60D26180A7B007356C3 /* ScreenUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenUtils.swift; sourceTree = "<group>"; };
 		4FF7C63826181268007356C3 /* SmsVerificationViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsVerificationViewState.swift; sourceTree = "<group>"; };
+		4FF7C63C2618151F007356C3 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
+		4FF7C64026181683007356C3 /* DefaultActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultActivityIndicator.swift; sourceTree = "<group>"; };
 		5378F58036B195AC3B33F121 /* MainTabsViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainTabsViewModel.swift; sourceTree = "<group>"; };
 		54DDB787EF4B4E7FF922C304 /* SetupPasscodeAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SetupPasscodeAssembly.swift; sourceTree = "<group>"; };
 		5C6619DFCF2687E832B89120 /* SetupPasscodeViewAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SetupPasscodeViewAdapter.swift; sourceTree = "<group>"; };
@@ -537,6 +541,7 @@
 		4FF7C4E32616E5AD007356C3 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				4FF7C63F26181679007356C3 /* ActivityIndicators */,
 				4FF7C5C626171AD2007356C3 /* Buttons */,
 				4FF7C5B5261714BA007356C3 /* Common */,
 				4FF7C5B026171486007356C3 /* TextFields */,
@@ -731,6 +736,7 @@
 			children = (
 				4FF7C5C726171AE5007356C3 /* Button.swift */,
 				4FF7C5E326171D78007356C3 /* PrimaryButton.swift */,
+				4FF7C63C2618151F007356C3 /* SecondaryButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -742,6 +748,14 @@
 				4FF7C63826181268007356C3 /* SmsVerificationViewState.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		4FF7C63F26181679007356C3 /* ActivityIndicators */ = {
+			isa = PBXGroup;
+			children = (
+				4FF7C64026181683007356C3 /* DefaultActivityIndicator.swift */,
+			);
+			path = ActivityIndicators;
 			sourceTree = "<group>";
 		};
 		6BD6ABFC53693888B42A4B66 /* ViewModel */ = {
@@ -1085,6 +1099,7 @@
 				4FF7C5AE26171015007356C3 /* UILabelExtension.swift in Sources */,
 				4FF7C5CF26171B60007356C3 /* UIActivityIndicatorViewExtension.swift in Sources */,
 				4FF7C5E426171D78007356C3 /* PrimaryButton.swift in Sources */,
+				4FF7C63D2618151F007356C3 /* SecondaryButton.swift in Sources */,
 				4883CA7DB618B59A6CDF3371 /* SignInModuleInput.swift in Sources */,
 				4FF7C60E26180A7B007356C3 /* ScreenUtils.swift in Sources */,
 				249B4AD4B276956BA8875647 /* SignInModuleOutput.swift in Sources */,
@@ -1096,6 +1111,7 @@
 				4FF7C52C2616ED42007356C3 /* NetworkError.swift in Sources */,
 				4FF7C5472616F050007356C3 /* AuthorizationTarget.swift in Sources */,
 				9541F3177D3A1E20B915B6E1 /* SignInRouterInput.swift in Sources */,
+				4FF7C64126181683007356C3 /* DefaultActivityIndicator.swift in Sources */,
 				4FF7C4F32616E77C007356C3 /* Assets.swift in Sources */,
 				4FF7C4E62616E5C4007356C3 /* AlertFactory.swift in Sources */,
 				F4A8CC3D9DF5B8323A59AB5F /* SignInRouter.swift in Sources */,
