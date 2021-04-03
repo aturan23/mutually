@@ -102,6 +102,10 @@
 		4FF7C64E26181773007356C3 /* OtpTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C64D26181773007356C3 /* OtpTextField.swift */; };
 		4FF7C65126181DBC007356C3 /* SmsCharView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C65026181DBC007356C3 /* SmsCharView.swift */; };
 		4FF7C654261876FC007356C3 /* AlertShowingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C653261876FC007356C3 /* AlertShowingRouter.swift */; };
+		4FF7C65C26189FEE007356C3 /* PasswordKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C65B26189FEE007356C3 /* PasswordKeyboardView.swift */; };
+		4FF7C65F2618A000007356C3 /* PasswordKeyboardViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C65E2618A000007356C3 /* PasswordKeyboardViewOutput.swift */; };
+		4FF7C6622618A010007356C3 /* PasswordKeyboardButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C6612618A010007356C3 /* PasswordKeyboardButtonType.swift */; };
+		4FF7C6652618A085007356C3 /* PasswordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C6642618A085007356C3 /* PasswordButton.swift */; };
 		5695FC17C485A046E8822B7C /* RegistrationModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F1844EF3EEC212912E2F9 /* RegistrationModuleOutput.swift */; };
 		5E11F8F4E136F951AB74243D /* MainTabsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E214F952358A442AB189ED8 /* MainTabsRouter.swift */; };
 		5EDC8F1C4B0854BBBA9A2A4A /* RegistrationRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77184EFAF8B71967630781C9 /* RegistrationRouterInput.swift */; };
@@ -254,6 +258,10 @@
 		4FF7C64D26181773007356C3 /* OtpTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpTextField.swift; sourceTree = "<group>"; };
 		4FF7C65026181DBC007356C3 /* SmsCharView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsCharView.swift; sourceTree = "<group>"; };
 		4FF7C653261876FC007356C3 /* AlertShowingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertShowingRouter.swift; sourceTree = "<group>"; };
+		4FF7C65B26189FEE007356C3 /* PasswordKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordKeyboardView.swift; sourceTree = "<group>"; };
+		4FF7C65E2618A000007356C3 /* PasswordKeyboardViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordKeyboardViewOutput.swift; sourceTree = "<group>"; };
+		4FF7C6612618A010007356C3 /* PasswordKeyboardButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordKeyboardButtonType.swift; sourceTree = "<group>"; };
+		4FF7C6642618A085007356C3 /* PasswordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordButton.swift; sourceTree = "<group>"; };
 		5378F58036B195AC3B33F121 /* MainTabsViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainTabsViewModel.swift; sourceTree = "<group>"; };
 		54DDB787EF4B4E7FF922C304 /* SetupPasscodeAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SetupPasscodeAssembly.swift; sourceTree = "<group>"; };
 		5C6619DFCF2687E832B89120 /* SetupPasscodeViewAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SetupPasscodeViewAdapter.swift; sourceTree = "<group>"; };
@@ -748,6 +756,7 @@
 				4FF7C5C726171AE5007356C3 /* Button.swift */,
 				4FF7C5E326171D78007356C3 /* PrimaryButton.swift */,
 				4FF7C63C2618151F007356C3 /* SecondaryButton.swift */,
+				4FF7C6642618A085007356C3 /* PasswordButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -778,6 +787,16 @@
 				4FF7C65026181DBC007356C3 /* SmsCharView.swift */,
 			);
 			path = InputView;
+			sourceTree = "<group>";
+		};
+		4FF7C65A26189FDB007356C3 /* PasswordKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				4FF7C65B26189FEE007356C3 /* PasswordKeyboardView.swift */,
+				4FF7C65E2618A000007356C3 /* PasswordKeyboardViewOutput.swift */,
+				4FF7C6612618A010007356C3 /* PasswordKeyboardButtonType.swift */,
+			);
+			path = PasswordKeyboard;
 			sourceTree = "<group>";
 		};
 		6BD6ABFC53693888B42A4B66 /* ViewModel */ = {
@@ -917,6 +936,7 @@
 		ECBFA6C50F4A5920EA3F4A1C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4FF7C65A26189FDB007356C3 /* PasswordKeyboard */,
 				4C3D0988316C4BEEEC0F4CAF /* SetupPasscodeViewProtocols.swift */,
 				87FEC8892D03CDD728ACA099 /* SetupPasscodeViewController.swift */,
 				5C6619DFCF2687E832B89120 /* SetupPasscodeViewAdapter.swift */,
@@ -1094,9 +1114,11 @@
 				4FF7C4E02616E584007356C3 /* AlertShowable.swift in Sources */,
 				4FF7C53C2616EFAE007356C3 /* NetworkReachabilityChecking.swift in Sources */,
 				8173C2716F0EF0E421A46A9B /* RegistrationViewAdapter.swift in Sources */,
+				4FF7C65C26189FEE007356C3 /* PasswordKeyboardView.swift in Sources */,
 				7F3927D5098A32F0785398CA /* RegistrationModuleInput.swift in Sources */,
 				4FF7C5C1261716D8007356C3 /* LayoutGuidance.swift in Sources */,
 				4FF7C60B26180A4C007356C3 /* DefaultNavigationController.swift in Sources */,
+				4FF7C65F2618A000007356C3 /* PasswordKeyboardViewOutput.swift in Sources */,
 				4FF7C6052617F9AF007356C3 /* SmsVerificationPurpose.swift in Sources */,
 				5695FC17C485A046E8822B7C /* RegistrationModuleOutput.swift in Sources */,
 				4FF7C5572616F436007356C3 /* Debouncer.swift in Sources */,
@@ -1130,6 +1152,7 @@
 				249B4AD4B276956BA8875647 /* SignInModuleOutput.swift in Sources */,
 				6082B1893C5900F666CBA1D0 /* SignInViewModel.swift in Sources */,
 				4FF7C5DB26171C85007356C3 /* UIImageExtension.swift in Sources */,
+				4FF7C6652618A085007356C3 /* PasswordButton.swift in Sources */,
 				4FF7C63926181268007356C3 /* SmsVerificationViewState.swift in Sources */,
 				4FF7C51C2616EC42007356C3 /* TimeIntervalExtension.swift in Sources */,
 				4FF7C53F2616EFC3007356C3 /* Alamofire+NetworkReachabilityChecking.swift in Sources */,
@@ -1161,6 +1184,7 @@
 				4FF7C5DE26171CF4007356C3 /* CALayerExtension.swift in Sources */,
 				5E11F8F4E136F951AB74243D /* MainTabsRouter.swift in Sources */,
 				4FF7C5362616EF02007356C3 /* JSONResponseParameter.swift in Sources */,
+				4FF7C6622618A010007356C3 /* PasswordKeyboardButtonType.swift in Sources */,
 				629C9F750C3D0B7C5CB474AA /* MainTabsAssembly.swift in Sources */,
 				4FF7C5302616EDBE007356C3 /* JSONStandard.swift in Sources */,
 				4FF7C5082616EAD6007356C3 /* KeyboardListening.swift in Sources */,
