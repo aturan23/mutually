@@ -92,6 +92,8 @@
 		4FF7C5F92617669B007356C3 /* RegistrationForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C5F82617669B007356C3 /* RegistrationForm.swift */; };
 		4FF7C6052617F9AF007356C3 /* SmsVerificationPurpose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C6042617F9AF007356C3 /* SmsVerificationPurpose.swift */; };
 		4FF7C60826180499007356C3 /* UINavigationItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C60726180499007356C3 /* UINavigationItemExtension.swift */; };
+		4FF7C60B26180A4C007356C3 /* DefaultNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C60A26180A4C007356C3 /* DefaultNavigationController.swift */; };
+		4FF7C60E26180A7B007356C3 /* ScreenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C60D26180A7B007356C3 /* ScreenUtils.swift */; };
 		5695FC17C485A046E8822B7C /* RegistrationModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F1844EF3EEC212912E2F9 /* RegistrationModuleOutput.swift */; };
 		5E11F8F4E136F951AB74243D /* MainTabsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E214F952358A442AB189ED8 /* MainTabsRouter.swift */; };
 		5EDC8F1C4B0854BBBA9A2A4A /* RegistrationRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77184EFAF8B71967630781C9 /* RegistrationRouterInput.swift */; };
@@ -234,6 +236,8 @@
 		4FF7C5F82617669B007356C3 /* RegistrationForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationForm.swift; sourceTree = "<group>"; };
 		4FF7C6042617F9AF007356C3 /* SmsVerificationPurpose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsVerificationPurpose.swift; sourceTree = "<group>"; };
 		4FF7C60726180499007356C3 /* UINavigationItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationItemExtension.swift; sourceTree = "<group>"; };
+		4FF7C60A26180A4C007356C3 /* DefaultNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNavigationController.swift; sourceTree = "<group>"; };
+		4FF7C60D26180A7B007356C3 /* ScreenUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenUtils.swift; sourceTree = "<group>"; };
 		5378F58036B195AC3B33F121 /* MainTabsViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainTabsViewModel.swift; sourceTree = "<group>"; };
 		54DDB787EF4B4E7FF922C304 /* SetupPasscodeAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SetupPasscodeAssembly.swift; sourceTree = "<group>"; };
 		5C6619DFCF2687E832B89120 /* SetupPasscodeViewAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SetupPasscodeViewAdapter.swift; sourceTree = "<group>"; };
@@ -541,6 +545,8 @@
 				4FF7C5072616EAD6007356C3 /* KeyboardListening.swift */,
 				4FF7C5A426170DFE007356C3 /* TextStyle.swift */,
 				4FF7C5C0261716D8007356C3 /* LayoutGuidance.swift */,
+				4FF7C60A26180A4C007356C3 /* DefaultNavigationController.swift */,
+				4FF7C60D26180A7B007356C3 /* ScreenUtils.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -1042,6 +1048,7 @@
 				8173C2716F0EF0E421A46A9B /* RegistrationViewAdapter.swift in Sources */,
 				7F3927D5098A32F0785398CA /* RegistrationModuleInput.swift in Sources */,
 				4FF7C5C1261716D8007356C3 /* LayoutGuidance.swift in Sources */,
+				4FF7C60B26180A4C007356C3 /* DefaultNavigationController.swift in Sources */,
 				4FF7C6052617F9AF007356C3 /* SmsVerificationPurpose.swift in Sources */,
 				5695FC17C485A046E8822B7C /* RegistrationModuleOutput.swift in Sources */,
 				4FF7C5572616F436007356C3 /* Debouncer.swift in Sources */,
@@ -1068,6 +1075,7 @@
 				4FF7C5CF26171B60007356C3 /* UIActivityIndicatorViewExtension.swift in Sources */,
 				4FF7C5E426171D78007356C3 /* PrimaryButton.swift in Sources */,
 				4883CA7DB618B59A6CDF3371 /* SignInModuleInput.swift in Sources */,
+				4FF7C60E26180A7B007356C3 /* ScreenUtils.swift in Sources */,
 				249B4AD4B276956BA8875647 /* SignInModuleOutput.swift in Sources */,
 				6082B1893C5900F666CBA1D0 /* SignInViewModel.swift in Sources */,
 				4FF7C5DB26171C85007356C3 /* UIImageExtension.swift in Sources */,
