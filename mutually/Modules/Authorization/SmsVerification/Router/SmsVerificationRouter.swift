@@ -9,7 +9,9 @@
 import UIKit
 
 class SmsVerificationRouter: SmsVerificationRouterInput {
+    
 	weak var viewController: UIViewController?
+    let alertFactory = AlertFactory()
 
 	// ------------------------------
     // MARK: - SmsVerificationRouterInput
