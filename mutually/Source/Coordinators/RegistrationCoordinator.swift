@@ -74,19 +74,6 @@ class RegistrationCoordinator: RegistrationCoordinating {
         navigationController.pushViewController(signInViewController, animated: animating)
     }
     
-    func moveToSetupPasscode() {
-        guard let setupPasscodeViewController = injection
-            .inject(SetupPasscodeModuleAssembly.self)?
-            .assemble({ [weak self] moduleInput in
-                moduleInput.alertPresenter = self
-                return self
-            })
-            else {
-                return
-        }
-        navigationController.pushViewController(setupPasscodeViewController, animated: true)
-    }
-    
     func showMainPage() {
         guard let mainTabBarController = injection
             .inject(MainTabsModuleAssembly.self)?
@@ -146,6 +133,19 @@ extension RegistrationCoordinator: RegistrationModuleOutput {
         }
         let configData = SignInConfigData(phone: userData.phone)
         moveToSignIn(data: configData, animating: true)
+    }
+    
+    func moveToSetupPasscode() {
+        guard let setupPasscodeViewController = injection
+            .inject(SetupPasscodeModuleAssembly.self)?
+            .assemble({ [weak self] moduleInput in
+                moduleInput.alertPresenter = self
+                return self
+            })
+            else {
+                return
+        }
+        navigationController.pushViewController(setupPasscodeViewController, animated: true)
     }
 
 }

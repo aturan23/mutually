@@ -8,4 +8,5 @@
 
 protocol RegistrationModuleOutput: class {
     func checkDidFindAlreadyRegistered(for phone: String)
+    func moveToSetupPasscode()
 }

@@ -11,6 +11,5 @@ protocol Coordinator {
 
 protocol RegistrationCoordinating: Coordinator {
     func moveToSignIn(data: SignInConfigData, animating: Bool)
-    func moveToSetupPasscode()
     func showMainPage()
 }
