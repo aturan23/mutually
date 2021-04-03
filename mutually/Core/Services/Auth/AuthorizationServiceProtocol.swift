@@ -7,5 +7,4 @@
 
 protocol AuthorizationServiceProtocol: SmsServiceProtocol {
     var sessionTracker: SessionTrackerProtocol? { get set }
-    func getSmsPass(phone: String, completion: @escaping (Result<Void, NetworkError>) -> ())
 }

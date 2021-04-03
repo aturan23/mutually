@@ -28,15 +28,6 @@ final class AuthorizationService: AuthorizationServiceProtocol {
     }
     
     // MARK: - AuthorizationServiceProtocol
- 
-    func getSmsPass(phone: String, completion: @escaping (Result<Void, NetworkError>) -> ()) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            completion(.success(()))
-        }
-//        dataProvider.request(.getSmsPath(phone: phone)) { (result: Result<Void, NetworkError>) in
-//
-//        }
-    }
     
     func checkRegistrationStatusOf(
         phone: String,
@@ -81,14 +72,16 @@ final class AuthorizationService: AuthorizationServiceProtocol {
     }
     
     func requestSMSCode(completion: @escaping (Result<Void, NetworkError>) -> ()) {
-//        guard let token = tokenWrapper?.token,
-//            let phone = dataService?.user?.phone,
-//            let status = dataService?.user?.status else {
-//            completion(.failure(.unknownError))
-//                return
-//        }
+        guard let phone = dataService?.phone else {
+            completion(.failure(.unknownError))
+                return
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            print(phone)
+            completion(.success(()))
+        }
 //        dataProvider.request(
-//            .requestSmsCode(token: token, phone: phone, status: status)
+//            .getSmsPath(phone: phone)
 //        ) { result in
 //            switch result {
 //            case .success:
