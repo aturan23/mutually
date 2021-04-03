@@ -21,6 +21,7 @@ class RegistrationViewModel: RegistrationViewOutput, RegistrationModuleInput {
     var router: RegistrationRouterInput?
     weak var moduleOutput: RegistrationModuleOutput?
     weak var authorizationService: AuthorizationServiceProtocol?
+    private var phone = ""
     
     // ------------------------------
     // MARK: - RegistrationViewOutput methods
@@ -36,6 +37,7 @@ class RegistrationViewModel: RegistrationViewOutput, RegistrationModuleInput {
               form.termsSelected else {
             return
         }
+        self.phone = phone
         view?.startLoading()
         authorizationService?.getSmsPass(phone: phone, completion: { [weak self] (result) in
             guard let self = self else { return }
@@ -66,5 +68,15 @@ class RegistrationViewModel: RegistrationViewOutput, RegistrationModuleInput {
         }
         view?.showError(phone: false, dataProcessing: !form.dataProcessingSelected, terms: !form.termsSelected)
         return phoneText
+    }
+}
+
+// ------------------------------
+// MARK: - SmsVerificationModuleOutput methods
+// ------------------------------
+
+extension RegistrationViewModel: SmsVerificationModuleOutput {
+    func smsVerificationSucceeded(with data: [String : Any]?) {
+        moduleOutput?.checkDidFindAlreadyRegistered(for: phone)
     }
 }
