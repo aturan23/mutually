@@ -172,7 +172,9 @@ final class SmsInputView: UIView {
 }
 
 // MARK: - SmsInputViewInput
+
 extension SmsInputView: SmsInputViewInput {
+    
     func disableInput() {
         otpTextField.endEditing(true)
         otpTextField.isUserInteractionEnabled = false
