@@ -20,7 +20,7 @@ class RegistrationCoordinator: RegistrationCoordinating {
     init(window: UIWindow, injection: ModuleInjecting) {
         self.window = window
         self.injection = injection
-        navigationController = UINavigationController()
+        navigationController = UINavigationController.makeDefault()
     }
     
     // MARK: - RegistrationCoordinating
