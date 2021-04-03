@@ -20,6 +20,13 @@ class SmsVerificationViewController: BaseViewController, SmsVerificationViewInpu
     // MARK: - UI components
     // ------------------------------
 
+    private let labelFactory = LabelFactory()
+    private lazy var titleLabel = labelFactory.make(
+        withStyle: .inputLabel,
+        text: "Мы отправили смс на указанный ранее вами номер, введите полученный код ниже",
+        textColor: .black)
+    
+    
     // ------------------------------
     // MARK: - Life cycle
     // ------------------------------
@@ -42,16 +49,18 @@ class SmsVerificationViewController: BaseViewController, SmsVerificationViewInpu
 
     private func setupViews() {
 
-
         setupViewsHierarchy()
         setupConstraints()
     }
 
     private func setupViewsHierarchy() {
-
+        [titleLabel].forEach(view.addSubview(_:))
     }
 
     private func setupConstraints() {
-        
+        titleLabel.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaInsets.top).offset(LayoutGuidance.offsetSuperLarge)
+            $0.left.right.equalToSuperview().inset(LayoutGuidance.offsetSuperLarge)
+        }
     }
 }
