@@ -6,4 +6,6 @@
 //  Copyright © 2021 mutually. All rights reserved.
 //
 
-protocol RegistrationModuleOutput: class { }
+protocol RegistrationModuleOutput: class {
+    func checkDidFindAlreadyRegistered(for phone: String)
+}
