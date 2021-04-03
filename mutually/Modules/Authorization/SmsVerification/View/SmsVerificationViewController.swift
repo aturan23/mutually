@@ -131,7 +131,7 @@ class SmsVerificationViewController: BaseViewController, SmsVerificationViewInpu
     func show(errorData: SmsVerificationErrorViewAdapter) {
         switch errorData.data {
         case .incorrectCode:
-            codeInputView.showError(message: "Неверный код")
+            codeInputView.showError(message: "Вы ввели не верный СМС код")
         case .couldNotRequestSms, .other:
             codeInputView.showError(message: nil)
         case .networkFail: break
