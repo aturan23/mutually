@@ -98,6 +98,9 @@ extension Container {
         register(MainTabsModuleAssembly.self) { _ in
             MainTabsModuleAssembly(injection: self)
         }
+        register(SmsVerificationModuleAssembly.self) { _ in
+            SmsVerificationModuleAssembly(injection: self)
+        }
         return self
     }
     
