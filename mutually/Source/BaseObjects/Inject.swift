@@ -101,6 +101,9 @@ extension Container {
         register(SmsVerificationModuleAssembly.self) { _ in
             SmsVerificationModuleAssembly(injection: self)
         }
+        register(SlidingRequestModuleAssembly.self) { _ in
+            SlidingRequestModuleAssembly(injection: self)
+        }
         return self
     }
     
