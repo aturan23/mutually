@@ -120,10 +120,15 @@ class SetupPasscodeViewController: BaseViewController, SetupPasscodeViewInput {
         }
         [passwordView, repeatPasswordView].forEach {
             $0.snp.makeConstraints {
-                $0.top.equalTo(createPasswordLabel.snp.bottom).offset(LayoutGuidance.offsetSuperLarge)
                 $0.centerX.equalToSuperview()
                 $0.bottom.equalToSuperview()
             }
+        }
+        passwordView.snp.makeConstraints {
+            $0.top.equalTo(createPasswordLabel.snp.bottom).offset(LayoutGuidance.offsetSuperLarge)
+        }
+        repeatPasswordView.snp.makeConstraints {
+            $0.top.equalTo(repeatPasswordLabel.snp.bottom).offset(LayoutGuidance.offsetSuperLarge)
         }
         createContainerView.snp.makeConstraints {
             createViewCenterXConstraint = $0.centerX.equalToSuperview().constraint
