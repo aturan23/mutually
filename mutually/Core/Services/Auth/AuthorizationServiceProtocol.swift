@@ -7,4 +7,6 @@
 
 protocol AuthorizationServiceProtocol: SmsServiceProtocol {
     var sessionTracker: SessionTrackerProtocol? { get set }
+    
+    func registerUser(password: String, completion: @escaping (Result<Void, NetworkError>) -> ())
 }

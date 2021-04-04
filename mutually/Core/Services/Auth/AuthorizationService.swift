@@ -114,9 +114,10 @@ final class AuthorizationService: AuthorizationServiceProtocol {
 //        }
     }
     
-    func registerUser(password: String,
-                      success: (() -> Void)?,
-                      failure: ((NetworkError) -> Void)?) {
+    func registerUser(password: String, completion: @escaping (Result<Void, NetworkError>) -> ()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            completion(.failure(.incorrectJSON))
+        }
 //        guard let token = tokenWrapper?.token,
 //            let status = dataService?.user?.status,
 //            let phone = dataService?.user?.phone else {
@@ -227,11 +228,5 @@ final class AuthorizationService: AuthorizationServiceProtocol {
 //                failure?(error)
 //            }
 //        }
-    }
-    
-    private func constructDeviceInfo() -> String {
-        return [("p",          "iOS\(UIDevice.current.systemVersion)")]
-            .map { "\($0.0):\($0.1);" }
-            .joined()
     }
 }
