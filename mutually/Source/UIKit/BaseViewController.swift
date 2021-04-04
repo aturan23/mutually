@@ -13,11 +13,21 @@ class BaseViewController: UIViewController {
         static let backgroundAppearingDuration: Double = 0.3
     }
     
+    private let loadingView: LoadingView = {
+        let view = LoadingView()
+        view.layer.zPosition = 10
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        view.alpha = 0.0
+        view.frame = view.bounds
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        return view
+    }()
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLoadingView()
         addKeyboardObserverIfNeeded()
         
         view.backgroundColor = .white
@@ -26,9 +36,27 @@ class BaseViewController: UIViewController {
     
     // MARK: - Public functions
     
+    func showLoading() {
+        DispatchQueue.main.async { [weak self] in
+            self?.loadingView.startLoading()
+        }
+    }
+    
+    func hideLoading() {
+        DispatchQueue.main.async { [weak self] in
+            self?.loadingView.stopLoading()
+        }
+    }
     
     // MARK: - Private functions
     
+    private func setupLoadingView() {
+        view.addSubview(loadingView)
+        
+        loadingView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+    }
 }
 
 // MARK: - Observers
