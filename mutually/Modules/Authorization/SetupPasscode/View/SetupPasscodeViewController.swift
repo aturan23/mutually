@@ -32,7 +32,7 @@ class SetupPasscodeViewController: BaseViewController, SetupPasscodeViewInput {
         text: "Придумайте 4х-значный пароль для последующего входа в приложение",
         textColor: Color.textHighContrast)
     private lazy var passwordView: SmsInputView = {
-        let view = SmsInputView(codeLength: 4)
+        let view = SmsInputView(codeLength: 4, isEnabled: false)
         view.output = self
         return view
     }()
@@ -43,7 +43,7 @@ class SetupPasscodeViewController: BaseViewController, SetupPasscodeViewInput {
         text: "Повторите введенный ранее 4х-значный пароль для его подтверждения",
         textColor: Color.textHighContrast)
     private lazy var repeatPasswordView: SmsInputView = {
-        let view = SmsInputView(codeLength: 4)
+        let view = SmsInputView(codeLength: 4, isEnabled: false)
         view.output = self
         return view
     }()
@@ -82,8 +82,8 @@ class SetupPasscodeViewController: BaseViewController, SetupPasscodeViewInput {
         case .tooSimplePasscode:
             passwordView.showError(message: "Придумай пароль посложнее")
         case .passcodeMismatch:
-            repeatPasswordView.showError(message: "Пароли не совпадают")
-            showCreate()
+            passwordView.showError()
+            repeatPasswordView.showError(message: "Пароли не совпадают", onHideAction: showCreate)
         }
     }
     
