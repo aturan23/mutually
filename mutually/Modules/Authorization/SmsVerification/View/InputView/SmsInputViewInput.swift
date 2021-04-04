@@ -6,6 +6,8 @@
 //
 
 protocol SmsInputViewInput: class {
+    func append(symbol: Character)
+    func eraseLastSymbol()
     func disableInput()
     func showError(message: String?)
     func set(otp: String)

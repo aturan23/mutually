@@ -175,6 +175,18 @@ final class SmsInputView: UIView {
 
 extension SmsInputView: SmsInputViewInput {
     
+    func append(symbol: Character) {
+        guard let text = otpTextField.text else { return }
+        otpTextField.text = "\(text)\(String(symbol))"
+        handleOtpValueChange()
+    }
+    
+    func eraseLastSymbol() {
+        guard let text = otpTextField.text else { return }
+        otpTextField.text = String(text.dropLast())
+        handleOtpValueChange()
+    }
+    
     func disableInput() {
         otpTextField.endEditing(true)
         otpTextField.isUserInteractionEnabled = false
