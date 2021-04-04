@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,8 +19,6 @@
 		4F6BFCAA2615D29B00AE1DC3 /* mutually.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F6BFCA82615D29B00AE1DC3 /* mutually.xcdatamodeld */; };
 		4F6BFCAC2615D29D00AE1DC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F6BFCAB2615D29D00AE1DC3 /* Assets.xcassets */; };
 		4F6BFCAF2615D29D00AE1DC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F6BFCAD2615D29D00AE1DC3 /* LaunchScreen.storyboard */; };
-		4F6BFCC826161B3500AE1DC3 /* Kingfisher.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F6BFCC42616194100AE1DC3 /* Kingfisher.xcframework */; };
-		4F6BFCCB26161B3700AE1DC3 /* SnapKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F6BFCBD2616193500AE1DC3 /* SnapKit.xcframework */; };
 		4FF7C4C82616E195007356C3 /* RootUIControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C4C72616E195007356C3 /* RootUIControllerType.swift */; };
 		4FF7C4CD2616E24F007356C3 /* BaseModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C4CC2616E24F007356C3 /* BaseModuleAssembly.swift */; };
 		4FF7C4D12616E26C007356C3 /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C4D02616E26C007356C3 /* Inject.swift */; };
@@ -106,6 +104,8 @@
 		4FF7C65F2618A000007356C3 /* PasswordKeyboardViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C65E2618A000007356C3 /* PasswordKeyboardViewOutput.swift */; };
 		4FF7C6622618A010007356C3 /* PasswordKeyboardButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C6612618A010007356C3 /* PasswordKeyboardButtonType.swift */; };
 		4FF7C6652618A085007356C3 /* PasswordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C6642618A085007356C3 /* PasswordButton.swift */; };
+		4FF7C66C26196AD7007356C3 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C66B26196AD7007356C3 /* StringUtils.swift */; };
+		4FF7C67026196D65007356C3 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C66F26196D65007356C3 /* LoadingViewController.swift */; };
 		5695FC17C485A046E8822B7C /* RegistrationModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F1844EF3EEC212912E2F9 /* RegistrationModuleOutput.swift */; };
 		5E11F8F4E136F951AB74243D /* MainTabsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E214F952358A442AB189ED8 /* MainTabsRouter.swift */; };
 		5EDC8F1C4B0854BBBA9A2A4A /* RegistrationRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77184EFAF8B71967630781C9 /* RegistrationRouterInput.swift */; };
@@ -262,6 +262,8 @@
 		4FF7C65E2618A000007356C3 /* PasswordKeyboardViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordKeyboardViewOutput.swift; sourceTree = "<group>"; };
 		4FF7C6612618A010007356C3 /* PasswordKeyboardButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordKeyboardButtonType.swift; sourceTree = "<group>"; };
 		4FF7C6642618A085007356C3 /* PasswordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordButton.swift; sourceTree = "<group>"; };
+		4FF7C66B26196AD7007356C3 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
+		4FF7C66F26196D65007356C3 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		5378F58036B195AC3B33F121 /* MainTabsViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainTabsViewModel.swift; sourceTree = "<group>"; };
 		54DDB787EF4B4E7FF922C304 /* SetupPasscodeAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SetupPasscodeAssembly.swift; sourceTree = "<group>"; };
 		5C6619DFCF2687E832B89120 /* SetupPasscodeViewAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SetupPasscodeViewAdapter.swift; sourceTree = "<group>"; };
@@ -305,8 +307,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BB431EDCCA1672C1B32DAAD /* Pods_mutually.framework in Frameworks */,
-				4F6BFCCB26161B3700AE1DC3 /* SnapKit.xcframework in Frameworks */,
-				4F6BFCC826161B3500AE1DC3 /* Kingfisher.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +488,7 @@
 		4FF7C4C32616E114007356C3 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				4FF7C66A26196AD1007356C3 /* Utils */,
 				4FF7C50D2616EB61007356C3 /* Extensions */,
 				4FF7C4E32616E5AD007356C3 /* UIKit */,
 				4FF7C4D32616E2FA007356C3 /* Coordinators */,
@@ -774,6 +775,7 @@
 			isa = PBXGroup;
 			children = (
 				4FF7C64026181683007356C3 /* DefaultActivityIndicator.swift */,
+				4FF7C66F26196D65007356C3 /* LoadingViewController.swift */,
 			);
 			path = ActivityIndicators;
 			sourceTree = "<group>";
@@ -797,6 +799,14 @@
 				4FF7C6612618A010007356C3 /* PasswordKeyboardButtonType.swift */,
 			);
 			path = PasswordKeyboard;
+			sourceTree = "<group>";
+		};
+		4FF7C66A26196AD1007356C3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4FF7C66B26196AD7007356C3 /* StringUtils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		6BD6ABFC53693888B42A4B66 /* ViewModel */ = {
@@ -1127,6 +1137,7 @@
 				4FF7C5C826171AE5007356C3 /* Button.swift in Sources */,
 				4FF7C55B2616F5D2007356C3 /* NetworkLoggerPluginConfig.swift in Sources */,
 				0086D0D40306975B7513B945 /* RegistrationViewModel.swift in Sources */,
+				4FF7C67026196D65007356C3 /* LoadingViewController.swift in Sources */,
 				4FF7C5CC26171B2A007356C3 /* IndicatorProtocol.swift in Sources */,
 				5EDC8F1C4B0854BBBA9A2A4A /* RegistrationRouterInput.swift in Sources */,
 				4FF7C60826180499007356C3 /* UINavigationItemExtension.swift in Sources */,
@@ -1168,6 +1179,7 @@
 				4FF7C54B2616F07C007356C3 /* BaseTargetType.swift in Sources */,
 				4FF7C5192616EBD1007356C3 /* SessionTrackerProtocol.swift in Sources */,
 				4FF7C4F12616E77C007356C3 /* CommonConfigs.swift in Sources */,
+				4FF7C66C26196AD7007356C3 /* StringUtils.swift in Sources */,
 				4FF7C5332616EEB3007356C3 /* NetworkResponse.swift in Sources */,
 				4FF7C65126181DBC007356C3 /* SmsCharView.swift in Sources */,
 				E9112D86C46D3C9FE7DFD48B /* SignInAssembly.swift in Sources */,
