@@ -16,6 +16,7 @@ class SetupPasscodeViewModel: SetupPasscodeViewOutput, SetupPasscodeModuleInput 
     weak var view: SetupPasscodeViewInput?
     var router: SetupPasscodeRouterInput?
     weak var moduleOutput: SetupPasscodeModuleOutput?
+    var authorizationService: AuthorizationServiceProtocol?
 
     // ------------------------------
     // MARK: - SetupPasscodeViewOutput methods

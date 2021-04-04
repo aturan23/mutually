@@ -21,6 +21,7 @@ class SetupPasscodeModuleAssembly: BaseModuleAssembly {
         let viewModel = SetupPasscodeViewModel()
         viewModel.view = viewController
         viewModel.router = router
+        viewModel.authorizationService = injection.inject(AuthorizationServiceProtocol.self)
         router.viewController = viewController
         viewController.output = viewModel
         viewModel.moduleOutput = configuration?(viewModel)
