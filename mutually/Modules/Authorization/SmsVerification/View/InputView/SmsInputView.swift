@@ -69,9 +69,10 @@ final class SmsInputView: UIView {
     
     // MARK: - Init
     
-    required init(codeLength: Int = Constant.defaultCodeLength) {
+    required init(codeLength: Int = Constant.defaultCodeLength, isEnabled: Bool = true) {
         self.codeLength = codeLength
         super.init(frame: .zero)
+        otpTextField.isEnabled = isEnabled
         configureViews()
     }
     required init?(coder aDecoder: NSCoder) {
@@ -192,7 +193,7 @@ extension SmsInputView: SmsInputViewInput {
         otpTextField.isUserInteractionEnabled = false
     }
     
-    func showError(message: String?) {
+    func showError(message: String?, onHideAction: (() -> Void)?) {
         shake()
         errorLabel.text = message
         let charViews = stackView.subviews.compactMap({ $0 as? SmsCharView })
@@ -204,6 +205,7 @@ extension SmsInputView: SmsInputViewInput {
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             self?.resetAndActivateInput()
+            onHideAction?()
         }
         isShowingError = true
     }
