@@ -15,6 +15,8 @@
 		3447B84CB0A94CD74331A72C /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AE11D8207F3BBCFBD87538 /* RegistrationViewController.swift */; };
 		36D6FF40A772645063C96244 /* MainTabsModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE905AAC21C36FA7A4B8A5B /* MainTabsModuleOutput.swift */; };
 		4883CA7DB618B59A6CDF3371 /* SignInModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3E2B41B3741A204C767A90 /* SignInModuleInput.swift */; };
+		4F2401B926197B3F00AA99BF /* loading_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F2401B826197B3F00AA99BF /* loading_animation.json */; };
+		4F2401BD26197C9F00AA99BF /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2401BC26197C9F00AA99BF /* LoadingView.swift */; };
 		4F6BFCA02615D29B00AE1DC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6BFC9F2615D29B00AE1DC3 /* AppDelegate.swift */; };
 		4F6BFCAA2615D29B00AE1DC3 /* mutually.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F6BFCA82615D29B00AE1DC3 /* mutually.xcdatamodeld */; };
 		4F6BFCAC2615D29D00AE1DC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F6BFCAB2615D29D00AE1DC3 /* Assets.xcassets */; };
@@ -105,7 +107,6 @@
 		4FF7C6622618A010007356C3 /* PasswordKeyboardButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C6612618A010007356C3 /* PasswordKeyboardButtonType.swift */; };
 		4FF7C6652618A085007356C3 /* PasswordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C6642618A085007356C3 /* PasswordButton.swift */; };
 		4FF7C66C26196AD7007356C3 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C66B26196AD7007356C3 /* StringUtils.swift */; };
-		4FF7C67026196D65007356C3 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C66F26196D65007356C3 /* LoadingViewController.swift */; };
 		5695FC17C485A046E8822B7C /* RegistrationModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F1844EF3EEC212912E2F9 /* RegistrationModuleOutput.swift */; };
 		5E11F8F4E136F951AB74243D /* MainTabsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E214F952358A442AB189ED8 /* MainTabsRouter.swift */; };
 		5EDC8F1C4B0854BBBA9A2A4A /* RegistrationRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77184EFAF8B71967630781C9 /* RegistrationRouterInput.swift */; };
@@ -160,6 +161,8 @@
 		4A13D65563BF3E3D15B6287E /* Pods_mutually.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mutually.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C3D0988316C4BEEEC0F4CAF /* SetupPasscodeViewProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SetupPasscodeViewProtocols.swift; sourceTree = "<group>"; };
 		4E214F952358A442AB189ED8 /* MainTabsRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainTabsRouter.swift; sourceTree = "<group>"; };
+		4F2401B826197B3F00AA99BF /* loading_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_animation.json; sourceTree = "<group>"; };
+		4F2401BC26197C9F00AA99BF /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4F6BFC9C2615D29B00AE1DC3 /* mutually.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mutually.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F6BFC9F2615D29B00AE1DC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F6BFCA92615D29B00AE1DC3 /* mutually.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = mutually.xcdatamodel; sourceTree = "<group>"; };
@@ -263,7 +266,6 @@
 		4FF7C6612618A010007356C3 /* PasswordKeyboardButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordKeyboardButtonType.swift; sourceTree = "<group>"; };
 		4FF7C6642618A085007356C3 /* PasswordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordButton.swift; sourceTree = "<group>"; };
 		4FF7C66B26196AD7007356C3 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
-		4FF7C66F26196D65007356C3 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		5378F58036B195AC3B33F121 /* MainTabsViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainTabsViewModel.swift; sourceTree = "<group>"; };
 		54DDB787EF4B4E7FF922C304 /* SetupPasscodeAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SetupPasscodeAssembly.swift; sourceTree = "<group>"; };
 		5C6619DFCF2687E832B89120 /* SetupPasscodeViewAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SetupPasscodeViewAdapter.swift; sourceTree = "<group>"; };
@@ -403,6 +405,14 @@
 			path = Assembly;
 			sourceTree = "<group>";
 		};
+		4F2401B3261976CD00AA99BF /* animations */ = {
+			isa = PBXGroup;
+			children = (
+				4F2401B826197B3F00AA99BF /* loading_animation.json */,
+			);
+			path = animations;
+			sourceTree = "<group>";
+		};
 		4F6BFC932615D29B00AE1DC3 = {
 			isa = PBXGroup;
 			children = (
@@ -509,6 +519,7 @@
 		4FF7C4C52616E126007356C3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4F2401B3261976CD00AA99BF /* animations */,
 				4FF7C59826170A14007356C3 /* Fonts */,
 				4F6BFCAB2615D29D00AE1DC3 /* Assets.xcassets */,
 				4FF7C4E92616E6AC007356C3 /* Colors.json */,
@@ -775,7 +786,7 @@
 			isa = PBXGroup;
 			children = (
 				4FF7C64026181683007356C3 /* DefaultActivityIndicator.swift */,
-				4FF7C66F26196D65007356C3 /* LoadingViewController.swift */,
+				4F2401BC26197C9F00AA99BF /* LoadingView.swift */,
 			);
 			path = ActivityIndicators;
 			sourceTree = "<group>";
@@ -1045,6 +1056,7 @@
 				4FF7C5ED261730DF007356C3 /* Ekibastuz-Bold.ttf in Resources */,
 				4FF7C5EC261730DF007356C3 /* Ekibastuz-Semibold.ttf in Resources */,
 				4F6BFCAF2615D29D00AE1DC3 /* LaunchScreen.storyboard in Resources */,
+				4F2401B926197B3F00AA99BF /* loading_animation.json in Resources */,
 				4FF7C4EA2616E6FB007356C3 /* CommonConfiguration.plist in Resources */,
 				4FF7C5EE261730DF007356C3 /* Ekibastuz-Regular.ttf in Resources */,
 				4F6BFCAC2615D29D00AE1DC3 /* Assets.xcassets in Resources */,
@@ -1137,7 +1149,6 @@
 				4FF7C5C826171AE5007356C3 /* Button.swift in Sources */,
 				4FF7C55B2616F5D2007356C3 /* NetworkLoggerPluginConfig.swift in Sources */,
 				0086D0D40306975B7513B945 /* RegistrationViewModel.swift in Sources */,
-				4FF7C67026196D65007356C3 /* LoadingViewController.swift in Sources */,
 				4FF7C5CC26171B2A007356C3 /* IndicatorProtocol.swift in Sources */,
 				5EDC8F1C4B0854BBBA9A2A4A /* RegistrationRouterInput.swift in Sources */,
 				4FF7C60826180499007356C3 /* UINavigationItemExtension.swift in Sources */,
@@ -1164,6 +1175,7 @@
 				6082B1893C5900F666CBA1D0 /* SignInViewModel.swift in Sources */,
 				4FF7C5DB26171C85007356C3 /* UIImageExtension.swift in Sources */,
 				4FF7C6652618A085007356C3 /* PasswordButton.swift in Sources */,
+				4F2401BD26197C9F00AA99BF /* LoadingView.swift in Sources */,
 				4FF7C63926181268007356C3 /* SmsVerificationViewState.swift in Sources */,
 				4FF7C51C2616EC42007356C3 /* TimeIntervalExtension.swift in Sources */,
 				4FF7C53F2616EFC3007356C3 /* Alamofire+NetworkReachabilityChecking.swift in Sources */,
