@@ -137,7 +137,15 @@ class SmsVerificationViewController: BaseViewController, SmsVerificationViewInpu
         case .networkFail: break
         }
     }
+    
+    func startLoading() {
+        showLoading()
+    }
 
+    func stopLoading() {
+        hideLoading()
+    }
+    
     // ------------------------------
     // MARK: - Private methods
     // ------------------------------

@@ -80,8 +80,10 @@ class SmsVerificationViewModel: SmsVerificationViewOutput {
         confirmationsCounter += 1
         stateBeforeValidating = view?.getCurrentState()
         view?.apply(state: .validatingCode)
+        view?.startLoading()
         smsService?.confirmSMSCode(code: code, completion: { [weak self] (result) in
             guard let self = self else { return }
+            self.view?.stopLoading()
             switch result {
             case .success(let json):
                 self.router?.routeBack(completion: { [weak self] in

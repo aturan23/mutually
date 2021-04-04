@@ -12,6 +12,8 @@ protocol SmsVerificationViewInput: class {
     func getCurrentState() -> SmsVerificationViewState?
     func updateTimerInfo(text: String)
     func show(errorData: SmsVerificationErrorViewAdapter)
+    func startLoading()
+    func stopLoading()
 }
 
 protocol SmsVerificationViewOutput {
