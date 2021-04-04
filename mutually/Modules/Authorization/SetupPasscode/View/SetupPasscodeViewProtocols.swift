@@ -7,9 +7,14 @@
 //
 
 protocol SetupPasscodeViewInput: class {
-    func display(viewAdapter: SetupPasscodeViewAdapter)
+    func showCreate()
+    func showRepeat()
+    func showError(adapter: SetupPasscodeViewAdapter)
+    func startLoading()
+    func stopLoading()
 }
 
 protocol SetupPasscodeViewOutput {
-    func didLoad()
+    func didCreate(passcode: String)
+    func didTryToRepeat(passcode: String)
 }

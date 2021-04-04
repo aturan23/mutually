@@ -7,4 +7,11 @@
 //
 
 /// Default ViewModel passed to View layer for displaying
-struct SetupPasscodeViewAdapter { }
+struct SetupPasscodeViewAdapter {
+    enum ErrorType {
+        case tooSimplePasscode
+        case passcodeMismatch
+    }
+    
+    let errorType: ErrorType
+}

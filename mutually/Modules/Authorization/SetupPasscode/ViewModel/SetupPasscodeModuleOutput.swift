@@ -6,4 +6,6 @@
 //  Copyright © 2021 mutually. All rights reserved.
 //
 
-protocol SetupPasscodeModuleOutput: class { }
+protocol SetupPasscodeModuleOutput: class {
+    func setupPasscodeSucceeded(passcode: String)
+}

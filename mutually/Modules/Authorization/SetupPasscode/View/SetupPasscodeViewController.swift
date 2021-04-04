@@ -17,6 +17,7 @@ class SetupPasscodeViewController: BaseViewController, SetupPasscodeViewInput {
 
     var output: SetupPasscodeViewOutput?
     private var createViewCenterXConstraint: Constraint?
+    private var repeatViewCenterXConstraint: Constraint?
 
     // ------------------------------
     // MARK: - UI components
@@ -36,10 +37,16 @@ class SetupPasscodeViewController: BaseViewController, SetupPasscodeViewInput {
         return view
     }()
     
+    private let repeatContainerView = UIView()
     private lazy var repeatPasswordLabel = labelFactory.make(
         withStyle: .paragraphSecondary,
         text: "Повторите введенный ранее 4х-значный пароль для его подтверждения",
         textColor: Color.textHighContrast)
+    private lazy var repeatPasswordView: SmsInputView = {
+        let view = SmsInputView(codeLength: 4)
+        view.output = self
+        return view
+    }()
     
     private lazy var keyboardView: PasswordKeyboardView = {
         let view = PasswordKeyboardView()
@@ -54,14 +61,39 @@ class SetupPasscodeViewController: BaseViewController, SetupPasscodeViewInput {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        output?.didLoad()
     }
 
     // ------------------------------
     // MARK: - SetupPasscodeViewInput
     // ------------------------------
 
-    func display(viewAdapter: SetupPasscodeViewAdapter) { }
+    func showCreate() {
+        passwordViewInput = passwordView as SmsInputViewInput
+        animateInputContainers(showLeft: true)
+    }
+    
+    func showRepeat() {
+        passwordViewInput = repeatPasswordView as SmsInputViewInput
+        animateInputContainers(showLeft: false)
+    }
+    
+    func showError(adapter: SetupPasscodeViewAdapter) {
+        switch adapter.errorType {
+        case .tooSimplePasscode:
+            passwordView.showError(message: "Придумай пароль посложнее")
+        case .passcodeMismatch:
+            repeatPasswordView.showError(message: "Пароли не совпадают")
+            showCreate()
+        }
+    }
+    
+    func startLoading() {
+        showLoading()
+    }
+    
+    func stopLoading() {
+        hideLoading()
+    }
 
     // ------------------------------
     // MARK: - Private methods
@@ -76,22 +108,32 @@ class SetupPasscodeViewController: BaseViewController, SetupPasscodeViewInput {
 
     private func setupViewsHierarchy() {
         [createPasswordLabel, passwordView].forEach(createContainerView.addSubview(_:))
-        [createContainerView, keyboardView].forEach(view.addSubview(_:))
+        [repeatPasswordLabel, repeatPasswordView].forEach(repeatContainerView.addSubview(_:))
+        [createContainerView, repeatContainerView, keyboardView].forEach(view.addSubview(_:))
     }
 
     private func setupConstraints() {
-        createPasswordLabel.snp.makeConstraints {
-            $0.top.width.equalToSuperview()
+        [createPasswordLabel, repeatPasswordLabel].forEach {
+            $0.snp.makeConstraints {
+                $0.top.width.equalToSuperview()
+            }
         }
-        passwordView.snp.makeConstraints {
-            $0.top.equalTo(createPasswordLabel.snp.bottom).offset(LayoutGuidance.offsetSuperLarge)
-            $0.centerX.equalToSuperview()
-            $0.bottom.equalToSuperview()
+        [passwordView, repeatPasswordView].forEach {
+            $0.snp.makeConstraints {
+                $0.top.equalTo(createPasswordLabel.snp.bottom).offset(LayoutGuidance.offsetSuperLarge)
+                $0.centerX.equalToSuperview()
+                $0.bottom.equalToSuperview()
+            }
         }
         createContainerView.snp.makeConstraints {
             createViewCenterXConstraint = $0.centerX.equalToSuperview().constraint
             $0.left.right.equalToSuperview().inset(LayoutGuidance.offsetSuperLarge)
         }
+        repeatContainerView.snp.makeConstraints {
+            repeatViewCenterXConstraint = $0.centerX.equalToSuperview().constraint
+            $0.left.right.equalToSuperview().inset(LayoutGuidance.offsetSuperLarge)
+        }
+        
         
         var viewSafeAreaHeight: CGFloat = view.bounds.height
         if let windowInsets = UIApplication.shared.keyWindow?.safeAreaInsets {
@@ -103,6 +145,23 @@ class SetupPasscodeViewController: BaseViewController, SetupPasscodeViewInput {
             $0.bottom.equalTo(view.safeAreaInsets.bottom)
         }
     }
+    
+    private func animateInputContainers(showLeft: Bool) {
+        let offset = view.bounds.width
+        UIView.animate(
+            withDuration: 0.7,
+            delay: 0,
+            usingSpringWithDamping: 0.8,
+            initialSpringVelocity: 1,
+            options: .curveEaseInOut,
+            animations: { [weak self] in
+                self?.createViewCenterXConstraint?.update(offset: showLeft ? 0 : -offset)
+                self?.repeatViewCenterXConstraint?.update(offset: showLeft ? offset : 0)
+//                self?.view.layoutIfNeeded()
+            },
+            completion: nil
+        )
+    }
 }
 
 // ------------------------------
@@ -113,10 +172,10 @@ extension SetupPasscodeViewController: SmsInputViewOutput {
     
     func didComplete(inputView: SmsInputView, code: String) {
         if inputView == passwordView {
-//            output?.didCreate(passcode: password)
-        }// else if inputView == repeatPasswordView {
-//            output?.didTryToRepeat(passcode: password)
-//        }
+            output?.didCreate(passcode: code)
+        } else if inputView == repeatPasswordView {
+            output?.didTryToRepeat(passcode: code)
+        }
     }
 }
 
