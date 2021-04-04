@@ -116,7 +116,7 @@ final class AuthorizationService: AuthorizationServiceProtocol {
     
     func registerUser(password: String, completion: @escaping (Result<Void, NetworkError>) -> ()) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            completion(.failure(.incorrectJSON))
+            completion(.success(()))
         }
 //        guard let token = tokenWrapper?.token,
 //            let status = dataService?.user?.status,
