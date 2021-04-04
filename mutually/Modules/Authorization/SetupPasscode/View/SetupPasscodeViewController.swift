@@ -113,30 +113,33 @@ class SetupPasscodeViewController: BaseViewController, SetupPasscodeViewInput {
     }
 
     private func setupConstraints() {
+        createContainerView.snp.makeConstraints {
+            $0.top.equalTo(LayoutGuidance.offsetSuperLarge)
+            createViewCenterXConstraint = $0.centerX.equalToSuperview().constraint
+            $0.width.equalToSuperview()
+        }
+        
         [createPasswordLabel, repeatPasswordLabel].forEach {
             $0.snp.makeConstraints {
-                $0.top.width.equalToSuperview()
-            }
-        }
-        [passwordView, repeatPasswordView].forEach {
-            $0.snp.makeConstraints {
-                $0.centerX.equalToSuperview()
-                $0.bottom.equalToSuperview()
+                $0.top.equalToSuperview()
+                $0.left.right.equalToSuperview().inset(LayoutGuidance.offsetSuperLarge)
             }
         }
         passwordView.snp.makeConstraints {
-            $0.top.equalTo(createPasswordLabel.snp.bottom).offset(LayoutGuidance.offsetSuperLarge)
+            $0.top.equalTo(createPasswordLabel.snp.bottom).offset(LayoutGuidance.offsetSuperLarge * 3)
+            $0.centerX.equalToSuperview()
+            $0.bottom.equalToSuperview()
+        }
+        
+        repeatContainerView.snp.makeConstraints {
+            $0.top.equalTo(LayoutGuidance.offsetSuperLarge)
+            repeatViewCenterXConstraint = $0.centerX.equalToSuperview().offset(view.bounds.width).constraint
+            $0.width.equalToSuperview()
         }
         repeatPasswordView.snp.makeConstraints {
-            $0.top.equalTo(repeatPasswordLabel.snp.bottom).offset(LayoutGuidance.offsetSuperLarge)
-        }
-        createContainerView.snp.makeConstraints {
-            createViewCenterXConstraint = $0.centerX.equalToSuperview().constraint
-            $0.left.right.equalToSuperview().inset(LayoutGuidance.offsetSuperLarge)
-        }
-        repeatContainerView.snp.makeConstraints {
-            repeatViewCenterXConstraint = $0.centerX.equalToSuperview().constraint
-            $0.left.right.equalToSuperview().inset(LayoutGuidance.offsetSuperLarge)
+            $0.top.equalTo(repeatPasswordLabel.snp.bottom).offset(LayoutGuidance.offsetSuperLarge * 3)
+            $0.centerX.equalToSuperview()
+            $0.bottom.equalToSuperview()
         }
         
         
@@ -162,7 +165,7 @@ class SetupPasscodeViewController: BaseViewController, SetupPasscodeViewInput {
             animations: { [weak self] in
                 self?.createViewCenterXConstraint?.update(offset: showLeft ? 0 : -offset)
                 self?.repeatViewCenterXConstraint?.update(offset: showLeft ? offset : 0)
-//                self?.view.layoutIfNeeded()
+                self?.view.layoutIfNeeded()
             },
             completion: nil
         )
