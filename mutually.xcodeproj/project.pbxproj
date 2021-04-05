@@ -17,6 +17,7 @@
 		3447B84CB0A94CD74331A72C /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AE11D8207F3BBCFBD87538 /* RegistrationViewController.swift */; };
 		36D6FF40A772645063C96244 /* MainTabsModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE905AAC21C36FA7A4B8A5B /* MainTabsModuleOutput.swift */; };
 		4883CA7DB618B59A6CDF3371 /* SignInModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3E2B41B3741A204C767A90 /* SignInModuleInput.swift */; };
+		4F094F2E261B4BA3000B7381 /* SlidingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F094F2D261B4BA3000B7381 /* SlidingView.swift */; };
 		4F2401B926197B3F00AA99BF /* loading_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F2401B826197B3F00AA99BF /* loading_animation.json */; };
 		4F2401BD26197C9F00AA99BF /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2401BC26197C9F00AA99BF /* LoadingView.swift */; };
 		4F6BFCA02615D29B00AE1DC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6BFC9F2615D29B00AE1DC3 /* AppDelegate.swift */; };
@@ -173,6 +174,7 @@
 		4A13D65563BF3E3D15B6287E /* Pods_mutually.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mutually.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C3D0988316C4BEEEC0F4CAF /* SetupPasscodeViewProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SetupPasscodeViewProtocols.swift; sourceTree = "<group>"; };
 		4E214F952358A442AB189ED8 /* MainTabsRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainTabsRouter.swift; sourceTree = "<group>"; };
+		4F094F2D261B4BA3000B7381 /* SlidingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingView.swift; sourceTree = "<group>"; };
 		4F2401B826197B3F00AA99BF /* loading_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_animation.json; sourceTree = "<group>"; };
 		4F2401BC26197C9F00AA99BF /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4F6BFC9C2615D29B00AE1DC3 /* mutually.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mutually.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -364,7 +366,6 @@
 			children = (
 				7D852869975B1C0B92824DD2 /* SlidingRequestAssembly.swift */,
 			);
-			name = Assembly;
 			path = Assembly;
 			sourceTree = "<group>";
 		};
@@ -394,7 +395,6 @@
 				7ED16636ACED813212109A78 /* SlidingRequestModuleOutput.swift */,
 				236E2275B93F27B7E623360D /* SlidingRequestViewModel.swift */,
 			);
-			name = ViewModel;
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
@@ -441,6 +441,14 @@
 				F2A4AB96E58E4D30F279D9E5 /* MainTabsAssembly.swift */,
 			);
 			path = Assembly;
+			sourceTree = "<group>";
+		};
+		4F094F2B261B4B06000B7381 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				4F094F2D261B4BA3000B7381 /* SlidingView.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		4F2401B3261976CD00AA99BF /* animations */ = {
@@ -867,7 +875,6 @@
 				C9D9268B0FC836FD758717DD /* Router */,
 				203B1DDE26C42FA53B58547F /* Assembly */,
 			);
-			name = SlidingRequest;
 			path = SlidingRequest;
 			sourceTree = "<group>";
 		};
@@ -885,11 +892,11 @@
 		6CF400D6BE2E97ED916ECBA1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4F094F2B261B4B06000B7381 /* Subviews */,
 				430E0B618A2A8812D59FC5D3 /* SlidingRequestViewProtocols.swift */,
 				A1590F86A020AAB35DCD9ABD /* SlidingRequestViewController.swift */,
 				B80DE65CE98E7E5588682894 /* SlidingRequestViewAdapter.swift */,
 			);
-			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -1013,7 +1020,6 @@
 				4803D06AB9FCF9BC040BD8A5 /* SlidingRequestRouterInput.swift */,
 				7C94BDF2A38A64C8A1CF0B1E /* SlidingRequestRouter.swift */,
 			);
-			name = Router;
 			path = Router;
 			sourceTree = "<group>";
 		};
@@ -1193,6 +1199,7 @@
 				4FF7C5052616EA7A007356C3 /* BaseViewController.swift in Sources */,
 				4FF7C5002616E9A5007356C3 /* UIWindowExtension.swift in Sources */,
 				4FF7C5BE26171523007356C3 /* TextFieldViewOutput.swift in Sources */,
+				4F094F2E261B4BA3000B7381 /* SlidingView.swift in Sources */,
 				4FF7C5272616ECC2007356C3 /* SmsServiceProtocol.swift in Sources */,
 				4FF7C4CD2616E24F007356C3 /* BaseModuleAssembly.swift in Sources */,
 				4FF7C5E126171D18007356C3 /* UIButtonExtension.swift in Sources */,
