@@ -15,7 +15,7 @@ class SlidingRequestModuleAssembly: BaseModuleAssembly {
     ///
     /// - Parameter configuration: optional configuration closure called by module owner
     /// - Returns: Assembled module's ViewController
-    func assemble(_ configuration: SlidingRequestConfiguration? = nil) -> UIViewController {
+    func assemble(_ configuration: SlidingRequestConfiguration? = nil) -> UINavigationController {
         let viewController = SlidingRequestViewController()
         let router = SlidingRequestRouter()
         let viewModel = SlidingRequestViewModel()
@@ -24,6 +24,7 @@ class SlidingRequestModuleAssembly: BaseModuleAssembly {
         router.viewController = viewController
         viewController.output = viewModel
         viewModel.moduleOutput = configuration?(viewModel)
-        return viewController
+        
+        return UINavigationController.makeDefault(root: viewController)
     }
 }

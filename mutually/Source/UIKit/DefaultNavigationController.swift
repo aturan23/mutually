@@ -8,8 +8,13 @@
 import UIKit
 
 extension UINavigationController {
-    static func makeDefault() -> UINavigationController {
-        let navigationController = UINavigationController()
+    static func makeDefault(root: UIViewController? = nil) -> UINavigationController {
+        var navigationController: UINavigationController
+        if let controller = root {
+            navigationController = UINavigationController(rootViewController: controller)
+        } else {
+            navigationController = UINavigationController()
+        }
         navigationController.navigationBar.isTranslucent = false
         navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController.navigationBar.shadowImage = UIImage()
