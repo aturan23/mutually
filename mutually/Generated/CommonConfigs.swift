@@ -12,6 +12,7 @@ import Foundation
 public enum CommonConfigs {
   private static let _document = PlistDocument(path: "CommonConfiguration.plist")
 
+  public static let agreement: String = _document["agreement"]
   public static let urlPath: String = _document["url_path"]
 }
 // swiftlint:enable identifier_name line_length type_body_length
