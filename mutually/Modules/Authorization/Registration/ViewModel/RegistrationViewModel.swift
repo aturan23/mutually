@@ -34,10 +34,7 @@ class RegistrationViewModel: RegistrationViewOutput, RegistrationModuleInput {
     
     func didTapButton(with form: RegistrationForm) {
         guard let phone = validate(form: form),
-              form.dataProcessingSelected,
-              form.termsSelected else {
-            return
-        }
+              form.dataProcessingSelected else { return }
         self.phone = phone
         dataService?.phone = phone
         router?.showSmsVerification(phone: self.phone, moduleOutput: self)
@@ -50,10 +47,10 @@ class RegistrationViewModel: RegistrationViewOutput, RegistrationModuleInput {
     private func validate(form: RegistrationForm) -> String? {
         guard let phoneText = form.phone,
               phoneText.count == Constants.phoneOnlyDigitsLength else {
-            view?.showError(phone: true, dataProcessing: !form.dataProcessingSelected, terms: !form.termsSelected)
+            view?.showError(phone: true, dataProcessing: !form.dataProcessingSelected)
             return nil
         }
-        view?.showError(phone: false, dataProcessing: !form.dataProcessingSelected, terms: !form.termsSelected)
+        view?.showError(phone: false, dataProcessing: !form.dataProcessingSelected)
         return phoneText
     }
 }

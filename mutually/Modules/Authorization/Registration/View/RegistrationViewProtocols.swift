@@ -8,7 +8,7 @@
 
 protocol RegistrationViewInput: class {
     func display(viewAdapter: RegistrationViewAdapter)
-    func showError(phone: Bool, dataProcessing: Bool, terms: Bool)
+    func showError(phone: Bool, dataProcessing: Bool)
     func startLoading()
     func stopLoading()
 }

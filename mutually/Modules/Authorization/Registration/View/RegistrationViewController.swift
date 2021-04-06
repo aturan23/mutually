@@ -36,14 +36,12 @@ class RegistrationViewController: BaseViewController, RegistrationViewInput, Key
     private let phoneFieldView = TextFieldViewFactory()
         .makeForPhone(title: "Номер телефона")
     private let dataProcessingCashbackView = CheckBoxView()
-    private let termsCheckboxView = CheckBoxView()
     private lazy var button: Button = {
         let button = Button.makePrimary(with: "Подтвердить телефон")
         button.touchUpInside = { [weak self] in
             var form = RegistrationForm()
             form.phone = self?.phoneFieldView.getText().onlyDigits
             form.dataProcessingSelected = self?.dataProcessingCashbackView.isChecked ?? false
-            form.termsSelected = self?.termsCheckboxView.isChecked ?? false
             self?.output?.didTapButton(with: form)
         }
         return button
@@ -78,10 +76,9 @@ class RegistrationViewController: BaseViewController, RegistrationViewInput, Key
 
     func display(viewAdapter: RegistrationViewAdapter) { }
     
-    func showError(phone: Bool, dataProcessing: Bool, terms: Bool) {
+    func showError(phone: Bool, dataProcessing: Bool) {
         if phone { phoneFieldView.shake() }
         if dataProcessing { dataProcessingCashbackView.shake() }
-        if terms { termsCheckboxView.shake() }
     }
     
     func startLoading() {
@@ -115,7 +112,6 @@ class RegistrationViewController: BaseViewController, RegistrationViewInput, Key
         titleLabel.numberOfLines = 0
         
         dataProcessingCashbackView.title = "Соглашение на обработку персональных данных"
-        termsCheckboxView.title = "Публичная оферта, условия использования сервиса"
 
         setupViewsHierarchy()
         setupConstraints()
@@ -126,7 +122,6 @@ class RegistrationViewController: BaseViewController, RegistrationViewInput, Key
          titleLabel,
          phoneFieldView,
          dataProcessingCashbackView,
-         termsCheckboxView,
          button].forEach(view.addSubview(_:))
     }
 
@@ -136,7 +131,7 @@ class RegistrationViewController: BaseViewController, RegistrationViewInput, Key
             $0.left.equalTo(LayoutGuidance.offsetSuperLarge)
             $0.bottom.equalTo(titleLabel.snp.top).offset(-LayoutGuidance.offsetSuperLarge)
         }
-        [titleLabel, phoneFieldView, dataProcessingCashbackView, termsCheckboxView, button].forEach {
+        [titleLabel, phoneFieldView, dataProcessingCashbackView, button].forEach {
             $0.snp.makeConstraints {
                 $0.left.right.equalToSuperview().inset(LayoutGuidance.offsetSuperLarge)
             }
@@ -148,9 +143,6 @@ class RegistrationViewController: BaseViewController, RegistrationViewInput, Key
             $0.bottom.equalTo(dataProcessingCashbackView.snp.top).offset(-LayoutGuidance.offsetSuperLarge)
         }
         dataProcessingCashbackView.snp.makeConstraints {
-            $0.bottom.equalTo(termsCheckboxView.snp.top).offset(-LayoutGuidance.offset)
-        }
-        termsCheckboxView.snp.makeConstraints {
             $0.bottom.equalTo(button.snp.top).offset(-LayoutGuidance.offsetSuperLarge)
         }
         button.snp.makeConstraints {

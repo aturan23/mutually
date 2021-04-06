@@ -8,5 +8,4 @@
 struct RegistrationForm {
     var phone: String? = nil
     var dataProcessingSelected = false
-    var termsSelected = false
 }
