@@ -16,4 +16,5 @@ protocol RegistrationViewInput: class {
 protocol RegistrationViewOutput {
     func didLoad()
     func didTapButton(with form: RegistrationForm)
+    func didTapLink()
 }

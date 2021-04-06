@@ -6,5 +6,9 @@
 //  Copyright © 2021 mutually. All rights reserved.
 //
 
+import Foundation
+
 /// Default ViewModel passed to View layer for displaying
-struct RegistrationViewAdapter { }
+struct RegistrationViewAdapter {
+    var dataProcessingAttributes: NSAttributedString
+}

@@ -35,7 +35,13 @@ class RegistrationViewController: BaseViewController, RegistrationViewInput, Key
         textColor: .black)
     private let phoneFieldView = TextFieldViewFactory()
         .makeForPhone(title: "Номер телефона")
-    private let dataProcessingCashbackView = CheckBoxView()
+    private lazy var dataProcessingCashbackView: CheckBoxView = {
+        let checkbox = CheckBoxView()
+        checkbox.textTap = { [weak self] in
+            self?.output?.didTapLink()
+        }
+        return checkbox
+    }()
     private lazy var button: Button = {
         let button = Button.makePrimary(with: "Подтвердить телефон")
         button.touchUpInside = { [weak self] in
@@ -74,7 +80,9 @@ class RegistrationViewController: BaseViewController, RegistrationViewInput, Key
     // MARK: - RegistrationViewInput
     // ------------------------------
 
-    func display(viewAdapter: RegistrationViewAdapter) { }
+    func display(viewAdapter: RegistrationViewAdapter) {
+        dataProcessingCashbackView.attributedTitle = viewAdapter.dataProcessingAttributes
+    }
     
     func showError(phone: Bool, dataProcessing: Bool) {
         if phone { phoneFieldView.shake() }
@@ -110,8 +118,6 @@ class RegistrationViewController: BaseViewController, RegistrationViewInput, Key
 
     private func setupViews() {
         titleLabel.numberOfLines = 0
-        
-        dataProcessingCashbackView.title = "Соглашение на обработку персональных данных"
 
         setupViewsHierarchy()
         setupConstraints()

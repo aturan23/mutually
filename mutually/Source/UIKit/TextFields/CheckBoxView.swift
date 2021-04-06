@@ -10,6 +10,7 @@ import UIKit
 class CheckBoxView: UIView, UITextViewDelegate {
     
     var checkBoxTap: ((Bool) -> Void)?
+    var textTap: (() -> Void)?
     
     var isChecked: Bool = false {
         didSet {
@@ -17,34 +18,23 @@ class CheckBoxView: UIView, UITextViewDelegate {
         }
     }
     var title: String? {
-        get { return titleTextView.text }
+        get { return titleTextLabel.text }
         set {
-            titleTextView.text = newValue
+            titleTextLabel.text = newValue
             updateCheckboxConstraintsIfNeeded()
         }
     }
     var attributedTitle: NSAttributedString? {
-        get { return titleTextView.attributedText }
+        get { return titleTextLabel.attributedText }
         set {
-            titleTextView.attributedText = newValue
+            titleTextLabel.attributedText = newValue
             updateCheckboxConstraintsIfNeeded()
         }
     }
     
-    private var titleTextView: UITextView = {
-        let textView = UITextView()
-        textView.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
-        textView.textColor = UIColor.black
-        textView.isEditable = false
-        textView.isSelectable = true
-        textView.backgroundColor = .clear
-        textView.isScrollEnabled = false
-        textView.linkTextAttributes = [
-            NSAttributedString.Key.foregroundColor: UIColor.black,
-            NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue
-        ]
-        return textView
-    }()
+    private var titleTextLabel = LabelFactory().make(
+        withStyle: .paragraphCaptionCaps,
+        textColor: .black)
     private let checkboxView = UIView()
     private let selectedImageView: UIImageView = {
         let imageView = UIImageView(image: Asset.iconCheckboxSelected.image)
@@ -62,9 +52,14 @@ class CheckBoxView: UIView, UITextViewDelegate {
     }
     
     private func configureViews() {
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapCheckbox))
-        checkboxView.addGestureRecognizer(gesture)
-        titleTextView.delegate = self
+        let textGesture = UITapGestureRecognizer(target: self, action: #selector(didTapText))
+        titleTextLabel.numberOfLines = 0
+        titleTextLabel.isUserInteractionEnabled = true
+        titleTextLabel.addGestureRecognizer(textGesture)
+        
+        
+        let checkBoxGesture = UITapGestureRecognizer(target: self, action: #selector(didTapCheckbox))
+        checkboxView.addGestureRecognizer(checkBoxGesture)
         
         selectedImageView.isHidden = !isChecked
         
@@ -72,7 +67,7 @@ class CheckBoxView: UIView, UITextViewDelegate {
         checkboxView.layer.borderWidth = 1
         checkboxView.layer.borderColor = Color.buttonPrimaryFillActive.cgColor
         
-        [selectedImageView, checkboxView, titleTextView].forEach(addSubview(_:))
+        [selectedImageView, checkboxView, titleTextLabel].forEach(addSubview(_:))
         
         checkboxView.snp.makeConstraints {
             $0.size.equalTo(32)
@@ -81,7 +76,7 @@ class CheckBoxView: UIView, UITextViewDelegate {
         selectedImageView.snp.makeConstraints {
             $0.center.equalTo(checkboxView)
         }
-        titleTextView.snp.makeConstraints {
+        titleTextLabel.snp.makeConstraints {
             $0.left.equalTo(checkboxView.snp.right).offset(LayoutGuidance.offset)
             $0.right.equalToSuperview()
             $0.centerY.equalTo(checkboxView)
@@ -89,7 +84,7 @@ class CheckBoxView: UIView, UITextViewDelegate {
     }
     
     private func updateCheckboxConstraintsIfNeeded() {
-        let size = titleTextView.systemLayoutSizeFitting(
+        let size = titleTextLabel.systemLayoutSizeFitting(
             CGSize(
                 width: self.frame.width - 30 - LayoutGuidance.offset,
                 height: UIView.layoutFittingCompressedSize.height))
@@ -98,7 +93,7 @@ class CheckBoxView: UIView, UITextViewDelegate {
                 $0.left.equalToSuperview()
                 $0.size.equalTo(32)
             }
-            titleTextView.snp.remakeConstraints {
+            titleTextLabel.snp.remakeConstraints {
                 $0.left.equalTo(checkboxView.snp.right).offset(LayoutGuidance.offset)
                 $0.right.equalToSuperview()
                 $0.centerY.equalTo(checkboxView)
@@ -112,7 +107,7 @@ class CheckBoxView: UIView, UITextViewDelegate {
         checkBoxTap?(isChecked)
     }
     
-    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
-        return true
+    @objc private func didTapText() {
+        textTap?()
     }
 }

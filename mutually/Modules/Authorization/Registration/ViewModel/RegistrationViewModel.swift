@@ -6,6 +6,9 @@
 //  Copyright © 2021 mutually. All rights reserved.
 //
 
+import Foundation
+import UIKit
+
 class RegistrationViewModel: RegistrationViewOutput, RegistrationModuleInput {
     
     private enum Constants {
@@ -29,7 +32,7 @@ class RegistrationViewModel: RegistrationViewOutput, RegistrationModuleInput {
     // ------------------------------
     
     func didLoad() {
-        view?.display(viewAdapter: RegistrationViewAdapter())
+        view?.display(viewAdapter: buildAdapter())
     }
     
     func didTapButton(with form: RegistrationForm) {
@@ -38,6 +41,10 @@ class RegistrationViewModel: RegistrationViewOutput, RegistrationModuleInput {
         self.phone = phone
         dataService?.phone = phone
         router?.showSmsVerification(phone: self.phone, moduleOutput: self)
+    }
+    
+    func didTapLink() {
+        
     }
     
     // ------------------------------
@@ -52,6 +59,18 @@ class RegistrationViewModel: RegistrationViewOutput, RegistrationModuleInput {
         }
         view?.showError(phone: false, dataProcessing: !form.dataProcessingSelected)
         return phoneText
+    }
+    
+    private func buildAdapter() -> RegistrationViewAdapter {
+        let text = "Соглашение на обработку персональных данных"
+        let textRange = NSRange(location: 0, length: text.count)
+        let attributedText = NSMutableAttributedString(
+            string: text,
+            attributes: [NSAttributedString.Key.font: UIFont.regular(size: 15)])
+        attributedText.addAttribute(.underlineStyle,
+                                    value: NSUnderlineStyle.single.rawValue,
+                                    range: textRange)
+        return .init(dataProcessingAttributes: attributedText)
     }
 }
 
