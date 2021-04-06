@@ -19,6 +19,7 @@
 		4883CA7DB618B59A6CDF3371 /* SignInModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3E2B41B3741A204C767A90 /* SignInModuleInput.swift */; };
 		4F094F2E261B4BA3000B7381 /* SlidingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F094F2D261B4BA3000B7381 /* SlidingView.swift */; };
 		4F094F31261BE21D000B7381 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F094F30261BE21D000B7381 /* GlobalConstants.swift */; };
+		4F094F4C261BF0E1000B7381 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F094F4B261BF0E1000B7381 /* WebViewController.swift */; };
 		4F2401B926197B3F00AA99BF /* loading_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F2401B826197B3F00AA99BF /* loading_animation.json */; };
 		4F2401BD26197C9F00AA99BF /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2401BC26197C9F00AA99BF /* LoadingView.swift */; };
 		4F6BFCA02615D29B00AE1DC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6BFC9F2615D29B00AE1DC3 /* AppDelegate.swift */; };
@@ -177,6 +178,7 @@
 		4E214F952358A442AB189ED8 /* MainTabsRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainTabsRouter.swift; sourceTree = "<group>"; };
 		4F094F2D261B4BA3000B7381 /* SlidingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingView.swift; sourceTree = "<group>"; };
 		4F094F30261BE21D000B7381 /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
+		4F094F4B261BF0E1000B7381 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		4F2401B826197B3F00AA99BF /* loading_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_animation.json; sourceTree = "<group>"; };
 		4F2401BC26197C9F00AA99BF /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4F6BFC9C2615D29B00AE1DC3 /* mutually.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mutually.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -635,6 +637,7 @@
 				4FF7C5C0261716D8007356C3 /* LayoutGuidance.swift */,
 				4FF7C60A26180A4C007356C3 /* DefaultNavigationController.swift */,
 				4FF7C60D26180A7B007356C3 /* ScreenUtils.swift */,
+				4F094F4B261BF0E1000B7381 /* WebViewController.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -1271,6 +1274,7 @@
 				4FF7C5AE26171015007356C3 /* UILabelExtension.swift in Sources */,
 				4FF7C5CF26171B60007356C3 /* UIActivityIndicatorViewExtension.swift in Sources */,
 				4FF7C5E426171D78007356C3 /* PrimaryButton.swift in Sources */,
+				4F094F4C261BF0E1000B7381 /* WebViewController.swift in Sources */,
 				4FF7C63D2618151F007356C3 /* SecondaryButton.swift in Sources */,
 				4883CA7DB618B59A6CDF3371 /* SignInModuleInput.swift in Sources */,
 				4FF7C60E26180A7B007356C3 /* ScreenUtils.swift in Sources */,

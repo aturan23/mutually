@@ -40,11 +40,11 @@ class RegistrationViewModel: RegistrationViewOutput, RegistrationModuleInput {
               form.dataProcessingSelected else { return }
         self.phone = phone
         dataService?.phone = phone
-        router?.showSmsVerification(phone: self.phone, moduleOutput: self)
+        router?.routeToSmsVerification(phone: self.phone, moduleOutput: self)
     }
     
     func didTapLink() {
-        
+        router?.routeToWebView()
     }
     
     // ------------------------------

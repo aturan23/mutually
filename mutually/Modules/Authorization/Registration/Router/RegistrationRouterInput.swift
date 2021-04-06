@@ -7,6 +7,7 @@
 //
 
 protocol RegistrationRouterInput {
-    func showSmsVerification(phone: String,
+    func routeToSmsVerification(phone: String,
                              moduleOutput: SmsVerificationModuleOutput)
+    func routeToWebView()
 }

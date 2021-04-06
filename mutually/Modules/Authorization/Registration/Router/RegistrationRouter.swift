@@ -20,7 +20,7 @@ class RegistrationRouter: RegistrationRouterInput {
     // MARK: - RegistrationRouterInput
     // ------------------------------
     
-    func showSmsVerification(phone: String, moduleOutput: SmsVerificationModuleOutput) {
+    func routeToSmsVerification(phone: String, moduleOutput: SmsVerificationModuleOutput) {
         guard
             let smsViewController = smsModuleAssembly?.assemble(
                 for: .registration,
@@ -32,5 +32,10 @@ class RegistrationRouter: RegistrationRouterInput {
                 return
         }
         viewController?.navigationController?.pushViewController(smsViewController, animated: true)
+    }
+    
+    func routeToWebView() {
+        let controller = WebViewController(urlLink: GlobalConstants.API.agreementUrl)
+        viewController?.navigationController?.present(controller, animated: true)
     }
 }
