@@ -24,6 +24,7 @@ internal enum Asset {
   internal static let cardShadow = ColorAsset(name: "card_shadow")
   internal static let iconCheckboxSelected = ImageAsset(name: "icon_checkbox_selected")
   internal static let iconClearTextfield = ImageAsset(name: "icon_clear_textfield")
+  internal static let iconClose = ImageAsset(name: "icon_close")
   internal static let logo = ImageAsset(name: "logo")
   internal static let passwordKeyboardBackspace = ImageAsset(name: "password_keyboard_backspace")
 }
