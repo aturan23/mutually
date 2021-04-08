@@ -32,7 +32,7 @@ final class AuthorizationService: AuthorizationServiceProtocol {
     func requestSMSCode(completion: @escaping (Result<Void, NetworkError>) -> ()) {
         guard let phone = dataService?.phone else {
             completion(.failure(.unknownError))
-                return
+            return
         }
         dataProvider.request(.getSmsPath(phone: phone)) { (result) in
             switch result {
@@ -51,7 +51,7 @@ final class AuthorizationService: AuthorizationServiceProtocol {
                         completion: @escaping (Result<Codable?, NetworkError>) -> ()) {
         guard let phone = dataService?.phone else {
             completion(.failure(.unknownError))
-                return
+            return
         }
         dataProvider.request(.auth(phone: phone, password: code)) { [weak self] (result: Result<TokenResponse, NetworkError>) in
             guard let self = self else { return }
