@@ -29,6 +29,7 @@
 		4F6BFCAF2615D29D00AE1DC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F6BFCAD2615D29D00AE1DC3 /* LaunchScreen.storyboard */; };
 		4FC25C9B261E9CED00704338 /* FloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC25C9A261E9CED00704338 /* FloatExtension.swift */; };
 		4FC25C9E261EA15E00704338 /* ScreenTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC25C9D261EA15E00704338 /* ScreenTypes.swift */; };
+		4FC25CA2261EA7B000704338 /* FirstScreenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC25CA1261EA7B000704338 /* FirstScreenResponse.swift */; };
 		4FF7C4C82616E195007356C3 /* RootUIControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C4C72616E195007356C3 /* RootUIControllerType.swift */; };
 		4FF7C4CD2616E24F007356C3 /* BaseModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C4CC2616E24F007356C3 /* BaseModuleAssembly.swift */; };
 		4FF7C4D12616E26C007356C3 /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C4D02616E26C007356C3 /* Inject.swift */; };
@@ -196,6 +197,7 @@
 		4F6BFCC42616194100AE1DC3 /* Kingfisher.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Kingfisher.xcframework; path = Carthage/Build/Kingfisher.xcframework; sourceTree = "<group>"; };
 		4FC25C9A261E9CED00704338 /* FloatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatExtension.swift; sourceTree = "<group>"; };
 		4FC25C9D261EA15E00704338 /* ScreenTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTypes.swift; sourceTree = "<group>"; };
+		4FC25CA1261EA7B000704338 /* FirstScreenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenResponse.swift; sourceTree = "<group>"; };
 		4FF7C4B62616DE67007356C3 /* FeatureToggle.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FeatureToggle.plist; sourceTree = "<group>"; };
 		4FF7C4B82616DE67007356C3 /* EnvConfiguration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = EnvConfiguration.plist; sourceTree = "<group>"; };
 		4FF7C4B92616DE67007356C3 /* CommonConfiguration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CommonConfiguration.plist; sourceTree = "<group>"; };
@@ -506,6 +508,14 @@
 			path = mutually;
 			sourceTree = "<group>";
 		};
+		4FC25CA0261EA7A600704338 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				4FC25CA1261EA7B000704338 /* FirstScreenResponse.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		4FF7C4B42616DE67007356C3 /* Configurations */ = {
 			isa = PBXGroup;
 			children = (
@@ -659,6 +669,7 @@
 		4FF7C4F52616E83A007356C3 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				4FC25CA0261EA7A600704338 /* Auth */,
 				4FF7C4F62616E844007356C3 /* RegisteredUserHandlerProtocol.swift */,
 				4FF7C4FA2616E8F4007356C3 /* RegisteredUserData.swift */,
 				4FF7C54E2616F1D7007356C3 /* RegistrationTokenWrapper.swift */,
@@ -1361,6 +1372,7 @@
 				E6FB7117F4816628DFDF32FE /* SmsVerificationViewModel.swift in Sources */,
 				F7FD8E24769EE4625823BF1B /* SmsVerificationRouterInput.swift in Sources */,
 				FBB8EEE8350D718EBE166F4E /* SmsVerificationRouter.swift in Sources */,
+				4FC25CA2261EA7B000704338 /* FirstScreenResponse.swift in Sources */,
 				FB38B32FFA272E56755BB8F3 /* SmsVerificationAssembly.swift in Sources */,
 				1BD10AE7371FEFDD1FA07364 /* SlidingRequestViewProtocols.swift in Sources */,
 				CF4BDD11CB4BD25D8DB76349 /* SlidingRequestViewController.swift in Sources */,
