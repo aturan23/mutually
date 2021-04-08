@@ -32,6 +32,8 @@
 		4FC25C9B261E9CED00704338 /* FloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC25C9A261E9CED00704338 /* FloatExtension.swift */; };
 		4FC25C9E261EA15E00704338 /* ScreenTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC25C9D261EA15E00704338 /* ScreenTypes.swift */; };
 		4FC25CA2261EA7B000704338 /* FirstScreenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC25CA1261EA7B000704338 /* FirstScreenResponse.swift */; };
+		4FC25CAA261EC3B300704338 /* ScrollableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC25CA9261EC3B300704338 /* ScrollableStackView.swift */; };
+		4FC25CAE261EC63A00704338 /* PhotoCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC25CAD261EC63A00704338 /* PhotoCollectionViewManager.swift */; };
 		4FF7C4C82616E195007356C3 /* RootUIControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C4C72616E195007356C3 /* RootUIControllerType.swift */; };
 		4FF7C4CD2616E24F007356C3 /* BaseModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C4CC2616E24F007356C3 /* BaseModuleAssembly.swift */; };
 		4FF7C4D12616E26C007356C3 /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C4D02616E26C007356C3 /* Inject.swift */; };
@@ -210,6 +212,8 @@
 		4FC25C9A261E9CED00704338 /* FloatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatExtension.swift; sourceTree = "<group>"; };
 		4FC25C9D261EA15E00704338 /* ScreenTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTypes.swift; sourceTree = "<group>"; };
 		4FC25CA1261EA7B000704338 /* FirstScreenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenResponse.swift; sourceTree = "<group>"; };
+		4FC25CA9261EC3B300704338 /* ScrollableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableStackView.swift; sourceTree = "<group>"; };
+		4FC25CAD261EC63A00704338 /* PhotoCollectionViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewManager.swift; sourceTree = "<group>"; };
 		4FF7C4B62616DE67007356C3 /* FeatureToggle.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FeatureToggle.plist; sourceTree = "<group>"; };
 		4FF7C4B82616DE67007356C3 /* EnvConfiguration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = EnvConfiguration.plist; sourceTree = "<group>"; };
 		4FF7C4B92616DE67007356C3 /* CommonConfiguration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CommonConfiguration.plist; sourceTree = "<group>"; };
@@ -372,7 +376,6 @@
 				D8B0B905AEED60BD424BC623 /* FullRequestRouterInput.swift */,
 				4880FA1DA8B1B9E05273C73D /* FullRequestRouter.swift */,
 			);
-			name = Router;
 			path = Router;
 			sourceTree = "<group>";
 		};
@@ -474,7 +477,6 @@
 				010153437843D53DEAA3AE4C /* Router */,
 				FE15AEB181BBF65EF05AA5B0 /* Assembly */,
 			);
-			name = FullRequest;
 			path = FullRequest;
 			sourceTree = "<group>";
 		};
@@ -554,6 +556,14 @@
 				4FC25CA1261EA7B000704338 /* FirstScreenResponse.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		4FC25CAC261EC61800704338 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				4FC25CAD261EC63A00704338 /* PhotoCollectionViewManager.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		4FF7C4B42616DE67007356C3 /* Configurations */ = {
@@ -695,6 +705,7 @@
 				4FF7C60A26180A4C007356C3 /* DefaultNavigationController.swift */,
 				4FF7C60D26180A7B007356C3 /* ScreenUtils.swift */,
 				4F094F4B261BF0E1000B7381 /* WebViewController.swift */,
+				4FC25CA9261EC3B300704338 /* ScrollableStackView.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -1079,7 +1090,6 @@
 				D407D91751952DC6400117D3 /* FullRequestModuleOutput.swift */,
 				5FD0B7C8F545A25BEEEDB2E2 /* FullRequestViewModel.swift */,
 			);
-			name = ViewModel;
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
@@ -1157,18 +1167,17 @@
 			children = (
 				1CA38995F0226004B4FBA8C2 /* FullRequestAssembly.swift */,
 			);
-			name = Assembly;
 			path = Assembly;
 			sourceTree = "<group>";
 		};
 		FEC0EE841A7B02DC089C4238 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4FC25CAC261EC61800704338 /* Subviews */,
 				AB93A91172E405EC4736CBCC /* FullRequestViewProtocols.swift */,
 				CA9C7D139DEBA6F255A2F6E8 /* FullRequestViewController.swift */,
 				1023D7C1806DFD8BAF06F66A /* FullRequestViewAdapter.swift */,
 			);
-			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -1349,6 +1358,7 @@
 				4FF7C5C826171AE5007356C3 /* Button.swift in Sources */,
 				4FF7C55B2616F5D2007356C3 /* NetworkLoggerPluginConfig.swift in Sources */,
 				0086D0D40306975B7513B945 /* RegistrationViewModel.swift in Sources */,
+				4FC25CAE261EC63A00704338 /* PhotoCollectionViewManager.swift in Sources */,
 				4FF7C5CC26171B2A007356C3 /* IndicatorProtocol.swift in Sources */,
 				5EDC8F1C4B0854BBBA9A2A4A /* RegistrationRouterInput.swift in Sources */,
 				4FF7C60826180499007356C3 /* UINavigationItemExtension.swift in Sources */,
@@ -1429,6 +1439,7 @@
 				4FF7C50B2616EB03007356C3 /* MutuallyNotification.swift in Sources */,
 				D629F72483A1DF6F5A87F44B /* SetupPasscodeModuleInput.swift in Sources */,
 				26CB7A7DCC37AEAF35BF9040 /* SetupPasscodeModuleOutput.swift in Sources */,
+				4FC25CAA261EC3B300704338 /* ScrollableStackView.swift in Sources */,
 				74BFC8E1AD40C864BFE49C47 /* SetupPasscodeViewModel.swift in Sources */,
 				0EB7F11B2D32EF190A440A3F /* SetupPasscodeRouterInput.swift in Sources */,
 				4FF7C5422616EFE6007356C3 /* JSONRequestParameter.swift in Sources */,
