@@ -20,7 +20,7 @@ extension BaseTargetType {
     }
     
     public var method: Moya.Method {
-        return .get
+        return .post
     }
     
     public var sampleData: Data {
