@@ -28,6 +28,7 @@
 		4F6BFCAC2615D29D00AE1DC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F6BFCAB2615D29D00AE1DC3 /* Assets.xcassets */; };
 		4F6BFCAF2615D29D00AE1DC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F6BFCAD2615D29D00AE1DC3 /* LaunchScreen.storyboard */; };
 		4FC25C9B261E9CED00704338 /* FloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC25C9A261E9CED00704338 /* FloatExtension.swift */; };
+		4FC25C9E261EA15E00704338 /* ScreenTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC25C9D261EA15E00704338 /* ScreenTypes.swift */; };
 		4FF7C4C82616E195007356C3 /* RootUIControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C4C72616E195007356C3 /* RootUIControllerType.swift */; };
 		4FF7C4CD2616E24F007356C3 /* BaseModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C4CC2616E24F007356C3 /* BaseModuleAssembly.swift */; };
 		4FF7C4D12616E26C007356C3 /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C4D02616E26C007356C3 /* Inject.swift */; };
@@ -194,6 +195,7 @@
 		4F6BFCC12616193B00AE1DC3 /* Swinject.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Swinject.xcframework; path = Carthage/Build/Swinject.xcframework; sourceTree = "<group>"; };
 		4F6BFCC42616194100AE1DC3 /* Kingfisher.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Kingfisher.xcframework; path = Carthage/Build/Kingfisher.xcframework; sourceTree = "<group>"; };
 		4FC25C9A261E9CED00704338 /* FloatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatExtension.swift; sourceTree = "<group>"; };
+		4FC25C9D261EA15E00704338 /* ScreenTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTypes.swift; sourceTree = "<group>"; };
 		4FF7C4B62616DE67007356C3 /* FeatureToggle.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FeatureToggle.plist; sourceTree = "<group>"; };
 		4FF7C4B82616DE67007356C3 /* EnvConfiguration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = EnvConfiguration.plist; sourceTree = "<group>"; };
 		4FF7C4B92616DE67007356C3 /* CommonConfiguration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CommonConfiguration.plist; sourceTree = "<group>"; };
@@ -662,6 +664,7 @@
 				4FF7C54E2616F1D7007356C3 /* RegistrationTokenWrapper.swift */,
 				4FF7C5722616F8F1007356C3 /* RegisteredUserHandler.swift */,
 				4F094F56261BFB50000B7381 /* TokenResponse.swift */,
+				4FC25C9D261EA15E00704338 /* ScreenTypes.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1283,6 +1286,7 @@
 				4FF7C5CF26171B60007356C3 /* UIActivityIndicatorViewExtension.swift in Sources */,
 				4FF7C5E426171D78007356C3 /* PrimaryButton.swift in Sources */,
 				4F094F4C261BF0E1000B7381 /* WebViewController.swift in Sources */,
+				4FC25C9E261EA15E00704338 /* ScreenTypes.swift in Sources */,
 				4FF7C63D2618151F007356C3 /* SecondaryButton.swift in Sources */,
 				4883CA7DB618B59A6CDF3371 /* SignInModuleInput.swift in Sources */,
 				4FF7C60E26180A7B007356C3 /* ScreenUtils.swift in Sources */,
