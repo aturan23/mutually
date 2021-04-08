@@ -41,17 +41,17 @@ class SetupPasscodeViewModel: SetupPasscodeViewOutput, SetupPasscodeModuleInput 
                 return
         }
         view?.startLoading()
-        authorizationService?.registerUser(password: passcode, completion: { [weak self] (result) in
-            self?.view?.stopLoading()
-            switch result {
-            case .success:
-                self?.moduleOutput?.setupPasscodeSucceeded(passcode: passcode)
-            case .failure(let error):
-                self?.alertPresenter?.showDefaultAlert(message: error.message, actionTitle: "OK", actionHandler: {
-                    self?.view?.showCreate()
-                })
-            }
-        })
+//        authorizationService?.registerUser(password: passcode, completion: { [weak self] (result) in
+//            self?.view?.stopLoading()
+//            switch result {
+//            case .success:
+//                self?.moduleOutput?.setupPasscodeSucceeded(passcode: passcode)
+//            case .failure(let error):
+//                self?.alertPresenter?.showDefaultAlert(message: error.message, actionTitle: "OK", actionHandler: {
+//                    self?.view?.showCreate()
+//                })
+//            }
+//        })
     }
     
     private func validateSimplicity(passcode: String) -> Bool {
