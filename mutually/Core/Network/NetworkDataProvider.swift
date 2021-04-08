@@ -20,7 +20,7 @@ final class NetworkDataProvider<Target: TargetType> {
         dataProvider = MoyaProvider(stubClosure: stubClosure, plugins: plugins)
     }
     
-    func request<T: Codable>(_ target: Target, reason: Bool = true, completion: @escaping (Result<T, NetworkError>) -> Void) {
+    func request<T: Codable>(_ target: Target, completion: @escaping (Result<T, NetworkError>) -> Void) {
         guard networkReachibilityChecker?.isReachable == true else {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 NotificationCenter.default.post(name: MutuallyNotification.networkFailed.name, object: nil)
@@ -32,7 +32,7 @@ final class NetworkDataProvider<Target: TargetType> {
             guard let self = self else { return }
             switch result {
             case .success(let response):
-                completion(self.decode(response, reason: reason))
+                completion(self.decode(response))
             case .failure(let error):
                 if let reason = error.failureReason {
                     completion(.failure(.serverError(reason: reason)))
@@ -43,12 +43,37 @@ final class NetworkDataProvider<Target: TargetType> {
         }
     }
     
-    private func decode<T: Codable>(_ response: Response, reason: Bool) -> Result<T, NetworkError> {
+    func request(_ target: Target, completion: @escaping (Result<NetworkResponse, NetworkError>) -> Void) {
+        guard networkReachibilityChecker?.isReachable == true else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                NotificationCenter.default.post(name: MutuallyNotification.networkFailed.name, object: nil)
+                completion(.failure(.networkFail))
+            }
+            return
+        }
+        dataProvider.request(target) { (result) in
+            switch result {
+            case .success(let response):
+                if let netResponse = try? response.map(NetworkResponse.self) {
+                    completion(.success(netResponse))
+                    return
+                }
+                completion(.failure(.incorrectJSON))
+            case .failure(let error):
+                if let reason = error.failureReason {
+                    completion(.failure(.serverError(reason: reason)))
+                } else {
+                    completion(.failure(.unknownError))
+                }
+            }
+        }
+    }
+    
+    private func decode<T: Codable>(_ response: Response) -> Result<T, NetworkError> {
         if let data = String(decoding: response.data, as: UTF8.self).data(using: .utf8),
            let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []),
            let _ = jsonObject as? JSONStandard,
            let result = try? response.map(NetworkResponse.self) {
-            
             let response = try? response.map(T.self)
             if let response = response, result.result {
                 return .success(response)
