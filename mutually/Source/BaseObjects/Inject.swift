@@ -104,6 +104,9 @@ extension Container {
         register(SlidingRequestModuleAssembly.self) { _ in
             SlidingRequestModuleAssembly(injection: self)
         }
+        register(FullRequestModuleAssembly.self) { _ in
+            FullRequestModuleAssembly(injection: self)
+        }
         return self
     }
     
