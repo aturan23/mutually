@@ -54,16 +54,16 @@ class SlidingRequestViewController: BaseViewController, SlidingRequestViewInput 
         title = "Заявка"
         titleLabel.numberOfLines = 0
         
-        summSliderView.paragraph = "Сумма (до 2 млн.)"
+        summSliderView.paragraph = "Сумма (до 1 млн.)"
         summSliderView.suffix = "₽"
-        summSliderView.range = (min: 0, max: 2000000)
-        summSliderView.step = 100000
-        summSliderView.value = 1000000
+        summSliderView.range = (min: 100000, max: 1000000)
+        summSliderView.step = 10000
+        summSliderView.value = 500000
         
-        summSliderView.paragraph = "Срок (до года)"
-        summSliderView.suffix = "мес."
-        summSliderView.range = (min: 1, max: 12)
-        summSliderView.value = 6
+        timeSliderView.paragraph = "Срок (до 4 лет)"
+        timeSliderView.suffix = "мес."
+        timeSliderView.range = (min: 12, max: 48)
+        timeSliderView.value = 24
 
         setupViewsHierarchy()
         setupConstraints()
