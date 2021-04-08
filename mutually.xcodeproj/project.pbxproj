@@ -20,6 +20,7 @@
 		4F094F2E261B4BA3000B7381 /* SlidingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F094F2D261B4BA3000B7381 /* SlidingView.swift */; };
 		4F094F31261BE21D000B7381 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F094F30261BE21D000B7381 /* GlobalConstants.swift */; };
 		4F094F4C261BF0E1000B7381 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F094F4B261BF0E1000B7381 /* WebViewController.swift */; };
+		4F094F57261BFB50000B7381 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F094F56261BFB50000B7381 /* TokenResponse.swift */; };
 		4F2401B926197B3F00AA99BF /* loading_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F2401B826197B3F00AA99BF /* loading_animation.json */; };
 		4F2401BD26197C9F00AA99BF /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2401BC26197C9F00AA99BF /* LoadingView.swift */; };
 		4F6BFCA02615D29B00AE1DC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6BFC9F2615D29B00AE1DC3 /* AppDelegate.swift */; };
@@ -179,6 +180,7 @@
 		4F094F2D261B4BA3000B7381 /* SlidingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingView.swift; sourceTree = "<group>"; };
 		4F094F30261BE21D000B7381 /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		4F094F4B261BF0E1000B7381 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		4F094F56261BFB50000B7381 /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		4F2401B826197B3F00AA99BF /* loading_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_animation.json; sourceTree = "<group>"; };
 		4F2401BC26197C9F00AA99BF /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4F6BFC9C2615D29B00AE1DC3 /* mutually.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mutually.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -657,6 +659,7 @@
 				4FF7C4FA2616E8F4007356C3 /* RegisteredUserData.swift */,
 				4FF7C54E2616F1D7007356C3 /* RegistrationTokenWrapper.swift */,
 				4FF7C5722616F8F1007356C3 /* RegisteredUserHandler.swift */,
+				4F094F56261BFB50000B7381 /* TokenResponse.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1233,6 +1236,7 @@
 				4FF7C4FB2616E8F4007356C3 /* RegisteredUserData.swift in Sources */,
 				4F6BFCAA2615D29B00AE1DC3 /* mutually.xcdatamodeld in Sources */,
 				4FF7C4D92616E328007356C3 /* RegistrationCoordinator.swift in Sources */,
+				4F094F57261BFB50000B7381 /* TokenResponse.swift in Sources */,
 				4FF7C5F126173CAB007356C3 /* StringExtension.swift in Sources */,
 				4FF7C5BB261714E9007356C3 /* TextFieldView.swift in Sources */,
 				5FB5CAAF3696C42BC5994941 /* RegistrationViewProtocols.swift in Sources */,
