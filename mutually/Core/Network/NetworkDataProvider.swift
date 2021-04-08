@@ -79,9 +79,9 @@ final class NetworkDataProvider<Target: TargetType> {
                 return .success(response)
             }
             var networkError: NetworkError = .unknownError
-//            if let response = try? response.map(NetworkResponse<String>.self) {
-//                networkError = response.reason == nil ? .unknownError : .serverError(reason: response.reason!)
-//            }
+            if let response = result.code {
+                networkError = .serverError(reason: response)
+            }
             return .failure(networkError)
         } else {
             return .failure(.incorrectJSON)
