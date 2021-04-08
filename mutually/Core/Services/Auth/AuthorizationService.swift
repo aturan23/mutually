@@ -48,7 +48,7 @@ final class AuthorizationService: AuthorizationServiceProtocol {
     }
     
     func confirmSMSCode(code: String,
-                        completion: @escaping (Result<JSONStandard?, NetworkError>) -> ()) {
+                        completion: @escaping (Result<Codable?, NetworkError>) -> ()) {
         guard let phone = dataService?.phone else {
             completion(.failure(.unknownError))
                 return
@@ -61,12 +61,13 @@ final class AuthorizationService: AuthorizationServiceProtocol {
                 let registeredUserData = RegisteredUserData(phone: phone, shouldAutoLogin: true)
                 self.registeredUserHandler?.set(userData: registeredUserData)
                 self.sessionTracker?.didLogin()
+                self.getFirstScreen(completion: completion)
             case .failure(let error): completion(.failure(error))
             }
         }
     }
     
-    private func getFirstScreen(completion: @escaping (Result<FirstScreenResponse, NetworkError>) -> ()) {
+    private func getFirstScreen(completion: @escaping (Result<Codable?, NetworkError>) -> ()) {
         guard let token = dataService?.token else {
             completion(.failure(.unknownError))
                 return
