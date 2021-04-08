@@ -79,7 +79,7 @@ class RegistrationViewModel: RegistrationViewOutput, RegistrationModuleInput {
 // ------------------------------
 
 extension RegistrationViewModel: SmsVerificationModuleOutput {
-    func smsVerificationSucceeded(with data: [String : Any]?) {
+    func smsVerificationSucceeded(with data: Codable?) {
         moduleOutput?.moveToSetupPasscode()
     }
 }

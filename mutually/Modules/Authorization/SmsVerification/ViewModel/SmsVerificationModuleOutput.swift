@@ -7,7 +7,7 @@
 //
 
 protocol SmsVerificationModuleOutput: class {
-    func smsVerificationSucceeded(with data: JSONStandard?)
+    func smsVerificationSucceeded(with data: Codable?)
     func smsVerificationDidCancel()
 }
 
