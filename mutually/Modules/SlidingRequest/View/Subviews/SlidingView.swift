@@ -21,8 +21,8 @@ class SlidingView: UIView {
         get {slidingView.value }
         set {
             let stepped = round(newValue / step) * step
-            slidingView.value = stepped
-            titleLabel.text = "\(stepped.description)\(suffix.isEmpty ? "" : " \(suffix)")"
+            slidingView.setValue(stepped, animated: false)
+            titleLabel.text = "\(stepped.wholeNumber)\(suffix.isEmpty ? "" : " \(suffix)")"
         }
     }
     var range: (min: Float, max: Float) = (min: 0, max: 100) {
@@ -68,6 +68,8 @@ class SlidingView: UIView {
     
     private func setupViews() {
         slidingView.addTarget(self, action: #selector(sliderValueChanged(sender:)), for: .valueChanged)
+        slidingView.thumbTintColor = Color.buttonPrimaryFillRegular
+        slidingView.tintColor = Color.buttonPrimaryFillRegular
         
         setupViewHierarchy()
         setupConstraints()
