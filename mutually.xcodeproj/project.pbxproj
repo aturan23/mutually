@@ -27,6 +27,7 @@
 		4F6BFCAA2615D29B00AE1DC3 /* mutually.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F6BFCA82615D29B00AE1DC3 /* mutually.xcdatamodeld */; };
 		4F6BFCAC2615D29D00AE1DC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F6BFCAB2615D29D00AE1DC3 /* Assets.xcassets */; };
 		4F6BFCAF2615D29D00AE1DC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F6BFCAD2615D29D00AE1DC3 /* LaunchScreen.storyboard */; };
+		4FC25C9B261E9CED00704338 /* FloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC25C9A261E9CED00704338 /* FloatExtension.swift */; };
 		4FF7C4C82616E195007356C3 /* RootUIControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C4C72616E195007356C3 /* RootUIControllerType.swift */; };
 		4FF7C4CD2616E24F007356C3 /* BaseModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C4CC2616E24F007356C3 /* BaseModuleAssembly.swift */; };
 		4FF7C4D12616E26C007356C3 /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C4D02616E26C007356C3 /* Inject.swift */; };
@@ -192,6 +193,7 @@
 		4F6BFCBD2616193500AE1DC3 /* SnapKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SnapKit.xcframework; path = Carthage/Build/SnapKit.xcframework; sourceTree = "<group>"; };
 		4F6BFCC12616193B00AE1DC3 /* Swinject.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Swinject.xcframework; path = Carthage/Build/Swinject.xcframework; sourceTree = "<group>"; };
 		4F6BFCC42616194100AE1DC3 /* Kingfisher.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Kingfisher.xcframework; path = Carthage/Build/Kingfisher.xcframework; sourceTree = "<group>"; };
+		4FC25C9A261E9CED00704338 /* FloatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatExtension.swift; sourceTree = "<group>"; };
 		4FF7C4B62616DE67007356C3 /* FeatureToggle.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FeatureToggle.plist; sourceTree = "<group>"; };
 		4FF7C4B82616DE67007356C3 /* EnvConfiguration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = EnvConfiguration.plist; sourceTree = "<group>"; };
 		4FF7C4B92616DE67007356C3 /* CommonConfiguration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CommonConfiguration.plist; sourceTree = "<group>"; };
@@ -686,6 +688,7 @@
 				4FF7C50E2616EB68007356C3 /* ContainerExtension.swift */,
 				4FF7C51B2616EC42007356C3 /* TimeIntervalExtension.swift */,
 				4FF7C5F026173CAB007356C3 /* StringExtension.swift */,
+				4FC25C9A261E9CED00704338 /* FloatExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1222,6 +1225,7 @@
 			files = (
 				4FF7C4C82616E195007356C3 /* RootUIControllerType.swift in Sources */,
 				4FF7C5D226171BF7007356C3 /* Observer.swift in Sources */,
+				4FC25C9B261E9CED00704338 /* FloatExtension.swift in Sources */,
 				4FF7C4D12616E26C007356C3 /* Inject.swift in Sources */,
 				4FF7C50F2616EB68007356C3 /* ContainerExtension.swift in Sources */,
 				4FF7C4D52616E310007356C3 /* RegistrationCoordinating.swift in Sources */,
