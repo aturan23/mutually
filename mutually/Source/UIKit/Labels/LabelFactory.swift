@@ -59,40 +59,4 @@ final class LabelFactory {
         label.setAttribute(key: .paragraphStyle, value: paragraphStyle)
         return label
     }
-    
-    func makeCardWidgetLabel(with font: UIFont) -> UILabel {
-        let label = UILabel()
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .left
-        label.attributedText = NSAttributedString(
-            string: " ",
-            attributes: [.font: font,
-                         .foregroundColor: Color.textHighContrast,
-                         .kern: 0.3,
-                         .paragraphStyle: paragraphStyle]
-        )
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.5
-        return label
-    }
-    
-    func makeCarouselWidgetCellLabel() -> UILabel {
-        let textStyle = TextStyle.paragraphCaption
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.5
-        label.textAlignment = .center
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .center
-        paragraphStyle.lineBreakMode = .byTruncatingTail
-        label.attributedText = NSAttributedString(
-            string: " ",
-            attributes: [.font: textStyle.font,
-                         .foregroundColor: Color.textHighContrast,
-                         .kern: textStyle.kern,
-                         .paragraphStyle: paragraphStyle]
-        )
-        return label
-    }
 }
