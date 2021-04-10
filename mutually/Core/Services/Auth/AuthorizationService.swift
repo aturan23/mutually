@@ -53,7 +53,7 @@ final class AuthorizationService: AuthorizationServiceProtocol {
             completion(.failure(.unknownError))
             return
         }
-        dataProvider.request(.auth(phone: phone, password: code)) { [weak self] (result: Result<TokenResponse, NetworkError>) in
+        dataProvider.request(.auth(phone: phone, password: code)) { [weak self] (result: ResponseResult<TokenResponse>) in
             guard let self = self else { return }
             switch result {
             case .success(let response):
@@ -72,7 +72,7 @@ final class AuthorizationService: AuthorizationServiceProtocol {
             completion(.failure(.unknownError))
                 return
         }
-        dataProvider.request(.firstScreen(token: token)) { (result: Result<FirstScreenResponse, NetworkError>) in
+        dataProvider.request(.firstScreen(token: token)) { (result: ResponseResult<FirstScreenResponse>) in
             switch result {
             case .success(let response): completion(.success(response))
             case .failure(let error): completion(.failure(error))

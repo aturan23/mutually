@@ -8,6 +8,7 @@
 import Foundation
 
 typealias ResponseCompletion<T> = (Result<T, NetworkError>) -> Void
+typealias ResponseResult<T: Codable> = Result<T, NetworkError>
 
 enum GlobalConstants {
     
