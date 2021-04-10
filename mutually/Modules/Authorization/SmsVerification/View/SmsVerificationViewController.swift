@@ -38,7 +38,7 @@ class SmsVerificationViewController: BaseViewController, SmsVerificationViewInpu
         return button
     }()
     private lazy var codeInputView: SmsInputView = {
-        let view = SmsInputView()
+        let view = SmsInputView(codeLength: 5)
         view.output = self
         
         let tapGesture = UITapGestureRecognizer(
