@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias ResponseCompletion<T> = (Result<T, NetworkError>) -> Void
+
 enum GlobalConstants {
     
     enum API {

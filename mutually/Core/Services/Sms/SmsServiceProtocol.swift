@@ -6,7 +6,7 @@
 //
 
 protocol SmsServiceProtocol: class {
-    func requestSMSCode(completion: @escaping (Result<Void, NetworkError>) -> ())
+    func requestSMSCode(completion: @escaping ResponseCompletion<Void>)
     func confirmSMSCode(code: String,
-                        completion: @escaping (Result<Codable?, NetworkError>) -> ())
+                        completion: @escaping ResponseCompletion<Codable?>)
 }

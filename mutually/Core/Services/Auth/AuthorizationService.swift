@@ -29,7 +29,7 @@ final class AuthorizationService: AuthorizationServiceProtocol {
     
     // MARK: - AuthorizationServiceProtocol
     
-    func requestSMSCode(completion: @escaping (Result<Void, NetworkError>) -> ()) {
+    func requestSMSCode(completion: @escaping ResponseCompletion<Void>) {
         guard let phone = dataService?.phone else {
             completion(.failure(.unknownError))
             return
@@ -48,7 +48,7 @@ final class AuthorizationService: AuthorizationServiceProtocol {
     }
     
     func confirmSMSCode(code: String,
-                        completion: @escaping (Result<Codable?, NetworkError>) -> ()) {
+                        completion: @escaping ResponseCompletion<Codable?>) {
         guard let phone = dataService?.phone else {
             completion(.failure(.unknownError))
             return
@@ -67,7 +67,7 @@ final class AuthorizationService: AuthorizationServiceProtocol {
         }
     }
     
-    private func getFirstScreen(completion: @escaping (Result<Codable?, NetworkError>) -> ()) {
+    private func getFirstScreen(completion: @escaping ResponseCompletion<Codable?>) {
         guard let token = dataService?.token else {
             completion(.failure(.unknownError))
                 return
