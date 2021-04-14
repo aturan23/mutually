@@ -49,6 +49,7 @@ extension Container {
         register(AuthorizationTokenPlugin.self) { (res: Resolver) in
             AuthorizationTokenPlugin(registeredUserHandler: res.resolve(RegisteredUserHandlerProtocol.self))
         }
+        autoregister(DefaultPlatformPlugin.self, initializer: DefaultPlatformPlugin.init)
         return self
     }
     
@@ -67,7 +68,8 @@ extension Container {
         func resolveDefaultPlugins(resolver: Resolver) -> [PluginType] {
             let optionalPlugins: [PluginType?] = [
                 resolver.resolve(NetworkLoggerPlugin.self),
-                resolver.resolve(AuthorizationTokenPlugin.self)]
+                resolver.resolve(AuthorizationTokenPlugin.self),
+                resolver.resolve(DefaultPlatformPlugin.self)]
             return optionalPlugins.compactMap { $0 }
         }
         

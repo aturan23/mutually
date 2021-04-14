@@ -18,8 +18,7 @@ extension InboxTarget: BaseTargetType {
             return .requestParameters(
                 parameters: [JSONRequestParameter.action.key: "new_inbox",
                              JSONRequestParameter.summ.key: summ,
-                             JSONRequestParameter.term.key: term,
-                             "platform": "iOS"],
+                             JSONRequestParameter.term.key: term],
                 encoding: URLEncoding.default)
         }
     }

@@ -29,6 +29,7 @@
 		4F1F1BCA2626ACA300E2E4B5 /* InboxTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F1BC92626ACA300E2E4B5 /* InboxTarget.swift */; };
 		4F1F1BCD2626C6BF00E2E4B5 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F1BCC2626C6BF00E2E4B5 /* Loadable.swift */; };
 		4F1F1BD12626CEA900E2E4B5 /* AuthorizationTokenPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F1BD02626CEA900E2E4B5 /* AuthorizationTokenPlugin.swift */; };
+		4F1F1BFE2626D83600E2E4B5 /* DefaultPlatformPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F1BFD2626D83600E2E4B5 /* DefaultPlatformPlugin.swift */; };
 		4F2401B926197B3F00AA99BF /* loading_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F2401B826197B3F00AA99BF /* loading_animation.json */; };
 		4F2401BD26197C9F00AA99BF /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2401BC26197C9F00AA99BF /* LoadingView.swift */; };
 		4F6BFCA02615D29B00AE1DC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6BFC9F2615D29B00AE1DC3 /* AppDelegate.swift */; };
@@ -212,6 +213,7 @@
 		4F1F1BC92626ACA300E2E4B5 /* InboxTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxTarget.swift; sourceTree = "<group>"; };
 		4F1F1BCC2626C6BF00E2E4B5 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		4F1F1BD02626CEA900E2E4B5 /* AuthorizationTokenPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationTokenPlugin.swift; sourceTree = "<group>"; };
+		4F1F1BFD2626D83600E2E4B5 /* DefaultPlatformPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPlatformPlugin.swift; sourceTree = "<group>"; };
 		4F2401B826197B3F00AA99BF /* loading_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_animation.json; sourceTree = "<group>"; };
 		4F2401BC26197C9F00AA99BF /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4F6BFC9C2615D29B00AE1DC3 /* mutually.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mutually.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -864,6 +866,7 @@
 			isa = PBXGroup;
 			children = (
 				4F1F1BD02626CEA900E2E4B5 /* AuthorizationTokenPlugin.swift */,
+				4F1F1BFD2626D83600E2E4B5 /* DefaultPlatformPlugin.swift */,
 			);
 			path = Plugins;
 			sourceTree = "<group>";
@@ -1417,6 +1420,7 @@
 				4FF7C63D2618151F007356C3 /* SecondaryButton.swift in Sources */,
 				4F1F1BD12626CEA900E2E4B5 /* AuthorizationTokenPlugin.swift in Sources */,
 				4883CA7DB618B59A6CDF3371 /* SignInModuleInput.swift in Sources */,
+				4F1F1BFE2626D83600E2E4B5 /* DefaultPlatformPlugin.swift in Sources */,
 				4F1F1BC72626ABDC00E2E4B5 /* InboxService.swift in Sources */,
 				4FF7C60E26180A7B007356C3 /* ScreenUtils.swift in Sources */,
 				249B4AD4B276956BA8875647 /* SignInModuleOutput.swift in Sources */,

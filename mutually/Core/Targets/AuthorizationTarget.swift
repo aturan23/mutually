@@ -29,20 +29,17 @@ extension AuthorizationTarget: BaseTargetType {
         case .getSmsPath(let phone):
             return .requestParameters(
                 parameters: [JSONRequestParameter.action.key: "get_sms_pass",
-                             JSONRequestParameter.login.key: phone,
-                             "platform": "iOS"],
+                             JSONRequestParameter.login.key: phone],
                 encoding: URLEncoding.default)
         case let .auth(phone, password):
             return .requestParameters(
                 parameters: [JSONRequestParameter.action.key: "auth",
                              JSONRequestParameter.login.key: phone,
-                             JSONRequestParameter.password.key: password,
-                             "platform": "iOS"],
+                             JSONRequestParameter.password.key: password],
                 encoding: URLEncoding.default)
         case .firstScreen:
             return .requestParameters(
-                parameters: [JSONRequestParameter.action.key: "getFirstScreen",
-                             "platform": "iOS"],
+                parameters: [JSONRequestParameter.action.key: "getFirstScreen"],
                 encoding: URLEncoding.default)
         }
     }
