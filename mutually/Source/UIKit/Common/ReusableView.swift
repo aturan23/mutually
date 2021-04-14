@@ -18,9 +18,10 @@ extension ReusableView where Self: UIView {
     }
 }
 
-extension UICollectionViewCell: ReusableView { }
+//extension UICollectionViewCell: ReusableView { }
 extension UITableViewCell: ReusableView { }
 extension UITableViewHeaderFooterView: ReusableView { }
+extension UICollectionReusableView: ReusableView { }
 
 extension UITableView {
     func register<T: UITableViewCell>(_: T.Type) {
@@ -53,8 +54,19 @@ extension UICollectionView {
         register(T.self, forCellWithReuseIdentifier: T.defaultReuseIdentifier)
     }
     
+    func register<T: UICollectionReusableView>(_: T.Type) {
+        register(T.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: T.defaultReuseIdentifier)
+    }
+    
     func dequeReusableCell<T: UICollectionViewCell>(for indexPath: IndexPath) -> T {
         guard let cell = dequeueReusableCell(withReuseIdentifier: T.defaultReuseIdentifier, for: indexPath) as? T else {
+            fatalError("Could not dequeue cell with identifier: \(T.defaultReuseIdentifier)")
+        }
+        return cell
+    }
+    
+    func dequeReusableHeaderView<T: UICollectionReusableView>(for indexPath: IndexPath) -> T {
+        guard let cell = dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: T.defaultReuseIdentifier, for: indexPath) as? T else {
             fatalError("Could not dequeue cell with identifier: \(T.defaultReuseIdentifier)")
         }
         return cell
