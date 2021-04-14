@@ -8,5 +8,5 @@
 struct FirstScreenResponse: Codable {
     let screen: ScreenTypes
     let text: String?
-    let full: Bool
+    let full: Bool?
 }
