@@ -6,4 +6,6 @@
 //  Copyright © 2021 mutually. All rights reserved.
 //
 
-protocol SlidingRequestModuleOutput: class { }
+protocol SlidingRequestModuleOutput: class {
+    func moveToPage(screen: FirstScreenResponse?)
+}

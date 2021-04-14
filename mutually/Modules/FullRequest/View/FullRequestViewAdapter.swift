@@ -7,4 +7,11 @@
 //
 
 /// Default ViewModel passed to View layer for displaying
-struct FullRequestViewAdapter { }
+struct FullRequestViewAdapter {
+    let sections: [FullRequestCollectionAdapter]
+}
+
+struct FullRequestCollectionAdapter {
+    let title: String
+    let items: [Photo]
+}

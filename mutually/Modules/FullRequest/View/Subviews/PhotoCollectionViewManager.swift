@@ -9,7 +9,7 @@ import UIKit
 
 class PhotoCollectionViewManager: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    private var rows: [Photo] = []
+    private var sections: [FullRequestCollectionAdapter] = []
     private weak var collectionView: UICollectionView?
     
     init(collectionView: UICollectionView) {
@@ -21,17 +21,21 @@ class PhotoCollectionViewManager: NSObject, UICollectionViewDataSource, UICollec
         collectionView.register(CollectionSectionHeader.self)
     }
     
-    func display(rows: [Photo]) {
-        self.rows = rows
+    func display(sections: [FullRequestCollectionAdapter]) {
+        self.sections = sections
     }
     
     // UICollectionViewDataSource
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        sections.count
+    }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             let header: CollectionSectionHeader = collectionView.dequeReusableHeaderView(for: indexPath)
-            header.label.text = "Документы"
+            header.label.text = sections[indexPath.section].title
             return header
         default:
             return UICollectionReusableView()
@@ -39,12 +43,12 @@ class PhotoCollectionViewManager: NSObject, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        rows.count
+        sections[section].items.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: PhotoCollectionViewCell = collectionView.dequeReusableCell(for: indexPath)
-        cell.update(with: rows[indexPath.row])
+        cell.update(with: sections[indexPath.section].items[indexPath.row])
         return cell
     }
 }

@@ -8,7 +8,9 @@
 
 /// Adapter struct for FullRequest initial configuration 
 /// through FullRequestModuleInput
-struct FullRequestConfigData { }
+struct FullRequestConfigData {
+    let photos: [Photo]?
+}
 
 /// Protocol with public methods to configure FullRequest 
 /// from its parent module (usually implemented by this module's ViewModel)

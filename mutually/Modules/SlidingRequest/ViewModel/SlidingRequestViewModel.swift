@@ -31,7 +31,7 @@ class SlidingRequestViewModel: SlidingRequestViewOutput {
             self?.view?.stopLoading()
             switch result {
             case .success(let firstscreen):
-                print(firstscreen)
+                self?.moduleOutput?.moveToPage(screen: firstscreen)
             case .failure(let error):
                 self?.router?.showAlert(message: error.message)
             }
