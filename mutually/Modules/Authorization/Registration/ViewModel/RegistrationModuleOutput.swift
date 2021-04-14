@@ -8,5 +8,5 @@
 
 protocol RegistrationModuleOutput: class {
     func checkDidFindAlreadyRegistered(for phone: String)
-    func moveToSetupPasscode()
+    func moveToPage(screen: FirstScreenResponse?)
 }

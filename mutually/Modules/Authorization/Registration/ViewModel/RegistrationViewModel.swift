@@ -80,6 +80,6 @@ class RegistrationViewModel: RegistrationViewOutput, RegistrationModuleInput {
 
 extension RegistrationViewModel: SmsVerificationModuleOutput {
     func smsVerificationSucceeded(with data: Codable?) {
-        moduleOutput?.moveToSetupPasscode()
+        moduleOutput?.moveToPage(screen: data as? FirstScreenResponse)
     }
 }
