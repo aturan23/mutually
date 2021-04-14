@@ -188,7 +188,7 @@ open class Button: UIButton {
      - Parameter userInteraction: Enable the user interaction while displaying the loader.
      - Parameter completion:      The completion handler.
      */
-    open func showLoader(userInteraction: Bool, _ completion: (() -> Void)? = nil) {
+    open func showLoader(userInteraction: Bool = false, _ completion: (() -> Void)? = nil) {
         showLoader([titleLabel, imageView], userInteraction: userInteraction, completion)
     }
     

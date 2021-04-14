@@ -21,12 +21,12 @@ protocol AlertShowingRouter {
 }
 
 extension AlertShowingRouter {
-    func showAlert(title: String? = nil, message: String?, completion: BaseErrorCompletion? = nil) {
+    func showAlert(title: String? = "", message: String?, completion: BaseErrorCompletion? = nil) {
         let alert = alertFactory.makeDefault(title: title, message: message, actionHandler: completion)
         viewController?.present(alert, animated: true)
     }
     func showAlert(
-        title: String? = nil,
+        title: String? = "",
         message: String?,
         style: UIAlertController.Style = .alert,
         actions: [AlertAction] = []) {
