@@ -62,8 +62,6 @@ final class PhotoCollectionViewCell: UICollectionViewCell {
         iconImageView.tintColor = .gray
         iconImageView.contentMode = .scaleAspectFit
         
-        titleLabel.numberOfLines = 1
-        
         setupViewsHierarchy()
         setupConstraints()
     }
