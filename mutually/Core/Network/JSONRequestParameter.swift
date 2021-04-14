@@ -10,6 +10,8 @@ enum JSONRequestParameter: String {
     case login
     case password
     case token
+    case summ
+    case term
     
     var key: String {
         return rawValue
