@@ -69,6 +69,15 @@ extension Container {
             return optionalPlugins.compactMap { $0 }
         }
         
+        register(InboxServiceProtocol.self, factory: { (res: Resolver) in
+            let inboxProvider = NetworkDataProvider<InboxTarget>(
+                networkReachibilityChecker: res.resolve(NetworkReachabilityChecking.self),
+                plugins: resolveDefaultPlugins(resolver: res))
+            return InboxService(
+                dataProvider: inboxProvider,
+                dataService: res.resolve(DataServiceProtocol.self))
+        })
+        
         register(AuthorizationServiceProtocol.self) { (res: Resolver) in
             let authProvider = NetworkDataProvider<AuthorizationTarget>(
                 networkReachibilityChecker: res.resolve(NetworkReachabilityChecking.self),
