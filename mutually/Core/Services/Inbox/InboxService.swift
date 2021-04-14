@@ -11,13 +11,16 @@ final class InboxService: InboxServiceProtocol {
     
     private let dataProvider: NetworkDataProvider<InboxTarget>
     private var dataService: DataServiceProtocol?
+    private var authService: AuthorizationServiceProtocol?
     
     // MARK: - Init
     
     init(dataProvider: NetworkDataProvider<InboxTarget>,
-         dataService: DataServiceProtocol?) {
+         dataService: DataServiceProtocol?,
+         authService: AuthorizationServiceProtocol?) {
         self.dataProvider = dataProvider
         self.dataService = dataService
+        self.authService = authService
     }
     
     // MARK: - InboxServiceProtocol

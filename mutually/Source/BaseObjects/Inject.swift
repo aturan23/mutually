@@ -75,7 +75,8 @@ extension Container {
                 plugins: resolveDefaultPlugins(resolver: res))
             return InboxService(
                 dataProvider: inboxProvider,
-                dataService: res.resolve(DataServiceProtocol.self))
+                dataService: res.resolve(DataServiceProtocol.self),
+                authService: res.resolve(AuthorizationServiceProtocol.self))
         })
         
         register(AuthorizationServiceProtocol.self) { (res: Resolver) in
