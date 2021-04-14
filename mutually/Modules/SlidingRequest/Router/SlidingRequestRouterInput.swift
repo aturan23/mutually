@@ -6,4 +6,4 @@
 //  Copyright © 2021 mutually. All rights reserved.
 //
 
-protocol SlidingRequestRouterInput { }
+protocol SlidingRequestRouterInput: AlertShowingRouter { }

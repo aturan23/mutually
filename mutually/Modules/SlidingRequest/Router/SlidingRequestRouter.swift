@@ -10,6 +10,7 @@ import UIKit
 
 class SlidingRequestRouter: SlidingRequestRouterInput {
 	weak var viewController: UIViewController?
+    let alertFactory = AlertFactory()
 
 	// ------------------------------
     // MARK: - SlidingRequestRouterInput

@@ -45,6 +45,14 @@ class SlidingRequestViewController: BaseViewController, SlidingRequestViewInput 
     // ------------------------------
 
     func display(viewAdapter: SlidingRequestViewAdapter) { }
+    
+    func startLoading() {
+        requestButton.showLoader()
+    }
+    
+    func stopLoading() {
+        requestButton.hideLoader()
+    }
 
     // ------------------------------
     // MARK: - Private methods
@@ -64,6 +72,12 @@ class SlidingRequestViewController: BaseViewController, SlidingRequestViewInput 
         timeSliderView.suffix = "мес."
         timeSliderView.range = (min: 12, max: 48)
         timeSliderView.value = 24
+        
+        requestButton.touchUpInside = { [weak self] in
+            guard let self = self else { return }
+            self.output?.didTapContinue(summ: self.summSliderView.value.wholeNumber,
+                                        term: self.timeSliderView.value.wholeNumber)
+        }
 
         setupViewsHierarchy()
         setupConstraints()

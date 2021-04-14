@@ -24,6 +24,7 @@ class SlidingRequestModuleAssembly: BaseModuleAssembly {
         router.viewController = viewController
         viewController.output = viewModel
         viewModel.moduleOutput = configuration?(viewModel)
+        viewModel.inboxService = injection.inject(InboxServiceProtocol.self)
         
         return UINavigationController.makeDefault(root: viewController)
     }
