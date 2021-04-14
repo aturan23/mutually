@@ -22,7 +22,7 @@ final class InboxService: InboxServiceProtocol {
     
     // MARK: - InboxServiceProtocol
     
-    func newInbox(summ: Double, term: Int, completion: @escaping ResponseCompletion<Void>) {
+    func newInbox(summ: String, term: String, completion: @escaping ResponseCompletion<Void>) {
         dataProvider.request(.inbox(summ: summ, term: term)) { (result) in
             switch result {
             case .success(let response):

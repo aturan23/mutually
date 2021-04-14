@@ -6,10 +6,11 @@
 //  Copyright © 2021 mutually. All rights reserved.
 //
 
-protocol SlidingRequestViewInput: class {
+protocol SlidingRequestViewInput: class, Loadable {
     func display(viewAdapter: SlidingRequestViewAdapter)
 }
 
 protocol SlidingRequestViewOutput {
     func didLoad()
+    func didTapContinue(summ: String, term: String)
 }

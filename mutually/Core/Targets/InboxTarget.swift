@@ -8,7 +8,7 @@
 import Moya
 
 enum InboxTarget {
-    case inbox(summ: Double, term: Int)
+    case inbox(summ: String, term: String)
 }
 
 extension InboxTarget: BaseTargetType {

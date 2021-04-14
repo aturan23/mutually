@@ -6,5 +6,5 @@
 //
 
 protocol InboxServiceProtocol {
-    func newInbox(summ: Double, term: Int, completion: @escaping ResponseCompletion<Void>)
+    func newInbox(summ: String, term: String, completion: @escaping ResponseCompletion<Void>)
 }
