@@ -29,9 +29,10 @@ struct AuthorizationTokenPlugin: PluginType {
      */
     func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
         guard let target = target as? TokenAuthorizable,
-              target.requiredToken else { return request }
+              target.requiredToken,
+              let token =  registeredUserHandler?.currentUser?.token else { return request }
         var request = request
-        let body = String(data: request.httpBody!, encoding: .utf8)! + "&token=\(registeredUserHandler?.currentUser?.token ?? "")"
+        let body = String(data: request.httpBody!, encoding: .utf8)! + "&token=\(token)"
         request.httpBody = Data(body.utf8)
         return request
     }
