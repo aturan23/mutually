@@ -61,22 +61,24 @@ final class AuthorizationService: AuthorizationServiceProtocol {
                 let registeredUserData = RegisteredUserData(phone: phone, shouldAutoLogin: true)
                 self.registeredUserHandler?.set(userData: registeredUserData)
                 self.sessionTracker?.didLogin()
-                self.getFirstScreen(completion: completion)
+                self.getFirstScreen { (result) in
+                    switch result {
+                    case .success(let model): completion(.success(model))
+                    case .failure(let error): completion(.failure(error))
+                    }
+                }
             case .failure(let error): completion(.failure(error))
             }
         }
     }
     
-    private func getFirstScreen(completion: @escaping ResponseCompletion<Codable?>) {
+    func getFirstScreen(completion: @escaping ResponseCompletion<FirstScreenResponse>) {
         guard let token = dataService?.token else {
             completion(.failure(.unknownError))
                 return
         }
         dataProvider.request(.firstScreen(token: token)) { (result: ResponseResult<FirstScreenResponse>) in
-            switch result {
-            case .success(let response): completion(.success(response))
-            case .failure(let error): completion(.failure(error))
-            }
+            completion(result)
         }
     }
 }

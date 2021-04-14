@@ -7,5 +7,5 @@
 
 protocol AuthorizationServiceProtocol: SmsServiceProtocol {
     var sessionTracker: SessionTrackerProtocol? { get set }
-    
+    func getFirstScreen(completion: @escaping ResponseCompletion<FirstScreenResponse>)
 }
