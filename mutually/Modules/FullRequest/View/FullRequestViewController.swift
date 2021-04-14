@@ -58,7 +58,7 @@ class FullRequestViewController: BaseViewController, FullRequestViewInput {
     // ------------------------------
 
     func display(viewAdapter: FullRequestViewAdapter) {
-        collectionViewManager.display(rows: Array(repeating: Photo(title: "Title"), count: 13))
+        collectionViewManager.display(rows: Array(repeating: Photo(title: "Title", group: .auto), count: 13))
         collectionView.reloadData()
     }
 

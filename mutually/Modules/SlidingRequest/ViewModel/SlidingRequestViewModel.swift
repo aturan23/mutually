@@ -30,8 +30,8 @@ class SlidingRequestViewModel: SlidingRequestViewOutput {
         inboxService?.newInbox(summ: summ, term: term, completion: { [weak self] (result) in
             self?.view?.stopLoading()
             switch result {
-            case .success:
-                print("Success")
+            case .success(let firstscreen):
+                print(firstscreen)
             case .failure(let error):
                 self?.router?.showAlert(message: error.message)
             }

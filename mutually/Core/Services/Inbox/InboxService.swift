@@ -25,12 +25,12 @@ final class InboxService: InboxServiceProtocol {
     
     // MARK: - InboxServiceProtocol
     
-    func newInbox(summ: String, term: String, completion: @escaping ResponseCompletion<Void>) {
-        dataProvider.request(.inbox(summ: summ, term: term)) { (result) in
+    func newInbox(summ: String, term: String, completion: @escaping ResponseCompletion<FirstScreenResponse>) {
+        dataProvider.request(.inbox(summ: summ, term: term)) { [weak self] (result) in
             switch result {
             case .success(let response):
                 if response.result {
-                    completion(.success(()))
+                    self?.authService?.getFirstScreen(completion: completion)
                     return
                 }
                 completion(.failure(.unknownError))
