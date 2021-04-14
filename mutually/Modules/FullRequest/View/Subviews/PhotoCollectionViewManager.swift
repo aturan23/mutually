@@ -51,4 +51,9 @@ class PhotoCollectionViewManager: NSObject, UICollectionViewDataSource, UICollec
         cell.update(with: sections[indexPath.section].items[indexPath.row])
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        sections[indexPath.section].onSelection?(indexPath)
+    }
 }

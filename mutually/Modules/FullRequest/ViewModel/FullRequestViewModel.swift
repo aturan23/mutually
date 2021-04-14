@@ -6,6 +6,8 @@
 //  Copyright © 2021 mutually. All rights reserved.
 //
 
+import UIKit
+
 class FullRequestViewModel: FullRequestViewOutput {
 
     // ------------------------------
@@ -26,11 +28,21 @@ class FullRequestViewModel: FullRequestViewOutput {
     }
     
     private func buildAdapter() -> FullRequestViewAdapter {
-        let documents = FullRequestCollectionAdapter(title: PhotoGroup.documents.title, items: photos.filter { $0.group == .documents })
-        let auto = FullRequestCollectionAdapter(title: PhotoGroup.auto.title, items: photos.filter { $0.group == .auto })
-        let others = FullRequestCollectionAdapter(title: PhotoGroup.other.title, items: photos.filter { $0.group == .other })
+        let documents = FullRequestCollectionAdapter(title: PhotoGroup.documents.title,
+                                                     items: photos.filter { $0.group == .documents },
+                                                     onSelection: didSelectAt(_:))
+        let auto = FullRequestCollectionAdapter(title: PhotoGroup.auto.title,
+                                                items: photos.filter { $0.group == .auto },
+                                                onSelection: didSelectAt(_:))
+        let others = FullRequestCollectionAdapter(title: PhotoGroup.other.title,
+                                                  items: photos.filter { $0.group == .other },
+                                                  onSelection: didSelectAt(_:))
         
         return .init(sections: [documents, auto, others])
+    }
+    
+    private func didSelectAt(_ indexPath: IndexPath) {
+        
     }
 }
 
