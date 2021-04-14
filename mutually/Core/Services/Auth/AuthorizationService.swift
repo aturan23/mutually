@@ -58,7 +58,8 @@ final class AuthorizationService: AuthorizationServiceProtocol {
             switch result {
             case .success(let response):
                 self.dataService?.token = response.data.hash
-                let registeredUserData = RegisteredUserData(phone: phone, shouldAutoLogin: true)
+                let registeredUserData = RegisteredUserData(phone: phone,
+                                                            token: response.data.hash)
                 self.registeredUserHandler?.set(userData: registeredUserData)
                 self.sessionTracker?.didLogin()
                 self.getFirstScreen { (result) in

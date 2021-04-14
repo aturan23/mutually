@@ -35,12 +35,4 @@ final class RegisteredUserHandler: RegisteredUserHandlerProtocol {
             storage.set(encodedData, forKey: RegisteredUserHandler.key)
         }
     }
-    
-    func changeAutoLogin(should: Bool) {
-        guard var currentUser = currentUser else {
-            return
-        }
-        currentUser.shouldAutoLogin = should
-        set(userData: currentUser)
-    }
 }

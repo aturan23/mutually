@@ -8,6 +8,5 @@
 
 struct RegisteredUserData: Codable {
     var phone: String
-    var token: String?
-    var shouldAutoLogin: Bool = false
+    var token: String
 }

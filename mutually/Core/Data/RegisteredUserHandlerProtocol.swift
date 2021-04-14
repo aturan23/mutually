@@ -8,5 +8,4 @@
 protocol RegisteredUserHandlerProtocol: class {
     var currentUser: RegisteredUserData? { get }
     func set(userData: RegisteredUserData?)
-    func changeAutoLogin(should: Bool)
 }
