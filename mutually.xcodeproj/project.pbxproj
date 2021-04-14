@@ -27,6 +27,7 @@
 		4F1F1BC32626ABD200E2E4B5 /* InboxServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F1BC22626ABD200E2E4B5 /* InboxServiceProtocol.swift */; };
 		4F1F1BC72626ABDC00E2E4B5 /* InboxService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F1BC62626ABDC00E2E4B5 /* InboxService.swift */; };
 		4F1F1BCA2626ACA300E2E4B5 /* InboxTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F1BC92626ACA300E2E4B5 /* InboxTarget.swift */; };
+		4F1F1BCD2626C6BF00E2E4B5 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F1BCC2626C6BF00E2E4B5 /* Loadable.swift */; };
 		4F2401B926197B3F00AA99BF /* loading_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F2401B826197B3F00AA99BF /* loading_animation.json */; };
 		4F2401BD26197C9F00AA99BF /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2401BC26197C9F00AA99BF /* LoadingView.swift */; };
 		4F6BFCA02615D29B00AE1DC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6BFC9F2615D29B00AE1DC3 /* AppDelegate.swift */; };
@@ -209,6 +210,7 @@
 		4F1F1BC22626ABD200E2E4B5 /* InboxServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxServiceProtocol.swift; sourceTree = "<group>"; };
 		4F1F1BC62626ABDC00E2E4B5 /* InboxService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxService.swift; sourceTree = "<group>"; };
 		4F1F1BC92626ACA300E2E4B5 /* InboxTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxTarget.swift; sourceTree = "<group>"; };
+		4F1F1BCC2626C6BF00E2E4B5 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		4F2401B826197B3F00AA99BF /* loading_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_animation.json; sourceTree = "<group>"; };
 		4F2401BC26197C9F00AA99BF /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4F6BFC9C2615D29B00AE1DC3 /* mutually.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mutually.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -913,6 +915,7 @@
 				4FF7C5CB26171B2A007356C3 /* IndicatorProtocol.swift */,
 				4FF7C653261876FC007356C3 /* AlertShowingRouter.swift */,
 				4FC25CB1261EC75B00704338 /* ReusableView.swift */,
+				4F1F1BCC2626C6BF00E2E4B5 /* Loadable.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1421,6 +1424,7 @@
 				4FF7C6652618A085007356C3 /* PasswordButton.swift in Sources */,
 				4F2401BD26197C9F00AA99BF /* LoadingView.swift in Sources */,
 				4FF7C63926181268007356C3 /* SmsVerificationViewState.swift in Sources */,
+				4F1F1BCD2626C6BF00E2E4B5 /* Loadable.swift in Sources */,
 				4FF7C51C2616EC42007356C3 /* TimeIntervalExtension.swift in Sources */,
 				4FF7C53F2616EFC3007356C3 /* Alamofire+NetworkReachabilityChecking.swift in Sources */,
 				4FF7C52C2616ED42007356C3 /* NetworkError.swift in Sources */,
