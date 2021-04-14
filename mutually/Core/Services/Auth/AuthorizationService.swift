@@ -74,11 +74,7 @@ final class AuthorizationService: AuthorizationServiceProtocol {
     }
     
     func getFirstScreen(completion: @escaping ResponseCompletion<FirstScreenResponse>) {
-        guard let token = dataService?.token else {
-            completion(.failure(.unknownError))
-                return
-        }
-        dataProvider.request(.firstScreen(token: token)) { (result: ResponseResult<FirstScreenResponse>) in
+        dataProvider.request(.firstScreen) { (result: ResponseResult<FirstScreenResponse>) in
             completion(result)
         }
     }

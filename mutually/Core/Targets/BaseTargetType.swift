@@ -7,31 +7,21 @@
 
 import Moya
 
-protocol BaseTargetType: TargetType {}
+protocol BaseTargetType: TargetType, TokenAuthorizable {}
 
 extension BaseTargetType {
     
-    public var baseURL: URL {
-        return URL(string: EnvConfigs.baseUrl)!
-    }
+    public var baseURL: URL { URL(string: EnvConfigs.baseUrl)! }
     
-    public var path: String {
-        return CommonConfigs.urlPath
-    }
+    public var path: String { CommonConfigs.urlPath }
     
-    public var method: Moya.Method {
-        return .post
-    }
+    public var method: Moya.Method { .post }
     
-    public var sampleData: Data {
-        return Data()
-    }
+    public var sampleData: Data { Data() }
     
-    public var headers: [String : String]? {
-        return nil
-    }
+    public var headers: [String : String]? { nil }
     
-    public var validate: Bool {
-        return true
-    }
+    public var validate: Bool { true }
+    
+    public var requiredToken: Bool { true }
 }

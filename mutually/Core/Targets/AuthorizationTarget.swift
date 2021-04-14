@@ -10,10 +10,20 @@ import Moya
 enum AuthorizationTarget {
     case getSmsPath(phone: String)
     case auth(phone: String, password: String)
-    case firstScreen(token: String)
+    case firstScreen
 }
 
 extension AuthorizationTarget: BaseTargetType {
+    
+    var requiredToken: Bool {
+        switch self {
+        case .getSmsPath, .auth:
+            return false
+        default:
+            return true
+        }
+    }
+    
     var task: Task {
         switch self {
         case .getSmsPath(let phone):
@@ -29,10 +39,9 @@ extension AuthorizationTarget: BaseTargetType {
                              JSONRequestParameter.password.key: password,
                              "platform": "iOS"],
                 encoding: URLEncoding.default)
-        case .firstScreen(let token):
+        case .firstScreen:
             return .requestParameters(
                 parameters: [JSONRequestParameter.action.key: "getFirstScreen",
-                             JSONRequestParameter.token.key: token,
                              "platform": "iOS"],
                 encoding: URLEncoding.default)
         }

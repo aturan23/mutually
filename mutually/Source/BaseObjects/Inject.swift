@@ -46,7 +46,9 @@ extension Container {
         register(NetworkLoggerPlugin.self) { _ in
             NetworkLoggerPlugin(configuration: NetworkLoggerPluginConfig.prettyLogging)
         }
-        autoregister(SessionTimeoutPlugin.self, initializer: SessionTimeoutPlugin.init)
+        register(AuthorizationTokenPlugin.self) { (res: Resolver) in
+            AuthorizationTokenPlugin(registeredUserHandler: res.resolve(RegisteredUserHandlerProtocol.self))
+        }
         return self
     }
     
@@ -65,7 +67,7 @@ extension Container {
         func resolveDefaultPlugins(resolver: Resolver) -> [PluginType] {
             let optionalPlugins: [PluginType?] = [
                 resolver.resolve(NetworkLoggerPlugin.self),
-                resolver.resolve(SessionTimeoutPlugin.self)]
+                resolver.resolve(AuthorizationTokenPlugin.self)]
             return optionalPlugins.compactMap { $0 }
         }
         

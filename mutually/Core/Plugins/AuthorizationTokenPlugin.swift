@@ -7,10 +7,16 @@
 
 import Moya
 
+protocol TokenAuthorizable {
+    var requiredToken: Bool { get }
+}
+
 struct AuthorizationTokenPlugin: PluginType {
     
-    init() {
-        
+    private let registeredUserHandler: RegisteredUserHandlerProtocol?
+    
+    init(registeredUserHandler: RegisteredUserHandlerProtocol?) {
+        self.registeredUserHandler = registeredUserHandler
     }
     
     /**
@@ -22,15 +28,11 @@ struct AuthorizationTokenPlugin: PluginType {
      - returns: The modified `URLRequest`.
      */
     func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
-//        guard
-//            let target = target as? TokenAuthorizable
-//        else {
-//            return request
-//        }
-//        var request = request
-//        target.requiredTokens.forEach { token in
-//            request.addValue(token.value, forHTTPHeaderField: token.key)
-//        }
+        guard let target = target as? TokenAuthorizable,
+              target.requiredToken else { return request }
+        var request = request
+        let body = String(data: request.httpBody!, encoding: .utf8)! + "&token=\(registeredUserHandler?.currentUser?.token ?? "")"
+        request.httpBody = Data(body.utf8)
         return request
     }
 }
