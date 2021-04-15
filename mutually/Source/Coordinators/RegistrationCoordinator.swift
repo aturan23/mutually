@@ -26,6 +26,14 @@ class RegistrationCoordinator: RegistrationCoordinating {
     // MARK: - RegistrationCoordinating
     
     func start() {
+        guard let launchScreen = injection
+                .inject(LaunchScreenModuleAssembly.self)?
+                .assemble(self) else { return }
+        
+        window.rootViewController = launchScreen
+    }
+    
+    private func stupSignIn() {
         guard
             let registrationViewController = injection
                 .inject(RegistrationModuleAssembly.self)?
@@ -50,38 +58,36 @@ class RegistrationCoordinator: RegistrationCoordinating {
         } else {
             transition()
         }
-        
-        if let registeredUserHandler = injection.inject(RegisteredUserHandlerProtocol.self),
-            let registeredUserData = registeredUserHandler.currentUser,
-            registeredUserData.shouldAutoLogin {
-            let configData = SignInConfigData(phone: registeredUserData.phone)
-            moveToSignIn(data: configData, animating: false)
-        }
     }
     
-    func moveToSignIn(data: SignInConfigData, animating: Bool) {
-        guard
-            let signInViewController = injection
-                .inject(SignInModuleAssembly.self)?
-                .assemble({ [weak self] moduleInput in
-                    moduleInput.alertPresenter = self
-                    moduleInput.configure(data: data)
+    func showSlidingView() {
+        guard let slidingViewModule = injection
+                .inject(SlidingRequestModuleAssembly.self)?
+                .assemble({ _ in
                     return self
-                })
-            else {
-                return
-        }
-        navigationController.pushViewController(signInViewController, animated: animating)
-    }
-    
-    func showMainPage() {
-        guard let mainTabBarController = injection
-            .inject(MainTabsModuleAssembly.self)?
-            .assemble() else {
+                }) else {
             return
         }
         
-        window.rootViewController = mainTabBarController
+        window.rootViewController = slidingViewModule
+        UIView.transition(with: window,
+                          duration: 0.5,
+                          options: [.transitionFlipFromRight],
+                          animations: nil,
+                          completion: nil)
+    }
+    
+    func showThanksPage(photos: [Photo]?) {
+        guard let fullRequestModule = injection
+                .inject(FullRequestModuleAssembly.self)?
+                .assemble({ moduleInput in
+                    moduleInput.configure(data: .init(photos: photos))
+                    return nil
+                }) else {
+            return
+        }
+        navigationController.setViewControllers([fullRequestModule], animated: false)
+        window.rootViewController = navigationController
         UIView.transition(with: window,
                           duration: 0.5,
                           options: [.transitionFlipFromRight],
@@ -116,52 +122,17 @@ extension RegistrationCoordinator: AlertShowable {
     }
 }
 
-extension RegistrationCoordinator: RegistrationModuleOutput {
+extension RegistrationCoordinator: RegistrationModuleOutput, SlidingRequestModuleOutput, LaunchScreenModuleOutput {
     
-    func checkDidFindAlreadyRegistered(for phone: String) {
-        moveToSignIn(data: SignInConfigData(phone: phone),
-                     animating: true)
-    }
-    
-    func checkDidFindLocallyRegistered() {
-        guard
-            let userData = injection
-                .inject(RegisteredUserHandlerProtocol.self)?
-                .currentUser
-            else {
-                return
+    func moveToPage(screen: FirstScreenResponse?) {
+        switch screen?.screen {
+        case .newClient:
+            showSlidingView()
+        case .thanks:
+            showThanksPage(photos: screen?.photos)
+        case .none:
+            stupSignIn()
+        default: break
         }
-        let configData = SignInConfigData(phone: userData.phone)
-        moveToSignIn(data: configData, animating: true)
-    }
-    
-    func moveToSetupPasscode() {
-        guard let setupPasscodeViewController = injection
-            .inject(SetupPasscodeModuleAssembly.self)?
-            .assemble({ [weak self] moduleInput in
-                moduleInput.alertPresenter = self
-                return self
-            })
-            else {
-                return
-        }
-        navigationController.pushViewController(setupPasscodeViewController, animated: true)
-    }
-
-}
-
-extension RegistrationCoordinator: SetupPasscodeModuleOutput {
-    func setupPasscodeSucceeded(passcode: String) {
-        showMainPage()
-    }
-}
-
-extension RegistrationCoordinator: SignInModuleOutput {
-    func signInSucceeded(with passcode: String) {
-        showMainPage()
-    }
-    
-    func signInDidSelectExit() {
-        navigationController.popToRootViewController(animated: true)
     }
 }

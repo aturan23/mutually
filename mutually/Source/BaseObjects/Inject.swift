@@ -121,6 +121,9 @@ extension Container {
         register(FullRequestModuleAssembly.self) { _ in
             FullRequestModuleAssembly(injection: self)
         }
+        register(LaunchScreenModuleAssembly.self) { _ in
+            LaunchScreenModuleAssembly(injection: self)
+        }
         return self
     }
     

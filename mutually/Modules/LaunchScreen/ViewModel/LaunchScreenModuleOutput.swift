@@ -1,11 +1,11 @@
 //
-//  RegistrationModuleOutput.swift
+//  LaunchScreenModuleOutput.swift
 //  mutually
 //
-//  Created by Turan Assylkhan on 02/04/2021.
+//  Created by Turan Assylkhan on 14/04/2021.
 //  Copyright © 2021 mutually. All rights reserved.
 //
 
-protocol RegistrationModuleOutput: class {
+protocol LaunchScreenModuleOutput: class {
     func moveToPage(screen: FirstScreenResponse?)
 }

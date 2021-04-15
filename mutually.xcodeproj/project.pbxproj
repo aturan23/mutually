@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		0086D0D40306975B7513B945 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED325DE109253AE8920FE198 /* RegistrationViewModel.swift */; };
 		0190091E8EDCC49C5DE84E42 /* FullRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9C7D139DEBA6F255A2F6E8 /* FullRequestViewController.swift */; };
+		0903BAE76D7371C39215CBDB /* LaunchScreenViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A6EA845C33DEA5F603100D /* LaunchScreenViewProtocols.swift */; };
 		0AA6B440EED7E4575E4CA729 /* FullRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD0B7C8F545A25BEEEDB2E2 /* FullRequestViewModel.swift */; };
 		0EB7F11B2D32EF190A440A3F /* SetupPasscodeRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEC2FFCE1BE3F69317EC74A /* SetupPasscodeRouterInput.swift */; };
 		1BD10AE7371FEFDD1FA07364 /* SlidingRequestViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430E0B618A2A8812D59FC5D3 /* SlidingRequestViewProtocols.swift */; };
 		1D66400147038E6D58E75637 /* SlidingRequestModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED16636ACED813212109A78 /* SlidingRequestModuleOutput.swift */; };
+		1FE0EFAF5C26EC49963E9FFB /* LaunchScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FE14AF8E9274E21CF083C5 /* LaunchScreenAssembly.swift */; };
 		249B4AD4B276956BA8875647 /* SignInModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45A82EDF28ABA2014E20487 /* SignInModuleOutput.swift */; };
 		26CB7A7DCC37AEAF35BF9040 /* SetupPasscodeModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C6BE6CB1E4681CBA100AB6 /* SetupPasscodeModuleOutput.swift */; };
 		2EE50B8436736DD8B8B30EED /* SignInViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EB0266911732CD2CA37ECF /* SignInViewAdapter.swift */; };
@@ -148,6 +150,7 @@
 		74561BBB32ED24227B95C4D3 /* FullRequestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4880FA1DA8B1B9E05273C73D /* FullRequestRouter.swift */; };
 		74BFC8E1AD40C864BFE49C47 /* SetupPasscodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F765BC1D072BA3D40B6D73 /* SetupPasscodeViewModel.swift */; };
 		7639589DAAE665051D8AFE24 /* SmsVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB931A16A64C4FE6C8FE40CD /* SmsVerificationViewController.swift */; };
+		7B784A32E96EDD04B7506036 /* LaunchScreenModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A2891D7A9F5D6E543E4524 /* LaunchScreenModuleOutput.swift */; };
 		7B9DE148C36136739EC972B0 /* SetupPasscodeViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6619DFCF2687E832B89120 /* SetupPasscodeViewAdapter.swift */; };
 		7F3927D5098A32F0785398CA /* RegistrationModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57E2596D301AD314134C05C /* RegistrationModuleInput.swift */; };
 		8173C2716F0EF0E421A46A9B /* RegistrationViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DC5F905050053DD3982C21 /* RegistrationViewAdapter.swift */; };
@@ -159,12 +162,14 @@
 		9739F1ACAE4837114BCD1164 /* MainTabsModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C26112B9F2F55CB00F3EB48 /* MainTabsModuleInput.swift */; };
 		A8BDF7CA236CDE0913588280 /* SlidingRequestAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D852869975B1C0B92824DD2 /* SlidingRequestAssembly.swift */; };
 		A99882878D774FC439520435 /* FullRequestModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D407D91751952DC6400117D3 /* FullRequestModuleOutput.swift */; };
+		AC6688DD73023313DE37D8BA /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866740CC69C877F1E836F171 /* LaunchScreenViewController.swift */; };
 		AC691A0FEB6446A73E1B662E /* SlidingRequestViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80DE65CE98E7E5588682894 /* SlidingRequestViewAdapter.swift */; };
 		AF27BF6FC5F3BE43C19CDB8A /* SmsVerificationViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60898B4EA537D7859BA5AF63 /* SmsVerificationViewProtocols.swift */; };
 		B00341ED191505BD657D7B16 /* MainTabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D143C146F2E2D10B3BCDFD27 /* MainTabsViewController.swift */; };
 		B0C4E6A866AD9E7893447531 /* MainTabsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5378F58036B195AC3B33F121 /* MainTabsViewModel.swift */; };
 		C12FFC3CA58537170479A213 /* SmsVerificationModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4B2158DA2E04157E269161 /* SmsVerificationModuleInput.swift */; };
 		C676444C5B5A27A432A5991E /* SmsVerificationViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F58DB79C249CD4BF740451 /* SmsVerificationViewAdapter.swift */; };
+		C97AD31839E2106EC5CCA720 /* LaunchScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03511F4F665F227780C00E5 /* LaunchScreenViewModel.swift */; };
 		CB822C4D3B976AE53EBF3433 /* FullRequestAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA38995F0226004B4FBA8C2 /* FullRequestAssembly.swift */; };
 		CCC89F19D217E51DB9CB278C /* MainTabsViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8895ECF189B850714640481 /* MainTabsViewProtocols.swift */; };
 		CF4BDD11CB4BD25D8DB76349 /* SlidingRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1590F86A020AAB35DCD9ABD /* SlidingRequestViewController.swift */; };
@@ -184,6 +189,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09FE14AF8E9274E21CF083C5 /* LaunchScreenAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LaunchScreenAssembly.swift; sourceTree = "<group>"; };
 		0E3E2B41B3741A204C767A90 /* SignInModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SignInModuleInput.swift; sourceTree = "<group>"; };
 		1023D7C1806DFD8BAF06F66A /* FullRequestViewAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FullRequestViewAdapter.swift; sourceTree = "<group>"; };
 		10DF6B781D413231565B3FF7 /* SetupPasscodeRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SetupPasscodeRouter.swift; sourceTree = "<group>"; };
@@ -341,6 +347,7 @@
 		7D852869975B1C0B92824DD2 /* SlidingRequestAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SlidingRequestAssembly.swift; sourceTree = "<group>"; };
 		7ED16636ACED813212109A78 /* SlidingRequestModuleOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SlidingRequestModuleOutput.swift; sourceTree = "<group>"; };
 		833A5E426E80D9031F812B58 /* SignInViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		866740CC69C877F1E836F171 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		87FEC8892D03CDD728ACA099 /* SetupPasscodeViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SetupPasscodeViewController.swift; sourceTree = "<group>"; };
 		92ADDFDDEC9BDBF0D365B0F0 /* SmsVerificationViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SmsVerificationViewModel.swift; sourceTree = "<group>"; };
 		95F765BC1D072BA3D40B6D73 /* SetupPasscodeViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SetupPasscodeViewModel.swift; sourceTree = "<group>"; };
@@ -353,11 +360,13 @@
 		B45A82EDF28ABA2014E20487 /* SignInModuleOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SignInModuleOutput.swift; sourceTree = "<group>"; };
 		B725CB47F7EA6099F09AEB7F /* SmsVerificationAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SmsVerificationAssembly.swift; sourceTree = "<group>"; };
 		B80DE65CE98E7E5588682894 /* SlidingRequestViewAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SlidingRequestViewAdapter.swift; sourceTree = "<group>"; };
+		C03511F4F665F227780C00E5 /* LaunchScreenViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewModel.swift; sourceTree = "<group>"; };
 		C65F1844EF3EEC212912E2F9 /* RegistrationModuleOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationModuleOutput.swift; sourceTree = "<group>"; };
 		CA9C7D139DEBA6F255A2F6E8 /* FullRequestViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FullRequestViewController.swift; sourceTree = "<group>"; };
 		CC8CD8DBE86F082874E02B8C /* SlidingRequestModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SlidingRequestModuleInput.swift; sourceTree = "<group>"; };
 		CE02A9FC0140DBC4A21F1DA0 /* Pods-mutually.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mutually.debug.xcconfig"; path = "Target Support Files/Pods-mutually/Pods-mutually.debug.xcconfig"; sourceTree = "<group>"; };
 		D143C146F2E2D10B3BCDFD27 /* MainTabsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainTabsViewController.swift; sourceTree = "<group>"; };
+		D3A6EA845C33DEA5F603100D /* LaunchScreenViewProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewProtocols.swift; sourceTree = "<group>"; };
 		D407D91751952DC6400117D3 /* FullRequestModuleOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FullRequestModuleOutput.swift; sourceTree = "<group>"; };
 		D8B0B905AEED60BD424BC623 /* FullRequestRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FullRequestRouterInput.swift; sourceTree = "<group>"; };
 		DE4B2158DA2E04157E269161 /* SmsVerificationModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SmsVerificationModuleInput.swift; sourceTree = "<group>"; };
@@ -374,6 +383,7 @@
 		EDE905AAC21C36FA7A4B8A5B /* MainTabsModuleOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainTabsModuleOutput.swift; sourceTree = "<group>"; };
 		F2A4AB96E58E4D30F279D9E5 /* MainTabsAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainTabsAssembly.swift; sourceTree = "<group>"; };
 		F48A5976706BFAF8C304858E /* Pods-mutually.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mutually.development.xcconfig"; path = "Target Support Files/Pods-mutually/Pods-mutually.development.xcconfig"; sourceTree = "<group>"; };
+		F4A2891D7A9F5D6E543E4524 /* LaunchScreenModuleOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LaunchScreenModuleOutput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -661,6 +671,7 @@
 				B804CBAA7083999AFC417CE7 /* MainTabs */,
 				5AAAF0AD8E2345610CF20F65 /* SlidingRequest */,
 				44FDAE1F75907A08E8B00A54 /* FullRequest */,
+				95EEFE70E0BF803027EF7805 /* LaunchScreen */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -1044,6 +1055,15 @@
 			path = Registration;
 			sourceTree = "<group>";
 		};
+		871C73318CA309F34294E373 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D3A6EA845C33DEA5F603100D /* LaunchScreenViewProtocols.swift */,
+				866740CC69C877F1E836F171 /* LaunchScreenViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		94742FE1AB3F1DB587452961 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1053,6 +1073,16 @@
 				4A13D65563BF3E3D15B6287E /* Pods_mutually.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		95EEFE70E0BF803027EF7805 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				871C73318CA309F34294E373 /* View */,
+				B10425C2F508740B4557757C /* ViewModel */,
+				FBA8AE5E1421A8A63E174964 /* Assembly */,
+			);
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 		988E69B62771757FA2113CAC /* SmsVerification */ = {
@@ -1085,6 +1115,15 @@
 				13EB0266911732CD2CA37ECF /* SignInViewAdapter.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B10425C2F508740B4557757C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F4A2891D7A9F5D6E543E4524 /* LaunchScreenModuleOutput.swift */,
+				C03511F4F665F227780C00E5 /* LaunchScreenViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		B41B3862284CA77D36C7E2F0 /* View */ = {
@@ -1195,6 +1234,14 @@
 				1D97DC0C7AC3C411D0027661 /* SignInRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		FBA8AE5E1421A8A63E174964 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				09FE14AF8E9274E21CF083C5 /* LaunchScreenAssembly.swift */,
+			);
+			path = Assembly;
 			sourceTree = "<group>";
 		};
 		FE15AEB181BBF65EF05AA5B0 /* Assembly */ = {
@@ -1519,6 +1566,11 @@
 				96426FBFA1EF30A55A44BDC4 /* FullRequestRouterInput.swift in Sources */,
 				74561BBB32ED24227B95C4D3 /* FullRequestRouter.swift in Sources */,
 				CB822C4D3B976AE53EBF3433 /* FullRequestAssembly.swift in Sources */,
+				0903BAE76D7371C39215CBDB /* LaunchScreenViewProtocols.swift in Sources */,
+				AC6688DD73023313DE37D8BA /* LaunchScreenViewController.swift in Sources */,
+				7B784A32E96EDD04B7506036 /* LaunchScreenModuleOutput.swift in Sources */,
+				C97AD31839E2106EC5CCA720 /* LaunchScreenViewModel.swift in Sources */,
+				1FE0EFAF5C26EC49963E9FFB /* LaunchScreenAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
