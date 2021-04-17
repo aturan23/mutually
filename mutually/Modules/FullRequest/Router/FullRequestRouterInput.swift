@@ -6,4 +6,6 @@
 //  Copyright © 2021 mutually. All rights reserved.
 //
 
-protocol FullRequestRouterInput { }
+protocol FullRequestRouterInput: AlertShowingRouter {
+    func routeToCamera(delegate: ImagePickerDelegate)
+}

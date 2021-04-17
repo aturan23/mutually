@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FullRequestViewModel: FullRequestViewOutput {
+class FullRequestViewModel: NSObject, FullRequestViewOutput {
 
     // ------------------------------
 	// MARK: - Properties
@@ -17,17 +17,30 @@ class FullRequestViewModel: FullRequestViewOutput {
     weak var view: FullRequestViewInput?
     var router: FullRequestRouterInput?
     weak var moduleOutput: FullRequestModuleOutput?
+    var imageService: ImageServiceProtocol?
+    
+    private var indexPath = IndexPath(index: 0)
     private var photos: [Photo] = []
+    private var sections: [FullRequestCollectionAdapter] = [] {
+        didSet {
+            view?.display(viewAdapter: .init(sections: sections))
+        }
+    }
 
     // ------------------------------
     // MARK: - FullRequestViewOutput methods
     // ------------------------------
 
     func didLoad() {
-        view?.display(viewAdapter: buildAdapter())
+        sections = configureSections()
     }
     
-    private func buildAdapter() -> FullRequestViewAdapter {
+    private func didSelectAt(_ indexPath: IndexPath) {
+        self.indexPath = indexPath
+        router?.routeToCamera(delegate: self)
+    }
+    
+    private func configureSections() -> [FullRequestCollectionAdapter] {
         let documents = FullRequestCollectionAdapter(title: PhotoGroup.documents.title,
                                                      items: photos.filter { $0.group == .documents },
                                                      onSelection: didSelectAt(_:))
@@ -37,12 +50,18 @@ class FullRequestViewModel: FullRequestViewOutput {
         let others = FullRequestCollectionAdapter(title: PhotoGroup.other.title,
                                                   items: photos.filter { $0.group == .other },
                                                   onSelection: didSelectAt(_:))
-        
-        return .init(sections: [documents, auto, others])
+        return [documents, auto, others]
     }
     
-    private func didSelectAt(_ indexPath: IndexPath) {
-        
+    private func save(base64: String) {
+        imageService?.upload(base64: base64, type: "3", completion: { [weak self] (result) in
+            switch result {
+            case .success:
+                print("SUCCESS")
+            case .failure(let error):
+                self?.router?.showAlert(message: error.message)
+            }
+        })
     }
 }
 
@@ -54,5 +73,17 @@ extension FullRequestViewModel: FullRequestModuleInput {
     func configure(data: FullRequestConfigData) {
         guard let photos = data.photos else { return }
         self.photos = photos
+    }
+}
+
+extension FullRequestViewModel: ImagePickerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let img = info[.originalImage] as? UIImage,
+           let png = img.pngData() {
+            save(base64: png.base64EncodedString())
+            picker.dismiss(animated: true)
+        } else {
+            print("Error")
+        }
     }
 }
