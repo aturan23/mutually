@@ -6,6 +6,8 @@
 //  Copyright © 2021 mutually. All rights reserved.
 //
 
+import UIKit
+
 protocol FullRequestRouterInput: AlertShowingRouter {
-    func routeToCamera()
+    func routeToCamera(delegate: ImagePickerDelegate?, maskView: UIView?)
 }

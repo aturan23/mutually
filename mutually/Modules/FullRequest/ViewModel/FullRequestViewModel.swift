@@ -38,7 +38,7 @@ class FullRequestViewModel: NSObject, FullRequestViewOutput {
     
     private func didSelectAt(_ indexPath: IndexPath) {
         self.indexPath = indexPath
-        router?.routeToCamera()
+        router?.routeToCamera(delegate: self, maskView: PassportFrontMask())
     }
     
     private func configureSections() -> [FullRequestCollectionAdapter] {
@@ -77,14 +77,14 @@ extension FullRequestViewModel: FullRequestModuleInput {
     }
 }
 
-//extension FullRequestViewModel: ImagePickerDelegate {
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//        if let img = info[.originalImage] as? UIImage,
-//           let png = img.pngData() {
-//            save(base64: png.base64EncodedString())
-//            picker.dismiss(animated: true)
-//        } else {
-//            print("Error")
-//        }
-//    }
-//}
+extension FullRequestViewModel: ImagePickerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let img = info[.originalImage] as? UIImage,
+           let png = img.pngData() {
+            save(base64: png.base64EncodedString())
+            picker.dismiss(animated: true)
+        } else {
+            print("Error")
+        }
+    }
+}
