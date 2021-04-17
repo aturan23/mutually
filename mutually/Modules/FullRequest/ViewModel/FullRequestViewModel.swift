@@ -54,8 +54,8 @@ class FullRequestViewModel: NSObject, FullRequestViewOutput {
         return [documents, auto, others]
     }
     
-    private func save(base64: String) {
-        imageService?.upload(base64: base64, type: "3", completion: { [weak self] (result) in
+    private func save(data: Data) {
+        imageService?.upload(data: data, type: "3", completion: { [weak self] (result) in
             switch result {
             case .success:
                 print("SUCCESS")
@@ -81,10 +81,8 @@ extension FullRequestViewModel: ImagePickerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let img = info[.originalImage] as? UIImage,
            let png = img.pngData() {
-            save(base64: png.base64EncodedString())
+            save(data: png)
             picker.dismiss(animated: true)
-        } else {
-            print("Error")
         }
     }
 }

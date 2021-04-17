@@ -5,8 +5,10 @@
 //  Created by Turan Assylkhan on 16.04.2021.
 //
 
+import Foundation
+
 protocol ImageServiceProtocol {
-    func upload(base64: String, type: String, completion: @escaping ResponseCompletion<Void>)
+    func upload(data: Data, type: String, completion: @escaping ResponseCompletion<Void>)
 }
 
 final class ImageService: ImageServiceProtocol {
@@ -23,8 +25,8 @@ final class ImageService: ImageServiceProtocol {
     
     // MARK: - InboxServiceProtocol
     
-    func upload(base64: String, type: String, completion: @escaping ResponseCompletion<Void>) {
-        dataProvider.request(.upload(base64: base64, type: type)) { result in
+    func upload(data: Data, type: String, completion: @escaping ResponseCompletion<Void>) {
+        dataProvider.request(.upload(data: data, type: type)) { result in
             switch result {
             case .success: completion(.success(()))
             case .failure(let error): completion(.failure(error))

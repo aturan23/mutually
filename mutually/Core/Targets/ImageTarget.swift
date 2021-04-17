@@ -8,14 +8,14 @@
 import Moya
 
 enum ImageTarget {
-    case upload(base64: String, type: String)
+    case upload(data: Data, type: String)
 }
 
 extension ImageTarget: BaseTargetType {
     var task: Task {
         switch self {
-        case let .upload(base64, _):
-            let model = Model(userFile: base64.data(using: .utf8)!)
+        case let .upload(data, _):
+            let model = Model(userFile: data)
             return .requestJSONEncodable(model)
         }
     }
