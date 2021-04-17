@@ -75,6 +75,7 @@ extension FullRequestViewModel: FullRequestModuleInput {
     func configure(data: FullRequestConfigData) {
         guard let photos = data.photos else { return }
         self.photos = photos
+        title = data.title
     }
 }
 
