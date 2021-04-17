@@ -41,6 +41,8 @@
 		4F6BFCAC2615D29D00AE1DC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F6BFCAB2615D29D00AE1DC3 /* Assets.xcassets */; };
 		4F6BFCAF2615D29D00AE1DC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F6BFCAD2615D29D00AE1DC3 /* LaunchScreen.storyboard */; };
 		4F93C8A8262ABB5900425FC4 /* PassportFrontMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F93C8A7262ABB5900425FC4 /* PassportFrontMask.swift */; };
+		4F93C8AE262ABC6800425FC4 /* Ekibastuz-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F93C8AC262ABC6800425FC4 /* Ekibastuz-Semibold.otf */; };
+		4F93C8AF262ABC6800425FC4 /* Ekibastuz-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F93C8AD262ABC6800425FC4 /* Ekibastuz-Bold.otf */; };
 		4FC25C9B261E9CED00704338 /* FloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC25C9A261E9CED00704338 /* FloatExtension.swift */; };
 		4FC25C9E261EA15E00704338 /* ScreenTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC25C9D261EA15E00704338 /* ScreenTypes.swift */; };
 		4FC25CA2261EA7B000704338 /* FirstScreenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC25CA1261EA7B000704338 /* FirstScreenResponse.swift */; };
@@ -111,8 +113,6 @@
 		4FF7C5E126171D18007356C3 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C5E026171D18007356C3 /* UIButtonExtension.swift */; };
 		4FF7C5E426171D78007356C3 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C5E326171D78007356C3 /* PrimaryButton.swift */; };
 		4FF7C5E7261723F3007356C3 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C5E6261723F3007356C3 /* CheckBoxView.swift */; };
-		4FF7C5EC261730DF007356C3 /* Ekibastuz-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FF7C5E9261730DF007356C3 /* Ekibastuz-Semibold.ttf */; };
-		4FF7C5ED261730DF007356C3 /* Ekibastuz-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FF7C5EA261730DF007356C3 /* Ekibastuz-Bold.ttf */; };
 		4FF7C5EE261730DF007356C3 /* Ekibastuz-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FF7C5EB261730DF007356C3 /* Ekibastuz-Regular.ttf */; };
 		4FF7C5F126173CAB007356C3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C5F026173CAB007356C3 /* StringExtension.swift */; };
 		4FF7C5F42617615C007356C3 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7C5F32617615C007356C3 /* UIViewExtension.swift */; };
@@ -237,6 +237,8 @@
 		4F6BFCC12616193B00AE1DC3 /* Swinject.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Swinject.xcframework; path = Carthage/Build/Swinject.xcframework; sourceTree = "<group>"; };
 		4F6BFCC42616194100AE1DC3 /* Kingfisher.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Kingfisher.xcframework; path = Carthage/Build/Kingfisher.xcframework; sourceTree = "<group>"; };
 		4F93C8A7262ABB5900425FC4 /* PassportFrontMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassportFrontMask.swift; sourceTree = "<group>"; };
+		4F93C8AC262ABC6800425FC4 /* Ekibastuz-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ekibastuz-Semibold.otf"; sourceTree = "<group>"; };
+		4F93C8AD262ABC6800425FC4 /* Ekibastuz-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ekibastuz-Bold.otf"; sourceTree = "<group>"; };
 		4FC25C9A261E9CED00704338 /* FloatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatExtension.swift; sourceTree = "<group>"; };
 		4FC25C9D261EA15E00704338 /* ScreenTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTypes.swift; sourceTree = "<group>"; };
 		4FC25CA1261EA7B000704338 /* FirstScreenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenResponse.swift; sourceTree = "<group>"; };
@@ -315,8 +317,6 @@
 		4FF7C5E026171D18007356C3 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		4FF7C5E326171D78007356C3 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		4FF7C5E6261723F3007356C3 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
-		4FF7C5E9261730DF007356C3 /* Ekibastuz-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ekibastuz-Semibold.ttf"; sourceTree = "<group>"; };
-		4FF7C5EA261730DF007356C3 /* Ekibastuz-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ekibastuz-Bold.ttf"; sourceTree = "<group>"; };
 		4FF7C5EB261730DF007356C3 /* Ekibastuz-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ekibastuz-Regular.ttf"; sourceTree = "<group>"; };
 		4FF7C5F026173CAB007356C3 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		4FF7C5F32617615C007356C3 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -919,9 +919,9 @@
 		4FF7C59826170A14007356C3 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				4FF7C5EA261730DF007356C3 /* Ekibastuz-Bold.ttf */,
 				4FF7C5EB261730DF007356C3 /* Ekibastuz-Regular.ttf */,
-				4FF7C5E9261730DF007356C3 /* Ekibastuz-Semibold.ttf */,
+				4F93C8AD262ABC6800425FC4 /* Ekibastuz-Bold.otf */,
+				4F93C8AC262ABC6800425FC4 /* Ekibastuz-Semibold.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -1348,12 +1348,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FF7C5ED261730DF007356C3 /* Ekibastuz-Bold.ttf in Resources */,
-				4FF7C5EC261730DF007356C3 /* Ekibastuz-Semibold.ttf in Resources */,
 				4F6BFCAF2615D29D00AE1DC3 /* LaunchScreen.storyboard in Resources */,
 				4F2401B926197B3F00AA99BF /* loading_animation.json in Resources */,
 				4FF7C4EA2616E6FB007356C3 /* CommonConfiguration.plist in Resources */,
+				4F93C8AE262ABC6800425FC4 /* Ekibastuz-Semibold.otf in Resources */,
 				4FF7C5EE261730DF007356C3 /* Ekibastuz-Regular.ttf in Resources */,
+				4F93C8AF262ABC6800425FC4 /* Ekibastuz-Bold.otf in Resources */,
 				4F6BFCAC2615D29D00AE1DC3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

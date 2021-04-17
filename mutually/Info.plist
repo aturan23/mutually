@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSCameraUsageDescription</key>
+	<string>My Awesome App requires access to your phone’s camera.</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -10,8 +12,8 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Ekibastuz-Regular.ttf</string>
-		<string>Ekibastuz-Semibold.ttf</string>
-		<string>Ekibastuz-Bold.ttf</string>
+		<string>Ekibastuz-Semibold.otf</string>
+		<string>Ekibastuz-Bold.otf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
