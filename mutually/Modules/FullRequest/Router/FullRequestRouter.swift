@@ -50,6 +50,8 @@ class FullRequestRouter: FullRequestRouterInput {
             return PassportFrontMask(showPhotoLine: type == .autoPassportFront)
         case .rectangle, .divided:
             return RectangleMask(line: type == .divided)
+        case .selfieWithPassport:
+            return SelfieMask()
         default:
             return UIView()
         }
