@@ -18,8 +18,10 @@ struct DefaultPlatformPlugin: PluginType {
      - returns: The modified `URLRequest`.
      */
     func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
+        guard let httpBody = request.httpBody else { return request }
         var request = request
-        let body = String(data: request.httpBody!, encoding: .utf8)! + "&platform=iOS"
+        
+        let body = String(data: httpBody, encoding: .utf8)! + "&platform=iOS"
         request.httpBody = Data(body.utf8)
         return request
     }
