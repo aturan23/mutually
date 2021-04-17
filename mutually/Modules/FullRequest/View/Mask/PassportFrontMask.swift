@@ -12,8 +12,9 @@ class PassportFrontMask: UIView {
     private let borderLineView = UIView()
     private let photoLineView = UIView()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(showPhotoLine: Bool = true) {
+        super.init(frame: .zero)
+        photoLineView.isHidden = !showPhotoLine
         setupViews()
     }
     
