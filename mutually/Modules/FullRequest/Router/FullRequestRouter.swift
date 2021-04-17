@@ -8,23 +8,38 @@
 
 import UIKit
 
-typealias ImagePickerDelegate = UIImagePickerControllerDelegate & UINavigationControllerDelegate
-
-class FullRequestRouter: FullRequestRouterInput {
+class FullRequestRouter: NSObject, FullRequestRouterInput {
     var alertFactory = AlertFactory()
 	weak var viewController: UIViewController?
-    private var imagePickerController = UIImagePickerController()
 
 	// ------------------------------
     // MARK: - FullRequestRouterInput
     // ------------------------------
     
-    func routeToCamera(delegate: ImagePickerDelegate) {
-        imagePickerController.delegate = delegate
+    func routeToCamera() {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
         imagePickerController.sourceType = .camera
-//        let view = UIView(frame: .init(x: 100, y: 100, width: 100, height: 100))
-//        view.backgroundColor = .red
-//        imagePickerController.cameraOverlayView = view
+        
+        let screenSize = UIScreen.main.bounds.size
+        let cameraAspectRatio: CGFloat = 4.0 / 3.0
+        let imageHeight = screenSize.width * cameraAspectRatio
+        var verticalAdjustment: CGFloat
+        verticalAdjustment = (screenSize.height - imageHeight) / 2.0
+        verticalAdjustment /= 1.425
+        var transform = imagePickerController.cameraViewTransform
+        transform.ty = verticalAdjustment
+        let previewFrame = CGRect(x: 0, y: verticalAdjustment, width: screenSize.width, height: imageHeight)
+        let overlayView = UIView(frame: previewFrame)
+        let maskView = PassportFrontMask()
+        overlayView.addSubview(maskView)
+        maskView.snp.makeConstraints { $0.edges.equalToSuperview() }
+        imagePickerController.cameraOverlayView = overlayView
+        
         viewController?.present(imagePickerController, animated: true)
     }
+}
+
+extension FullRequestRouter: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    
 }

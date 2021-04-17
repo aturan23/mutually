@@ -7,5 +7,5 @@
 //
 
 protocol FullRequestRouterInput: AlertShowingRouter {
-    func routeToCamera(delegate: ImagePickerDelegate)
+    func routeToCamera()
 }
