@@ -40,6 +40,7 @@
 		4F6BFCAA2615D29B00AE1DC3 /* mutually.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F6BFCA82615D29B00AE1DC3 /* mutually.xcdatamodeld */; };
 		4F6BFCAC2615D29D00AE1DC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F6BFCAB2615D29D00AE1DC3 /* Assets.xcassets */; };
 		4F6BFCAF2615D29D00AE1DC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F6BFCAD2615D29D00AE1DC3 /* LaunchScreen.storyboard */; };
+		4F93C8A8262ABB5900425FC4 /* PassportFrontMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F93C8A7262ABB5900425FC4 /* PassportFrontMask.swift */; };
 		4FC25C9B261E9CED00704338 /* FloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC25C9A261E9CED00704338 /* FloatExtension.swift */; };
 		4FC25C9E261EA15E00704338 /* ScreenTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC25C9D261EA15E00704338 /* ScreenTypes.swift */; };
 		4FC25CA2261EA7B000704338 /* FirstScreenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC25CA1261EA7B000704338 /* FirstScreenResponse.swift */; };
@@ -235,6 +236,7 @@
 		4F6BFCBD2616193500AE1DC3 /* SnapKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SnapKit.xcframework; path = Carthage/Build/SnapKit.xcframework; sourceTree = "<group>"; };
 		4F6BFCC12616193B00AE1DC3 /* Swinject.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Swinject.xcframework; path = Carthage/Build/Swinject.xcframework; sourceTree = "<group>"; };
 		4F6BFCC42616194100AE1DC3 /* Kingfisher.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Kingfisher.xcframework; path = Carthage/Build/Kingfisher.xcframework; sourceTree = "<group>"; };
+		4F93C8A7262ABB5900425FC4 /* PassportFrontMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassportFrontMask.swift; sourceTree = "<group>"; };
 		4FC25C9A261E9CED00704338 /* FloatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatExtension.swift; sourceTree = "<group>"; };
 		4FC25C9D261EA15E00704338 /* ScreenTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTypes.swift; sourceTree = "<group>"; };
 		4FC25CA1261EA7B000704338 /* FirstScreenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenResponse.swift; sourceTree = "<group>"; };
@@ -597,6 +599,14 @@
 				4F6BFCA82615D29B00AE1DC3 /* mutually.xcdatamodeld */,
 			);
 			path = mutually;
+			sourceTree = "<group>";
+		};
+		4F93C8A6262ABB2E00425FC4 /* Mask */ = {
+			isa = PBXGroup;
+			children = (
+				4F93C8A7262ABB5900425FC4 /* PassportFrontMask.swift */,
+			);
+			path = Mask;
 			sourceTree = "<group>";
 		};
 		4FC25CA0261EA7A600704338 /* Auth */ = {
@@ -1269,6 +1279,7 @@
 		FEC0EE841A7B02DC089C4238 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4F93C8A6262ABB2E00425FC4 /* Mask */,
 				4FC25CAC261EC61800704338 /* Subviews */,
 				AB93A91172E405EC4736CBCC /* FullRequestViewProtocols.swift */,
 				CA9C7D139DEBA6F255A2F6E8 /* FullRequestViewController.swift */,
@@ -1541,6 +1552,7 @@
 				4FF7C5B7261714C8007356C3 /* EditingAction.swift in Sources */,
 				7B9DE148C36136739EC972B0 /* SetupPasscodeViewAdapter.swift in Sources */,
 				4FF7C50B2616EB03007356C3 /* MutuallyNotification.swift in Sources */,
+				4F93C8A8262ABB5900425FC4 /* PassportFrontMask.swift in Sources */,
 				D629F72483A1DF6F5A87F44B /* SetupPasscodeModuleInput.swift in Sources */,
 				26CB7A7DCC37AEAF35BF9040 /* SetupPasscodeModuleOutput.swift in Sources */,
 				4FC25CAA261EC3B300704338 /* ScrollableStackView.swift in Sources */,
