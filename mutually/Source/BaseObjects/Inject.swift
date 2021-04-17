@@ -74,14 +74,20 @@ extension Container {
         }
         
         register(InboxServiceProtocol.self, factory: { (res: Resolver) in
-            let inboxProvider = NetworkDataProvider<InboxTarget>(
+            let provider = NetworkDataProvider<InboxTarget>(
                 networkReachibilityChecker: res.resolve(NetworkReachabilityChecking.self),
                 plugins: resolveDefaultPlugins(resolver: res))
             return InboxService(
-                dataProvider: inboxProvider,
+                dataProvider: provider,
                 dataService: res.resolve(DataServiceProtocol.self),
                 authService: res.resolve(AuthorizationServiceProtocol.self))
         })
+        register(ImageServiceProtocol.self) { (res: Resolver) in
+            let provider = NetworkDataProvider<ImageTarget>(
+                networkReachibilityChecker: res.resolve(NetworkReachabilityChecking.self),
+                plugins: resolveDefaultPlugins(resolver: res))
+            return ImageService(dataProvider: provider)
+        }
         
         register(AuthorizationServiceProtocol.self) { (res: Resolver) in
             let authProvider = NetworkDataProvider<AuthorizationTarget>(

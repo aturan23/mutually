@@ -12,6 +12,8 @@ enum JSONRequestParameter: String {
     case token
     case summ
     case term
+    case type
+    case userFile
     
     var key: String {
         return rawValue

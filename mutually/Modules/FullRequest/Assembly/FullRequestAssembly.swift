@@ -21,6 +21,7 @@ class FullRequestModuleAssembly: BaseModuleAssembly {
         let viewModel = FullRequestViewModel()
         viewModel.view = viewController
         viewModel.router = router
+        viewModel.imageService = injection.inject(ImageServiceProtocol.self)
         router.viewController = viewController
         viewController.output = viewModel
         viewModel.moduleOutput = configuration?(viewModel)

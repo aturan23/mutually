@@ -34,6 +34,8 @@
 		4F1F1BFE2626D83600E2E4B5 /* DefaultPlatformPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F1BFD2626D83600E2E4B5 /* DefaultPlatformPlugin.swift */; };
 		4F2401B926197B3F00AA99BF /* loading_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F2401B826197B3F00AA99BF /* loading_animation.json */; };
 		4F2401BD26197C9F00AA99BF /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2401BC26197C9F00AA99BF /* LoadingView.swift */; };
+		4F45DCE62629A22A00D830B5 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F45DCE52629A22A00D830B5 /* ImageService.swift */; };
+		4F45DCEA2629A28000D830B5 /* ImageTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F45DCE92629A28000D830B5 /* ImageTarget.swift */; };
 		4F6BFCA02615D29B00AE1DC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6BFC9F2615D29B00AE1DC3 /* AppDelegate.swift */; };
 		4F6BFCAA2615D29B00AE1DC3 /* mutually.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F6BFCA82615D29B00AE1DC3 /* mutually.xcdatamodeld */; };
 		4F6BFCAC2615D29D00AE1DC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F6BFCAB2615D29D00AE1DC3 /* Assets.xcassets */; };
@@ -222,6 +224,8 @@
 		4F1F1BFD2626D83600E2E4B5 /* DefaultPlatformPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPlatformPlugin.swift; sourceTree = "<group>"; };
 		4F2401B826197B3F00AA99BF /* loading_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_animation.json; sourceTree = "<group>"; };
 		4F2401BC26197C9F00AA99BF /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		4F45DCE52629A22A00D830B5 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		4F45DCE92629A28000D830B5 /* ImageTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTarget.swift; sourceTree = "<group>"; };
 		4F6BFC9C2615D29B00AE1DC3 /* mutually.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mutually.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F6BFC9F2615D29B00AE1DC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F6BFCA92615D29B00AE1DC3 /* mutually.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = mutually.xcdatamodel; sourceTree = "<group>"; };
@@ -551,6 +555,14 @@
 			path = animations;
 			sourceTree = "<group>";
 		};
+		4F45DCE42629A1E600D830B5 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				4F45DCE52629A22A00D830B5 /* ImageService.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
 		4F6BFC932615D29B00AE1DC3 = {
 			isa = PBXGroup;
 			children = (
@@ -803,6 +815,7 @@
 		4FF7C5122616EBB1007356C3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4F45DCE42629A1E600D830B5 /* Image */,
 				4F1F1BC12626ABB300E2E4B5 /* Inbox */,
 				4FF7C5652616F787007356C3 /* FeatureToggle */,
 				4FF7C5252616ECBB007356C3 /* Sms */,
@@ -860,6 +873,7 @@
 				4FF7C54A2616F07C007356C3 /* BaseTargetType.swift */,
 				4FF7C5462616F050007356C3 /* AuthorizationTarget.swift */,
 				4F1F1BC92626ACA300E2E4B5 /* InboxTarget.swift */,
+				4F45DCE92629A28000D830B5 /* ImageTarget.swift */,
 			);
 			path = Targets;
 			sourceTree = "<group>";
@@ -1457,6 +1471,7 @@
 				6E5CE1893A235366D2D20AC1 /* SignInViewController.swift in Sources */,
 				2EE50B8436736DD8B8B30EED /* SignInViewAdapter.swift in Sources */,
 				4FF7C5F42617615C007356C3 /* UIViewExtension.swift in Sources */,
+				4F45DCE62629A22A00D830B5 /* ImageService.swift in Sources */,
 				4FF7C5152616EBC5007356C3 /* SessionTracker.swift in Sources */,
 				4FF7C5532616F20C007356C3 /* DataServiceProtocol.swift in Sources */,
 				4FF7C5AE26171015007356C3 /* UILabelExtension.swift in Sources */,
@@ -1544,6 +1559,7 @@
 				E6FB7117F4816628DFDF32FE /* SmsVerificationViewModel.swift in Sources */,
 				F7FD8E24769EE4625823BF1B /* SmsVerificationRouterInput.swift in Sources */,
 				FBB8EEE8350D718EBE166F4E /* SmsVerificationRouter.swift in Sources */,
+				4F45DCEA2629A28000D830B5 /* ImageTarget.swift in Sources */,
 				4FC25CA2261EA7B000704338 /* FirstScreenResponse.swift in Sources */,
 				FB38B32FFA272E56755BB8F3 /* SmsVerificationAssembly.swift in Sources */,
 				1BD10AE7371FEFDD1FA07364 /* SlidingRequestViewProtocols.swift in Sources */,
