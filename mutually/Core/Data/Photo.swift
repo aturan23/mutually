@@ -11,6 +11,7 @@ struct Photo: Codable {
     let title: String
     let group: PhotoGroup
     let path: String?
+    let maskType: MaskType
     
     var pathUrl: URL? {
         guard let path = path else { return nil }
@@ -21,6 +22,14 @@ struct Photo: Codable {
         case title
         case group = "image_group"
         case path = "file_path"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        title = try container.decode(String.self, forKey: .title)
+        group = try container.decode(PhotoGroup.self, forKey: .group)
+        path = try container.decodeIfPresent(String.self, forKey: .path)
+        maskType = MaskType(rawValue: group == .other ? "Прочее" : title) ?? .none
     }
 }
 
@@ -37,6 +46,35 @@ enum PhotoGroup: String, Codable {
             return "Фото автомобиля"
         case .other:
             return "Прочее"
+        }
+    }
+}
+
+enum MaskType: String, Codable {
+    case selfieWithPassport
+    case autoPassportFront
+    case autoPassportBack
+    case rectangle
+    case divided
+    case none
+
+    
+    init?(rawValue: String) {
+        switch rawValue {
+        case "Селфи с паспортом":
+            self = .selfieWithPassport
+        case "Водительское удостоверение":
+            self = .autoPassportFront
+        case "Водительское удостоверение обратная сторона":
+            self = .autoPassportBack
+        case "СТС", "СТС обратная сторона":
+            self = .rectangle
+        case "Паспорт регистрация", "ПТС", "ПТС обратная сторона":
+            self = .divided
+        case "Прочее":
+            self = .none
+        default:
+            self = .divided
         }
     }
 }
