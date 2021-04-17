@@ -44,6 +44,7 @@
 		4F93C8AE262ABC6800425FC4 /* Ekibastuz-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F93C8AC262ABC6800425FC4 /* Ekibastuz-Semibold.otf */; };
 		4F93C8AF262ABC6800425FC4 /* Ekibastuz-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F93C8AD262ABC6800425FC4 /* Ekibastuz-Bold.otf */; };
 		4F93C8B2262AC10D00425FC4 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F93C8B1262AC10D00425FC4 /* UIImageViewExtension.swift */; };
+		4F93C8B5262ACEA400425FC4 /* RectangleMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F93C8B4262ACEA400425FC4 /* RectangleMask.swift */; };
 		4FC25C9B261E9CED00704338 /* FloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC25C9A261E9CED00704338 /* FloatExtension.swift */; };
 		4FC25C9E261EA15E00704338 /* ScreenTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC25C9D261EA15E00704338 /* ScreenTypes.swift */; };
 		4FC25CA2261EA7B000704338 /* FirstScreenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC25CA1261EA7B000704338 /* FirstScreenResponse.swift */; };
@@ -241,6 +242,7 @@
 		4F93C8AC262ABC6800425FC4 /* Ekibastuz-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ekibastuz-Semibold.otf"; sourceTree = "<group>"; };
 		4F93C8AD262ABC6800425FC4 /* Ekibastuz-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ekibastuz-Bold.otf"; sourceTree = "<group>"; };
 		4F93C8B1262AC10D00425FC4 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		4F93C8B4262ACEA400425FC4 /* RectangleMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleMask.swift; sourceTree = "<group>"; };
 		4FC25C9A261E9CED00704338 /* FloatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatExtension.swift; sourceTree = "<group>"; };
 		4FC25C9D261EA15E00704338 /* ScreenTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTypes.swift; sourceTree = "<group>"; };
 		4FC25CA1261EA7B000704338 /* FirstScreenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenResponse.swift; sourceTree = "<group>"; };
@@ -607,6 +609,7 @@
 			isa = PBXGroup;
 			children = (
 				4F93C8A7262ABB5900425FC4 /* PassportFrontMask.swift */,
+				4F93C8B4262ACEA400425FC4 /* RectangleMask.swift */,
 			);
 			path = Mask;
 			sourceTree = "<group>";
@@ -1443,6 +1446,7 @@
 				4FF7C4CD2616E24F007356C3 /* BaseModuleAssembly.swift in Sources */,
 				4FF7C5E126171D18007356C3 /* UIButtonExtension.swift in Sources */,
 				4FF7C4FB2616E8F4007356C3 /* RegisteredUserData.swift in Sources */,
+				4F93C8B5262ACEA400425FC4 /* RectangleMask.swift in Sources */,
 				4F6BFCAA2615D29B00AE1DC3 /* mutually.xcdatamodeld in Sources */,
 				4FF7C4D92616E328007356C3 /* RegistrationCoordinator.swift in Sources */,
 				4F094F57261BFB50000B7381 /* TokenResponse.swift in Sources */,
