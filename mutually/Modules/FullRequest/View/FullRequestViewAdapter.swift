@@ -11,6 +11,7 @@ import UIKit
 /// Default ViewModel passed to View layer for displaying
 struct FullRequestViewAdapter {
     let sections: [FullRequestCollectionAdapter]
+    let title: String?
 }
 
 struct FullRequestCollectionAdapter {

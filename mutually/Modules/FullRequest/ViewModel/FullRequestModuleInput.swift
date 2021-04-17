@@ -10,6 +10,7 @@
 /// through FullRequestModuleInput
 struct FullRequestConfigData {
     let photos: [Photo]?
+    let title: String?
 }
 
 /// Protocol with public methods to configure FullRequest 

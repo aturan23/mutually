@@ -24,6 +24,9 @@ class FullRequestViewController: BaseViewController, FullRequestViewInput {
     
     private let stackView = ScrollableStackView()
     
+    private let titleLabel = LabelFactory().make(withStyle: .paragraphBody,
+                                                 textColor: Color.textHighContrast)
+    
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -39,7 +42,7 @@ class FullRequestViewController: BaseViewController, FullRequestViewInput {
         collectionView.contentInset = UIEdgeInsets(
             top: 0, left: LayoutGuidance.offsetSuperLarge, bottom: 0, right: LayoutGuidance.offsetSuperLarge)
         collectionView.backgroundColor = .clear
-        collectionView.clipsToBounds = false
+        collectionView.clipsToBounds = true
         return collectionView
     }()
 
@@ -58,6 +61,7 @@ class FullRequestViewController: BaseViewController, FullRequestViewInput {
     // ------------------------------
 
     func display(viewAdapter: FullRequestViewAdapter) {
+        titleLabel.text = viewAdapter.title
         collectionViewManager.display(sections: viewAdapter.sections)
         collectionView.reloadData()
     }
@@ -77,13 +81,18 @@ class FullRequestViewController: BaseViewController, FullRequestViewInput {
     private func setupViewsHierarchy() {
 //        stackView.add(subview: collectionView)
         view.addSubview(collectionView)
+        view.addSubview(titleLabel)
     }
 
     private func setupConstraints() {
-        
+        titleLabel.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.left.right.equalToSuperview().inset(LayoutGuidance.offset)
+        }
         
         collectionView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.equalTo(titleLabel.snp.bottom).offset(LayoutGuidance.offsetThreeQuarters)
+            $0.width.bottom.equalToSuperview()
         }
     }
 }

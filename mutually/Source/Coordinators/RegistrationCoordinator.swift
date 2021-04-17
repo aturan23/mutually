@@ -77,11 +77,11 @@ class RegistrationCoordinator: RegistrationCoordinating {
                           completion: nil)
     }
     
-    func showThanksPage(photos: [Photo]?) {
+    func showThanksPage(screen: FirstScreenResponse?) {
         guard let fullRequestModule = injection
                 .inject(FullRequestModuleAssembly.self)?
                 .assemble({ moduleInput in
-                    moduleInput.configure(data: .init(photos: photos))
+                    moduleInput.configure(data: .init(photos: screen?.photos, title: screen?.text))
                     return nil
                 }) else {
             return
@@ -129,7 +129,7 @@ extension RegistrationCoordinator: RegistrationModuleOutput, SlidingRequestModul
         case .newClient:
             showSlidingView()
         case .thanks:
-            showThanksPage(photos: screen?.photos)
+            showThanksPage(screen: screen)
         case .none:
             stupSignIn()
         default: break
