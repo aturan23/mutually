@@ -45,7 +45,11 @@ final class PhotoCollectionViewCell: UICollectionViewCell {
     // ------------------------------
     
     func update(with viewAdapter: Photo) {
-//        iconImageView.image = viewAdapter.iconImage
+        if let path = viewAdapter.pathUrl {
+            iconImageView.setImage(with: path)
+        } else {
+            iconImageView.image = Asset.iconEmptyImg.image
+        }
         titleLabel.text = viewAdapter.title
     }
     
@@ -76,7 +80,7 @@ final class PhotoCollectionViewCell: UICollectionViewCell {
             $0.top.left.right.equalToSuperview()
         }
         iconImageView.snp.makeConstraints {
-            $0.center.equalToSuperview()
+            $0.size.equalToSuperview()
         }
         titleLabel.snp.makeConstraints {
             $0.top.equalTo(containerView.snp.bottom).offset(LayoutGuidance.offsetHalf)
