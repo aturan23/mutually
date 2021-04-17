@@ -43,6 +43,7 @@
 		4F93C8A8262ABB5900425FC4 /* PassportFrontMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F93C8A7262ABB5900425FC4 /* PassportFrontMask.swift */; };
 		4F93C8AE262ABC6800425FC4 /* Ekibastuz-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F93C8AC262ABC6800425FC4 /* Ekibastuz-Semibold.otf */; };
 		4F93C8AF262ABC6800425FC4 /* Ekibastuz-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F93C8AD262ABC6800425FC4 /* Ekibastuz-Bold.otf */; };
+		4F93C8B2262AC10D00425FC4 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F93C8B1262AC10D00425FC4 /* UIImageViewExtension.swift */; };
 		4FC25C9B261E9CED00704338 /* FloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC25C9A261E9CED00704338 /* FloatExtension.swift */; };
 		4FC25C9E261EA15E00704338 /* ScreenTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC25C9D261EA15E00704338 /* ScreenTypes.swift */; };
 		4FC25CA2261EA7B000704338 /* FirstScreenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC25CA1261EA7B000704338 /* FirstScreenResponse.swift */; };
@@ -239,6 +240,7 @@
 		4F93C8A7262ABB5900425FC4 /* PassportFrontMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassportFrontMask.swift; sourceTree = "<group>"; };
 		4F93C8AC262ABC6800425FC4 /* Ekibastuz-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ekibastuz-Semibold.otf"; sourceTree = "<group>"; };
 		4F93C8AD262ABC6800425FC4 /* Ekibastuz-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ekibastuz-Bold.otf"; sourceTree = "<group>"; };
+		4F93C8B1262AC10D00425FC4 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		4FC25C9A261E9CED00704338 /* FloatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatExtension.swift; sourceTree = "<group>"; };
 		4FC25C9D261EA15E00704338 /* ScreenTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTypes.swift; sourceTree = "<group>"; };
 		4FC25CA1261EA7B000704338 /* FirstScreenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenResponse.swift; sourceTree = "<group>"; };
@@ -807,6 +809,7 @@
 				4FF7C5E026171D18007356C3 /* UIButtonExtension.swift */,
 				4FF7C5F32617615C007356C3 /* UIViewExtension.swift */,
 				4FF7C60726180499007356C3 /* UINavigationItemExtension.swift */,
+				4F93C8B1262AC10D00425FC4 /* UIImageViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1475,6 +1478,7 @@
 				4FF7C654261876FC007356C3 /* AlertShowingRouter.swift in Sources */,
 				4FF7C4F02616E77C007356C3 /* Color.swift in Sources */,
 				F17AD218DCF2687012996957 /* RegistrationAssembly.swift in Sources */,
+				4F93C8B2262AC10D00425FC4 /* UIImageViewExtension.swift in Sources */,
 				4FF7C5A526170DFE007356C3 /* TextStyle.swift in Sources */,
 				4FF7C5632616F72B007356C3 /* DataService.swift in Sources */,
 				61F5B79BCB16832A40BC9A80 /* SignInViewProtocols.swift in Sources */,
