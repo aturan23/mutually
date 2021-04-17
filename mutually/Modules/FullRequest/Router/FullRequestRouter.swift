@@ -18,10 +18,11 @@ class FullRequestRouter: FullRequestRouterInput {
     // MARK: - FullRequestRouterInput
     // ------------------------------
     
-    func routeToCamera(delegate: ImagePickerDelegate?, maskView: UIView?) {
+    func routeToCamera(delegate: ImagePickerDelegate?, mask: MaskType) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = delegate
         imagePickerController.sourceType = .camera
+        imagePickerController.cameraDevice = mask == .selfieWithPassport ? .front : .rear
         
         let screenSize = UIScreen.main.bounds.size
         let cameraAspectRatio: CGFloat = 4.0 / 3.0
@@ -33,12 +34,24 @@ class FullRequestRouter: FullRequestRouterInput {
         transform.ty = verticalAdjustment
         let previewFrame = CGRect(x: 0, y: verticalAdjustment, width: screenSize.width, height: imageHeight)
         let overlayView = UIView(frame: previewFrame)
-        if let maskView = maskView {
-            overlayView.addSubview(maskView)
-            maskView.snp.makeConstraints { $0.edges.equalToSuperview() }
-        }
+
+        let maskedView = maskView(by: mask)
+        overlayView.addSubview(maskedView)
+        maskedView.snp.makeConstraints { $0.edges.equalToSuperview() }
+        
         imagePickerController.cameraOverlayView = overlayView
         
         viewController?.present(imagePickerController, animated: true)
+    }
+    
+    private func maskView(by type: MaskType) -> UIView {
+        switch type {
+        case .autoPassportFront, .autoPassportBack:
+            return PassportFrontMask(showPhotoLine: type == .autoPassportFront)
+        case .rectangle, .divided:
+            return RectangleMask(line: type == .divided)
+        default:
+            return UIView()
+        }
     }
 }

@@ -9,5 +9,5 @@
 import UIKit
 
 protocol FullRequestRouterInput: AlertShowingRouter {
-    func routeToCamera(delegate: ImagePickerDelegate?, maskView: UIView?)
+    func routeToCamera(delegate: ImagePickerDelegate?, mask: MaskType)
 }

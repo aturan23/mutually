@@ -38,7 +38,8 @@ class FullRequestViewModel: NSObject, FullRequestViewOutput {
     
     private func didSelectAt(_ indexPath: IndexPath) {
         self.indexPath = indexPath
-        router?.routeToCamera(delegate: self, maskView: PassportFrontMask())
+        let photo = sections[indexPath.section].items[indexPath.row]
+        router?.routeToCamera(delegate: self, mask: photo.maskType)
     }
     
     private func configureSections() -> [FullRequestCollectionAdapter] {
