@@ -65,6 +65,10 @@ class FullRequestViewController: BaseViewController, FullRequestViewInput {
         collectionViewManager.display(sections: viewAdapter.sections)
         collectionView.reloadData()
     }
+    
+    func displayButton() {
+        configureForButton()
+    }
 
     // ------------------------------
     // MARK: - Private methods
@@ -93,6 +97,25 @@ class FullRequestViewController: BaseViewController, FullRequestViewInput {
         collectionView.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(LayoutGuidance.offsetThreeQuarters)
             $0.width.bottom.equalToSuperview()
+        }
+    }
+    
+    private func configureForButton() {
+        let button = Button.makePrimary(with: "Отправить фотографий")
+        button.touchUpInside = { [weak self] in
+            self?.output?.buttonDidTap()
+        }
+        
+        view.addSubview(button)
+        
+        button.snp.makeConstraints {
+            $0.bottom.left.right.equalToSuperview().inset(LayoutGuidance.offsetSuperLarge)
+        }
+        
+        collectionView.snp.remakeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(LayoutGuidance.offsetThreeQuarters)
+            $0.width.equalToSuperview()
+            $0.bottom.equalTo(button.snp.top).offset(-LayoutGuidance.offsetHalf)
         }
     }
 }

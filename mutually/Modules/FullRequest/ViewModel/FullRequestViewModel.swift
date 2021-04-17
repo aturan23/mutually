@@ -36,6 +36,21 @@ class FullRequestViewModel: NSObject, FullRequestViewOutput {
         sections = configureSections()
     }
     
+    func buttonDidTap() {
+        imageService?.done(completion: { [weak self] (result) in
+            switch result {
+            case .success:
+                print("")
+            case .failure(let error):
+                self?.router?.showAlert(message: error.message)
+            }
+        })
+    }
+    
+    // ------------------------------
+    // MARK: - Private methods
+    // ------------------------------
+    
     private func didSelectAt(_ indexPath: IndexPath) {
         self.indexPath = indexPath
         let photo = sections[indexPath.section].items[indexPath.row]
@@ -59,7 +74,7 @@ class FullRequestViewModel: NSObject, FullRequestViewOutput {
         imageService?.upload(data: data, type: "3", completion: { [weak self] (result) in
             switch result {
             case .success:
-                print("SUCCESS")
+                self?.view?.displayButton()
             case .failure(let error):
                 self?.router?.showAlert(message: error.message)
             }

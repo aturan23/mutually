@@ -9,6 +9,7 @@ import Foundation
 
 protocol ImageServiceProtocol {
     func upload(data: Data, type: String, completion: @escaping ResponseCompletion<Void>)
+    func done(completion: @escaping ResponseCompletion<Void>)
 }
 
 final class ImageService: ImageServiceProtocol {
@@ -27,6 +28,15 @@ final class ImageService: ImageServiceProtocol {
     
     func upload(data: Data, type: String, completion: @escaping ResponseCompletion<Void>) {
         dataProvider.request(.upload(data: data, type: type)) { result in
+            switch result {
+            case .success: completion(.success(()))
+            case .failure(let error): completion(.failure(error))
+            }
+        }
+    }
+    
+    func done(completion: @escaping ResponseCompletion<Void>) {
+        dataProvider.request(.uploaded) { result in
             switch result {
             case .success: completion(.success(()))
             case .failure(let error): completion(.failure(error))

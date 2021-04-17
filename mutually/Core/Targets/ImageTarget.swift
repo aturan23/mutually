@@ -9,6 +9,7 @@ import Moya
 
 enum ImageTarget {
     case upload(data: Data, type: String)
+    case uploaded
 }
 
 extension ImageTarget: BaseTargetType {
@@ -17,6 +18,10 @@ extension ImageTarget: BaseTargetType {
         case let .upload(data, _):
             let model = Model(userFile: data)
             return .requestJSONEncodable(model)
+        case .uploaded:
+            return .requestParameters(
+                parameters: [JSONRequestParameter.action.key: "documents_uploaded"],
+                encoding: URLEncoding.default)
         }
     }
 }

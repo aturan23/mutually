@@ -8,8 +8,10 @@
 
 protocol FullRequestViewInput: class {
     func display(viewAdapter: FullRequestViewAdapter)
+    func displayButton()
 }
 
 protocol FullRequestViewOutput {
     func didLoad()
+    func buttonDidTap()
 }
