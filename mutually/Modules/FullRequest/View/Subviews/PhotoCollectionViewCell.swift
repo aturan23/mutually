@@ -66,6 +66,10 @@ final class PhotoCollectionViewCell: UICollectionViewCell {
         iconImageView.tintColor = .gray
         iconImageView.contentMode = .scaleAspectFit
         
+        titleLabel.minimumScaleFactor = 0.2
+        titleLabel.adjustsFontSizeToFitWidth = true
+        titleLabel.lineBreakMode = .byCharWrapping
+        
         setupViewsHierarchy()
         setupConstraints()
     }
