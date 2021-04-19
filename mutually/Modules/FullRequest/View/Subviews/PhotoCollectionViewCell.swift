@@ -27,6 +27,8 @@ final class PhotoCollectionViewCell: UICollectionViewCell {
         withStyle: .paragraph,
         textColor: Color.textLowContrast)
     
+    private let indicator = UIActivityIndicatorView.makeDefault()
+    
     // ------------------------------
     // MARK: - Life cycle
     // ------------------------------
@@ -45,11 +47,20 @@ final class PhotoCollectionViewCell: UICollectionViewCell {
     // ------------------------------
     
     func update(with viewAdapter: Photo) {
+        indicator.stopAnimating()
+        iconImageView.isHidden = false
+        
         if let path = viewAdapter.pathUrl {
             iconImageView.setImage(with: path)
         } else {
             iconImageView.image = Asset.iconEmptyImg.image
         }
+        
+        if viewAdapter.loading {
+            iconImageView.isHidden = true
+            indicator.startAnimating()
+        }
+        
         titleLabel.text = viewAdapter.title
     }
     
@@ -74,7 +85,7 @@ final class PhotoCollectionViewCell: UICollectionViewCell {
         setupConstraints()
     }
     private func setupViewsHierarchy() {
-        containerView.addSubview(iconImageView)
+        [iconImageView, indicator].forEach(containerView.addSubview(_:))
         [containerView, titleLabel].forEach(contentView.addSubview(_:))
     }
     
@@ -84,6 +95,9 @@ final class PhotoCollectionViewCell: UICollectionViewCell {
             $0.top.left.right.equalToSuperview()
         }
         iconImageView.snp.makeConstraints {
+            $0.size.equalToSuperview()
+        }
+        indicator.snp.makeConstraints {
             $0.size.equalToSuperview()
         }
         titleLabel.snp.makeConstraints {

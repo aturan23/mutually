@@ -13,6 +13,7 @@ extension UIActivityIndicatorView {
     ) -> UIActivityIndicatorView {
         let indicator = UIActivityIndicatorView(style: style)
         indicator.hidesWhenStopped = true
+        indicator.color = Color.buttonPrimaryFillRegular
         indicator.startAnimating()
         return indicator
     }

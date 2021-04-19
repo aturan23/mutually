@@ -13,6 +13,7 @@ struct Photo: Codable {
     var path: String?
     let maskType: MaskType
     
+    var loading: Bool = false
     var pathUrl: URL? {
         guard let path = path else { return nil }
         return URL(string: EnvConfigs.baseUrl)?.appendingPathComponent(path)

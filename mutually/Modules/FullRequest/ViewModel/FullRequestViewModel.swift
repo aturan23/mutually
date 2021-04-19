@@ -71,14 +71,24 @@ class FullRequestViewModel: NSObject, FullRequestViewOutput {
     }
     
     private func save(data: Data) {
-        imageService?.upload(data: data, type: "3", completion: { [weak self] (result) in
+        var photo = sections[indexPath.section].items[indexPath.row]
+        photo.loading = true
+        changeSectionItem(for: photo)
+        imageService?.upload(data: data, type: photo.group.rawValue, completion: { [weak self] (result) in
             switch result {
-            case .success:
+            case .success(let response):
+                photo.path = response.urlFile
+                photo.loading = false
+                self?.changeSectionItem(for: photo)
                 self?.view?.displayButton()
             case .failure(let error):
                 self?.router?.showAlert(message: error.message)
             }
         })
+    }
+    
+    private func changeSectionItem(for photo: Photo) {
+        sections[indexPath.section].items[indexPath.row] = photo
     }
 }
 
