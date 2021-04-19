@@ -75,7 +75,7 @@ class FullRequestViewModel: NSObject, FullRequestViewOutput {
         var photo = sections[indexPath.section].items[indexPath.row]
         photo.loading = true
         changeSectionItem(for: photo)
-        imageService?.upload(data: data, type: photo.group.rawValue, completion: { [weak self] (result) in
+        imageService?.upload(data: data, type: photo.id, completion: { [weak self] (result) in
             switch result {
             case .success(let response):
                 photo.path = response.urlFile

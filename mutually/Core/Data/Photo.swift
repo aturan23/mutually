@@ -8,6 +8,7 @@
 import Foundation
 
 struct Photo: Codable {
+    let id: String
     let title: String
     let group: PhotoGroup
     var path: String?
@@ -20,13 +21,14 @@ struct Photo: Codable {
     }
     
     enum CodingKeys: String, CodingKey {
-        case title
+        case title, id
         case group = "image_group"
         case path = "file_path"
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(String.self, forKey: .id)
         title = try container.decode(String.self, forKey: .title)
         group = try container.decode(PhotoGroup.self, forKey: .group)
         path = try container.decodeIfPresent(String.self, forKey: .path)
