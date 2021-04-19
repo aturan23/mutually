@@ -8,48 +8,26 @@
 import Moya
 
 enum ImageTarget {
-    case upload(data: Data, type: String)
+    case upload(data: Data, type: String, token: String)
     case uploaded
 }
 
 extension ImageTarget: BaseTargetType {
     var task: Task {
         switch self {
-        case let .upload(data, _):
-            let model = Model(userFile: data)
-            return .requestJSONEncodable(model)
+        case let .upload(data, _, token):
+            let image = MultipartFormData(provider: .data(data), name: "userFile", fileName: "СТС.png", mimeType: "image/png")
+            let type = MultipartFormData(provider: .data("2".data(using: .utf8)!), name: "type")
+            let action = MultipartFormData(provider: .data("upload_photo".data(using: .utf8)!), name: "action")
+            let token = MultipartFormData(provider: .data(token.data(using: .utf8)!), name: "token")
+            let platform = MultipartFormData(provider: .data("iOS".data(using: .utf8)!), name: "platform")
+            let multipartData = [action, image, type, token, platform]
+            
+            return .uploadMultipart(multipartData)
         case .uploaded:
             return .requestParameters(
                 parameters: [JSONRequestParameter.action.key: "documents_uploaded"],
                 encoding: URLEncoding.default)
-        }
-    }
-}
-
-struct Model: Codable {
-    var action: String = "upload_photo"
-    var type: String = "3"
-    var userFile: Data
-}
-
-func multipartFormData(_ image: String, _ name: String) -> MultipartFormData{
-    let formData = MultipartFormData(provider: .data(image.data(using: .utf8)!), name: name, mimeType: "image/png")
-    return formData
-}
-
-extension Encodable {
-    /// Converts Codable-conformant class or struct instance into swift dictionary, if possible
-    func toDict() -> [String: Any] {
-        do {
-            let encoder = JSONEncoder()
-            encoder.dateEncodingStrategy = .iso8601
-            let data = try encoder.encode(self)
-            let dict: [String: Any] = try JSONSerialization.jsonObject(
-                with: data, options: .mutableLeaves)
-                as? [String: Any] ?? [String: Any]()
-            return dict
-        } catch {
-            return [String: Any]()
         }
     }
 }

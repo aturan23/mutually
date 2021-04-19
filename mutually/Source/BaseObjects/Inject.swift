@@ -86,7 +86,8 @@ extension Container {
             let provider = NetworkDataProvider<ImageTarget>(
                 networkReachibilityChecker: res.resolve(NetworkReachabilityChecking.self),
                 plugins: resolveDefaultPlugins(resolver: res))
-            return ImageService(dataProvider: provider)
+            return ImageService(dataProvider: provider,
+                                registeredUserHandler: res.resolve(RegisteredUserHandlerProtocol.self))
         }
         
         register(AuthorizationServiceProtocol.self) { (res: Resolver) in
