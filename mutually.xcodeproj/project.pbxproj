@@ -36,6 +36,7 @@
 		4F2401BD26197C9F00AA99BF /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2401BC26197C9F00AA99BF /* LoadingView.swift */; };
 		4F45DCE62629A22A00D830B5 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F45DCE52629A22A00D830B5 /* ImageService.swift */; };
 		4F45DCEA2629A28000D830B5 /* ImageTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F45DCE92629A28000D830B5 /* ImageTarget.swift */; };
+		4F6465FD262D25E1008F5B6E /* ImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6465FC262D25E1008F5B6E /* ImageResponse.swift */; };
 		4F6BFCA02615D29B00AE1DC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6BFC9F2615D29B00AE1DC3 /* AppDelegate.swift */; };
 		4F6BFCAA2615D29B00AE1DC3 /* mutually.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F6BFCA82615D29B00AE1DC3 /* mutually.xcdatamodeld */; };
 		4F6BFCAC2615D29D00AE1DC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F6BFCAB2615D29D00AE1DC3 /* Assets.xcassets */; };
@@ -230,6 +231,7 @@
 		4F2401BC26197C9F00AA99BF /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4F45DCE52629A22A00D830B5 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		4F45DCE92629A28000D830B5 /* ImageTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTarget.swift; sourceTree = "<group>"; };
+		4F6465FC262D25E1008F5B6E /* ImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResponse.swift; sourceTree = "<group>"; };
 		4F6BFC9C2615D29B00AE1DC3 /* mutually.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mutually.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F6BFC9F2615D29B00AE1DC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F6BFCA92615D29B00AE1DC3 /* mutually.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = mutually.xcdatamodel; sourceTree = "<group>"; };
@@ -799,6 +801,7 @@
 				4F094F56261BFB50000B7381 /* TokenResponse.swift */,
 				4FC25C9D261EA15E00704338 /* ScreenTypes.swift */,
 				4FC25CB4261ECAD900704338 /* Photo.swift */,
+				4F6465FC262D25E1008F5B6E /* ImageResponse.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1550,6 +1553,7 @@
 				4FF7C6622618A010007356C3 /* PasswordKeyboardButtonType.swift in Sources */,
 				629C9F750C3D0B7C5CB474AA /* MainTabsAssembly.swift in Sources */,
 				4FF7C5302616EDBE007356C3 /* JSONStandard.swift in Sources */,
+				4F6465FD262D25E1008F5B6E /* ImageResponse.swift in Sources */,
 				4FF7C5082616EAD6007356C3 /* KeyboardListening.swift in Sources */,
 				4FF7C5202616EC90007356C3 /* AuthorizationService.swift in Sources */,
 				4FF7C5AA26170EBD007356C3 /* LabelFactory.swift in Sources */,
