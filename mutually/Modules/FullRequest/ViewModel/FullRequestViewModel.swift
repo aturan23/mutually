@@ -37,10 +37,11 @@ class FullRequestViewModel: NSObject, FullRequestViewOutput {
     }
     
     func buttonDidTap() {
+        view?.button(isLoading: true, text: nil)
         imageService?.done(completion: { [weak self] (result) in
             switch result {
             case .success:
-                print("")
+                self?.view?.button(isLoading: false, text: "Продолжить")
             case .failure(let error):
                 self?.router?.showAlert(message: error.message)
             }
@@ -80,7 +81,6 @@ class FullRequestViewModel: NSObject, FullRequestViewOutput {
                 photo.path = response.urlFile
                 photo.loading = false
                 self?.changeSectionItem(for: photo)
-                self?.view?.displayButton()
             case .failure(let error):
                 self?.router?.showAlert(message: error.message)
             }

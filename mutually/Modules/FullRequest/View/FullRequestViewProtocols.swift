@@ -8,7 +8,7 @@
 
 protocol FullRequestViewInput: class {
     func display(viewAdapter: FullRequestViewAdapter)
-    func displayButton()
+    func button(isLoading: Bool, text: String?)
 }
 
 protocol FullRequestViewOutput {

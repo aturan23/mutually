@@ -40,11 +40,13 @@ class FullRequestViewController: BaseViewController, FullRequestViewInput {
             frame: .zero, collectionViewLayout: layout)
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.contentInset = UIEdgeInsets(
-            top: 0, left: LayoutGuidance.offsetSuperLarge, bottom: 0, right: LayoutGuidance.offsetSuperLarge)
+            top: 0, left: LayoutGuidance.offsetSuperLarge, bottom: LayoutGuidance.buttonHeight, right: LayoutGuidance.offsetSuperLarge)
         collectionView.backgroundColor = .clear
         collectionView.clipsToBounds = true
         return collectionView
     }()
+    
+    private let button = Button.makePrimary(with: "Отправить фотографий")
 
     // ------------------------------
     // MARK: - Life cycle
@@ -66,8 +68,10 @@ class FullRequestViewController: BaseViewController, FullRequestViewInput {
         collectionView.reloadData()
     }
     
-    func displayButton() {
-        configureForButton()
+    func button(isLoading: Bool, text: String?) {
+        button.isLoading = isLoading
+        guard let text = text else { return }
+        button.set(title: text)
     }
 
     // ------------------------------
@@ -77,6 +81,10 @@ class FullRequestViewController: BaseViewController, FullRequestViewInput {
     private func setupViews() {
         title = "Заявка"
         stackView.backgroundColor = .gray
+        
+        button.touchUpInside = { [weak self] in
+            self?.output?.buttonDidTap()
+        }
 
         setupViewsHierarchy()
         setupConstraints()
@@ -86,6 +94,7 @@ class FullRequestViewController: BaseViewController, FullRequestViewInput {
 //        stackView.add(subview: collectionView)
         view.addSubview(collectionView)
         view.addSubview(titleLabel)
+        view.addSubview(button)
     }
 
     private func setupConstraints() {
@@ -98,24 +107,9 @@ class FullRequestViewController: BaseViewController, FullRequestViewInput {
             $0.top.equalTo(titleLabel.snp.bottom).offset(LayoutGuidance.offsetThreeQuarters)
             $0.width.bottom.equalToSuperview()
         }
-    }
-    
-    private func configureForButton() {
-        let button = Button.makePrimary(with: "Отправить фотографий")
-        button.touchUpInside = { [weak self] in
-            self?.output?.buttonDidTap()
-        }
-        
-        view.addSubview(button)
         
         button.snp.makeConstraints {
             $0.bottom.left.right.equalToSuperview().inset(LayoutGuidance.offsetSuperLarge)
-        }
-        
-        collectionView.snp.remakeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(LayoutGuidance.offsetThreeQuarters)
-            $0.width.equalToSuperview()
-            $0.bottom.equalTo(button.snp.top).offset(-LayoutGuidance.offsetHalf)
         }
     }
 }
