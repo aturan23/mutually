@@ -10,7 +10,7 @@ import Foundation
 struct Photo: Codable {
     let title: String
     let group: PhotoGroup
-    let path: String?
+    var path: String?
     let maskType: MaskType
     
     var pathUrl: URL? {

@@ -16,6 +16,6 @@ struct FullRequestViewAdapter {
 
 struct FullRequestCollectionAdapter {
     let title: String
-    let items: [Photo]
+    var items: [Photo]
     let onSelection: ((IndexPath) -> Void)?
 }
