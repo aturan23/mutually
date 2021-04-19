@@ -8,6 +8,27 @@
 import UIKit
 
 extension UIView {
+    struct ValuesHolder {
+        static var tapClosures: [UIView: () -> Void] = [:]
+        static var backgroundColors: [UIView: UIColor] = [:]
+    }
+    var originalBackgroundColor: UIColor? {
+        get {
+            return ValuesHolder.backgroundColors[self] ?? backgroundColor
+        }
+        set(value) {
+            ValuesHolder.backgroundColors[self] = value
+        }
+    }
+    var closure: (() -> Void) {
+        get {
+            return ValuesHolder.tapClosures[self] ?? {}
+        }
+        set(value) {
+            ValuesHolder.tapClosures[self] = value
+        }
+    }
+    
     func shake() {
         let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
         animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
@@ -40,5 +61,16 @@ extension UIView {
         shadowLayer.shadowOpacity = opacity
         shadowLayer.shadowRadius = shadowRadius
         layer.insertSublayer(shadowLayer, at: 0)
+    }
+    
+    func addTap(_ closure: @escaping (() -> Void)) {
+        self.closure = closure
+        self.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        self.addGestureRecognizer(tap)
+    }
+    
+    @objc func tapped() {
+        closure()
     }
 }
