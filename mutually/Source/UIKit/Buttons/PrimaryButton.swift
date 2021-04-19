@@ -18,7 +18,7 @@ extension Button {
                             cornerRadius: 8,
                             withShadow: false)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        button.heightAnchor.constraint(equalToConstant: LayoutGuidance.buttonHeight).isActive = true
         let indicatorView = UIActivityIndicatorView()
         indicatorView.style = .white
         indicatorView.color = .white

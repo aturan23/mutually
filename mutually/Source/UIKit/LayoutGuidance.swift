@@ -20,4 +20,6 @@ enum LayoutGuidance {
     static let offsetLarge: CGFloat = 24
     /// 32
     static let offsetSuperLarge: CGFloat = 32
+    /// 44
+    static let buttonHeight: CGFloat = 44
 }
